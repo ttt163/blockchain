@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+ 
+ <html>
+ <head>
+     <meta name="viewport" content="width=device-width" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+     <meta content=always name=referrer>
+     <title>APP</title>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ </head>
+ <body>
+<style>
+	.Mytable{
+	   /*  text-align: center;  */
+	    background-color: #ffb3b3;
+	    border-radius: 20px;
+	    width: 300px;
+	    height: 350px;
+	    margin-top:150px;
+	    /* position: absolute; */
+	    margin-left:700px;
+	}
+	.Myaffirm{
+	    background-color: #e6e6e6;
+	    border-radius: 20px;
+	    width: 700px;
+	    height: 100px;
+	     margin-top:20px;
+	    margin-left:500px;
+	}
+</style>
+<div class="Mytable">
+ <br>
+ <h2><center>火星账号管理</center></h2>
+ 	&nbsp;&nbsp;<span>选服:&nbsp;&nbsp;</span>
+			<input type="radio" name="vipOrcom" value="vip">测试服&nbsp;&nbsp;
+			<input type="radio" name="vipOrcom"  value="com">正式服
+     <br><br>
+	&nbsp;&nbsp;<span>类型:&nbsp;&nbsp;</span>
+			<input type="radio" name="delOrUntie"  value="del">删除账号&nbsp;&nbsp;
+			<input type="radio" name="delOrUntie"  value="untie">解绑微信
+     <br><br>
+    &nbsp;&nbsp;<span>手机号:&nbsp;&nbsp;</span>
+     		<input type="text" name="phoneNum" >
+     <br><br>
+     &nbsp;&nbsp;<span>密&nbsp;&nbsp;&nbsp;码:&nbsp;&nbsp;</span>
+     		<input id="pwd" type="text" name="password" >
+     <br><br>
+    <center ><button style="background-color: rgb(204, 255, 255);width:120px;height: 30px" onclick="Start()">上传</button></center>
+</div>
+<div class="Myaffirm">
+<span style="color: #cc0000;padding-bottom:1px;padding-top:10px"> &nbsp;&nbsp;申明:</span>
+<br><div style="margin-left:50px">
+	1.【火星账号管理】功能仅用于开发人员进行账号的登录、注册以及微信绑定解绑测试;
+<br>2.禁止删除线上有历史数据的账号,包括发布新闻、快讯、评论、收藏、部落里发布问题等<br>如需删除,请联系开发人员。
+</div>
+</span>
+</div>
+     <script>
+        function Start(){
+        	var vipOrcom = $('input[name="vipOrcom"]:checked').val();
+        	var delOrUntie = $('input[name="delOrUntie"]:checked').val();
+        	var middle = "";
+        	var suffix = "";
+        	if (vipOrcom=="com") {
+        		middle = "com/mgr/account/";
+			}else{
+				middle = "vip/mgr/account/";
+			}
+        	if (delOrUntie=="del") {
+        		suffix = "delaccount";
+			}else{
+				suffix = "untieweixin";
+			}
+         	 var url = "http://www.huoxing24."+middle+suffix;   
+        	 /* var url = "http://localhost:8080/lk-mars-mgr/account/untieweixin";   */
+        	
+        	var phoneNum = $('input[name="phoneNum"]').val();
+        	var password = $('input[name="password"]').val();
+        	alert("请求url="+url)
+        	 $.post(url, {'phoneNum': phoneNum,'password':password,'vipOrcom':vipOrcom}, function (data) {
+                alert(data.msg);
+            });
+        	
+        }
+         
+     </script>
+
+ </body>
+ </html>

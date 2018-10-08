@@ -1,0 +1,61 @@
+<!-- 公共头部 -->
+@@include('public/m-header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.min.css"],
+"private": ["../css/m-buDownload.css"]
+})
+
+<div class="bu-warp">
+    <div class="section-one">
+        <h1>火星币优APP</h1>
+        <h2>全方面数字货币管家</h2>
+        <a href="">立即下载</a>
+    </div>
+    <div class="section-two">
+        <h2>专业的资产管理</h2>
+        <h6>自动导入</h6>
+        <p>币优首创自动记录，解决用户记账烦恼<br/>即将支持超过100家交易所与两款钱包</p>
+        <div class="swiper-container administration">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../img/biyou/m-section1-phone0.png" alt=""></div>
+                <div class="swiper-slide"><img src="../img/biyou/m-section1-phone1.png" alt=""></div>
+                <div class="swiper-slide"><img src="../img/biyou/m-section1-phone2.png" alt=""></div>
+                <div class="swiper-slide"><img src="../img/biyou/m-section1-phone3.png" alt=""></div>
+            </div>
+            <div class="swiper-pagination adminP"></div>
+        </div>
+    </div>
+    <div class="section-three">
+        <h2>完善的行情数据</h2>
+        <h6>长期数据</h6>
+        <p>除常规的25小时涨跌幅，还提供了1小时、1周、1个月、3个月、6个月的涨跌幅</p>
+        <div class="swiper-container data">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../img/biyou/m-section2-phone0.png" alt=""></div>
+                <div class="swiper-slide"><img src="../img/biyou/m-section2-phone1.png" alt=""></div>
+            </div>
+            <div class="swiper-pagination dataP"></div>
+        </div>
+    </div>
+    <div class="section-four">
+        <h2>7x24H快讯</h2>
+        <h6>行业资讯 即时推送</h6>
+        <img src="../img/biyou/m-section3-phone.png" alt="">
+    </div>
+    <div class="section-five">
+        <h2>聚合交易</h2>
+        <p>聚合交易可以让你在一个App上就能交易所有支持的交易所。目前已经支持币安、Bittrex、HitBTC以及Fcoin，即将支持20家交易所</p>
+        <div class="img-box">
+            <img src="../img/biyou/m-section4-phone0.png" alt="">
+            <img src="../img/biyou/m-section4-phone1.png" alt="">
+        </div>
+    </div>
+</div>
+
+<!-- 公共底部 -->
+@@include('public/m-footer-prue.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.jquery.min.js", "http://static.huoxing24.com/assets/jquery-1.12.0.min.js"],
+"private": ["../js/m-buDownload.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

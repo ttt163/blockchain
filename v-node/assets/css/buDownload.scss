@@ -1,0 +1,182 @@
+@import "./public/normalize";
+@import "./public/public";
+
+.section-main {
+    margin: 0 auto;
+    padding-top: 70px;
+    width: 920px;
+    text-align: center;
+
+    .section-title {
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        font-size: 36px;
+    }
+
+    p {
+        display: block;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .seciton-img {
+        img {
+            display: inline-block;
+        }
+    }
+}
+
+.section-one {
+    background: url("../img/biyou/section0-bg.jpg") no-repeat center;
+    height: 760px;
+
+    .one-left {
+        float: left;
+        padding-top: 20px;
+        width: 479px;
+    }
+
+    .one-right {
+        float: right;
+        padding-top: 120px;
+        width: 400px;
+        color: #fff;
+        text-align: left;
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 60px;
+        }
+
+        h2 {
+            margin: 10px 0;
+            font-size: 42px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        .one-download-qrcode {
+            margin-top: 30px;
+
+            .one-download {
+                float: left;
+                width: 220px;
+
+                a {
+                    margin-bottom: 20px;
+                    border: 1px solid #fff;
+                    border-radius: 5px;
+                    display: table;
+                    vertical-align: middle;
+                    height: 58px;
+                    width: 218px;
+                    color: #fff;
+                    font-size: 16px;
+                    line-height: 58px;
+                    text-align: center;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+
+                    img {
+                        margin: 0 5px -5px 0;
+                        display: inline-block;
+                    }
+
+                    span {
+                        margin-top: -5px;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .qrcode {
+                float: right;
+            }
+        }
+    }
+}
+
+.section-two {
+    background: url("../img/biyou/section1-bg.jpg") no-repeat center;
+    height: 846px;
+    color: #48525b;
+}
+
+.section-three {
+    background: url("../img/biyou/section2-bg.jpg") no-repeat center;
+    height: 846px;
+    color: #fff;
+}
+
+.section-four {
+    background: url("../img/biyou/section3-bg.jpg") no-repeat center;
+    height: 819px;
+    color: #48525b;
+}
+
+.section-five {
+    background: url("../img/biyou/section4-bg.jpg") no-repeat center;
+    height: 820px;
+    color: #fff;
+}
+
+.section-six {
+    background: url("../img/biyou/section5-bg.jpg") no-repeat center;
+    height: 846px;
+    color: #48525b;
+
+    li {
+        float: left;
+        width: 246px;
+
+        &:nth-child(2) {
+            margin: 0 70px;
+        }
+
+        h3 {
+            margin: 25px 0 10px 0;
+            font-size: 24px;
+        }
+
+        span {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+}
+
+.section-seven {
+    background: url("../img/biyou/section6-bg.jpg") no-repeat center;
+    height: 816px;
+    color: #fff;
+
+    .section-img {
+        width: 620px;
+    }
+
+    ul {
+        margin: 0 auto;
+    }
+
+    li {
+        float: left;
+        width: 246px;
+
+        &:nth-child(2) {
+            float: right;
+        }
+    }
+}
+
+.section-eight {
+    background: url("../img/biyou/section7-bg.jpg") no-repeat center;
+    height: 750px;
+    color: #48525b;
+}

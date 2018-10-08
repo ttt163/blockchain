@@ -1,0 +1,16 @@
+<div id="containMain" data-rate="<%= JSON.stringify(data.rateData) %>" data-id="<%= data.coinId %>"
+     data-cname="<%= data.coinName %>" data-tags="<%= tags %>">
+    @@include('./messageBanner.ejs')
+    <!-- tab header -->
+    <div class="project-info-head">
+        <div class="info-head">
+            <a data-type="material" class="" title="项目数据"
+               href="<%= domain %>/project/<%= data.coinId %>"><span>项目数据</span></a>
+            <a data-type="news" class="active" title="相关新闻" href="<%= domain %>/projectNews/<%= data.coinId %>"><span>相关新闻</span></a>
+        </div>
+    </div>
+    <div class="project-classify">
+        <!-- 相关新闻 -->
+        @@include('./projectNews.ejs')
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": ["/plugin/share/share.min.css", "http://static.huoxing24.com/assets/swiper.min.css"],
+"private": ["../css/index.css"]
+})
+<!--头部行情-->
+<!--@@include('./index/topMarket.ejs')-->
+<!-- 内容 -->
+@@include('./index/main.ejs')
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.jquery.min.js", "http://static.huoxing24.com/assets/share/jquery.share.min.js"],
+"private": ["../js/common.js", "../js/index.js"]
+})
+

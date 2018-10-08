@@ -1,0 +1,192 @@
+<%
+const add0 = (m) => {
+    return m < 10 ? '0' + m : m
+}
+// 格式化时间, 没有年,今天之内不显示日期
+const formatDateTime = (publishDate, currDate, str) => {
+    str = !str ? '-' : str
+    let curr = new Date()
+    let publish = new Date(publishDate)
+    if (currDate && !isNaN(currDate)) {
+        curr = new Date(currDate)
+    } else {
+        str = currDate
+    }
+    let m = publish.getMonth() + 1
+    let d = publish.getDate()
+    const h = publish.getHours()
+    const mn = publish.getMinutes()
+    let dateStr = ''
+    if (publish.getDate() !== curr.getDate()) {
+        // 当天之外
+        dateStr = `${add0(m)}${str}${add0(d)} ${add0(h)}:${add0(mn)}`
+    } else {
+        // 当天之内
+        dateStr = `${add0(h)}:${add0(mn)}`
+    }
+    return dateStr
+}
+const formatDate = (publishDate, str) => {
+    str = !str ? '-' : str
+    let publish = new Date(publishDate)
+    let y = publish.getFullYear()
+    let m = publish.getMonth() + 1
+    let d = publish.getDate()
+    const h = publish.getHours()
+    const mn = publish.getMinutes()
+    return `${y}${str}${add0(m)}${str}${add0(d)} ${add0(h)}:${add0(mn)}`
+}
+const getTimeContent = (publishTime, requestTime, str) => {
+    requestTime = !requestTime ? new Date().getTime() : requestTime
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime, '/')
+    }
+    return content
+}
+ %>
+<div class="summit-warp">
+    <div class="summit-page1">
+        <!--<div class="page-contain">
+            <div class="top clearfix">
+                <div class="left">
+                    <img class="logo-img" src="../../img/m-img/m-mars-logo.png" alt="logo">
+                    <img class="top-left-img" src="../../img/m-img/m-topic-top-left.png" alt="<%= webSiteInfo.title %>">
+                </div>
+                <img class="right" src="../../img/m-img/m-topic-top-date.png" alt="<%= webSiteInfo.title %>">
+            </div>
+           <img class="title-img" src="../../img/m-img/m-topic-top-title.png" alt="<%= webSiteInfo.title %>">
+        </div>-->
+        <!--视频-->
+        <div class="video-box">
+            <div class="video-contain">
+                <video autoplay="autoplay" controls="controls" src="https://hx24-media.huoxing24.com/meeting/2018-08-29-00-02-20_2018-08-29-01-02-20.mp4"></video>
+                <div class="mask">
+                    <a href="<%= domain %>/liveDetail/20180827104056328239" target="_blank" class="video-play-btn"></a>
+                </div>
+            </div>
+        </div>
+        <!--直播-->
+        <!--<div class="live-box">
+            <div class="live-contain">
+                <div class="live-content">
+                    <div class="prism-player" id="player-con"></div>
+                </div>
+                <div class="mask"></div>
+                <a href="<%= domain %>/liveDetail/20180827104056328239" target="_blank" class="live-play-btn"></a>
+                <span class="live-text">正在直播</span>
+            </div>
+        </div>-->
+    </div>
+    <!--峰会热点-->
+    <div class="summit-page2">
+        <img class="page-title" src="../../img/m-img/m-hot-title.png" alt="峰会热点">
+        <div class="page2-swiper">
+            <!--轮播图-->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <%
+                    data.recommend.map((item) =>{%>
+                    <div class="swiper-slide">
+                        <a href="<%= item.url %>" title="<%= item.title %>">
+                            <img src="<%= item.mImg %>">
+                            <span class="mode"></span>
+                            <h3 class="title"><%= item.title %></h3>
+                        </a>
+                    </div>
+                    <%})
+                    %>
+                </div>
+            </div>
+        </div>
+        <div class="page-contain">
+            <!--快讯-->
+            <div class="live-box">
+                <div class="button-next"><i class="iconfont iconfont-right"></i></div>
+                <div class="live-list-warp">
+                    <div class="live-list">
+                        <%
+                        data.lives.map((item) => {
+                            let title = ''
+                            let content = item.content
+                            if (!item.title) {
+                                let startIndex = item.content.indexOf('【') === -1 ? 0 : item.content.indexOf('【') + 1
+                                let endIndex = item.content.indexOf('】') === -1 ? 0 : item.content.indexOf('】')
+                                title = item.content.substring(startIndex, endIndex)
+                                content = item.content.substring(endIndex + 1)
+                            } else {
+                                title = item.title
+                                content = item.content
+                            }
+                            let dateTime = formatDateTime(item.createdTime, '/').split(' ')
+                            let date = ''
+                            let time = ''
+                            if (dateTime.length > 1) {
+                                date = dateTime[0]
+                                time = dateTime[1]
+                            } else {
+                                time = dateTime[0]
+                            }
+                        %>
+                        <div class="live-item clearfix">
+                            <div class="live-data">
+                                <span class="time"><%= time %></span>
+                                <span class="date"><%= date %></span>
+                            </div>
+                            <a href="<%= domain %>/liveNewsDetail/<%= item.id %>" title="<%= title %>">
+                                <h3><%= title %></h3>
+                            </a>
+                        </div>
+                        <%})
+                        %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--峰会新闻-->
+    <div class="summit-page3">
+        <div class="bg-top"></div>
+        <div class="bg-bottom"></div>
+        <div class="page3-contain">
+            <div class="page-contain">
+                <img class="page-title" src="../../img/m-img/m-news-title.png" alt="峰会新闻">
+                <div class="news-list clearfix">
+                    <%
+                    let newsList = !data.news.inforList || !data.news.inforList.length ? [] : data.news.inforList
+                    newsList.map((item) => {
+                        let pcImg = '../../img/default-img.svg'
+                        if (item.coverPic) {
+                            let coverPic = JSON.parse(item.coverPic)
+                            if (coverPic.wap_small) {
+                                pcImg = coverPic.wap_small
+                            }
+                        }
+                    %>
+                    <a class="news-item clearfix" href="<%= domain %>/newsdetail/<%= item.id %>" title="<%= item.title %>">
+                        <div class="news-img">
+                            <img src="<%= pcImg %>" alt="<%= item.title %>" >
+                        </div>
+                        <div class="news-right">
+                            <h3><%= item.title %></h3>
+                            <span><%= getTimeContent(item.publishTime, data.news.currentTime, '/') %></span>
+                        </div>
+                    </a>
+                    <%})
+                    %>
+                </div>
+                <a style="display: <%= data.news.recordCount > data.news.pageSize ? 'block' : 'none' %>" class="news-more-btn" data-size="<%= data.news.pageSize %>" data-page="<%= data.news.currentPage %>" data-count="<%= data.news.pageCount %>" data-time="<%= !data.news.inforList || !data.news.inforList.length ? 0 : data.news.inforList[data.news.inforList.length - 1].publishTime %>" href="javascript:void(0)" title="加载更多"></a>
+                <a style="display: <%= data.news.recordCount > data.news.pageSize ? 'none' : 'block' %>" class="news-no-more" title="暂无更多"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+@@include('./footer.ejs')

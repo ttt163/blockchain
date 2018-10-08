@@ -1,0 +1,30 @@
+<div class="activity-box clearfix"
+    <%if (data.activityData[9].length === 0) {%>
+      style="height: 0px; padding: 0"
+    <%}%>
+>
+    <div class="indev-activity">
+        <div class="activity-title clearfix">
+            <h3>推荐活动</h3>
+            <a href="/huodong" class="more" target="_blank"></a>
+        </div>
+        <div class="activity-cont">
+            <div class="swiper-container activity">
+                <div class="swiper-wrapper">
+                    <%
+                    data.activityData[9].map((item, index) => { %>
+                    <div class="swiper-slide">
+                        <a href="<%=item.typeLink%>" title="<%=item.title%>" target="_blank">
+                            <h6><%=item.title%></h6>
+                            <img src="<%=item.pcImgSrc%>" alt="">
+                        </a>
+                    </div>
+                    <%
+                    })
+                    %>
+                </div>
+                <div class="swiper-pagination activity-page"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.min.css", "//g.alicdn.com/de/prismplayer/2.7.1/skins/default/aliplayer-min.css"],
+"private": ["../css/summit-live-detail.css"]
+})
+
+<!-- 内容 -->
+@@include('./summit/liveDetail.ejs')
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.jquery.min.js", "//g.alicdn.com/de/prismplayer/2.7.1/aliplayer-min.js"],
+"private": ["../js/common.js", "../js/summit-live-detail.js"]
+})

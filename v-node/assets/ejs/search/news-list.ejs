@@ -1,0 +1,24 @@
+<% data.inforList.map((item) => { %>
+<div class="index-news-list">
+    <a title="<%= item.title %>" target="_blank" href="<%= domain %>/newsdetail/<%= `${item.id}.html` %>">
+        <div class="list-left">
+            <img alt="<%= item.title %>"
+                 src="<%= (!item.coverPic || !JSON.parse(item.coverPic).pc ? `http://static.huoxing24.com/images/2018/03/05/1520243882098653.svg` : JSON.parse(item.coverPic).pc) %>">
+        </div>
+        <div class="list-right" style="width: 560px;">
+            <h1 class="headline"><%- keyLight(item.title, data.searchVal) %></h1>
+            <h3 class="details"><%- keyLight(item.synopsis, data.searchVal) %></h3>
+        </div>
+    </a>
+    <div class="list-bottom index-mian clearfix">
+        <!--<p class="portrait">-->
+        <!--<a title="<%= item.author %>" target="_blank" href="<%= domain %>/newsauthor/<%= item.passportId %>">-->
+        <!--<img alt="<%= item.author %>" src="<%= item.iconUrl %>">-->
+        <!--</a>-->
+        <!--</p>-->
+        <p class="name"><%= item.author %></p>
+        <p class="lock-time"><%= getTimeContent(item.publishTime, data.currentTime) %></p>
+    </div>
+    <div class="shadow"></div>
+</div>
+<% }) %>

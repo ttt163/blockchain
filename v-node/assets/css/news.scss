@@ -1,0 +1,260 @@
+/**
+ * Author：tantingting
+ * Time：2018/4/25
+ * Description：Description
+ */
+
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./public/newsList";
+@import "./modules/newsRecommend";
+
+.news-nav {
+    width: 100%;
+    height: 82px;
+    // background: url("./img/nws-nav-bg.jpg") center no-repeat;
+    background: #1c273d;
+    // margin-bottom: 20px;
+
+    .nav-box {
+        width: 1200px;
+        height: 82px;
+        margin: 0 auto;
+
+        a {
+            position: relative;
+            display: block;
+            color: #eee;
+            float: left;
+            margin-left: 50px;
+            height: 82px;
+            font-size: 18px;
+            line-height: 82px;
+            text-align: center;
+
+            h5 {
+                font-size: 18px;
+            }
+
+            &:hover,
+            &.active {
+                color: #1482f0;
+            }
+
+            //font {
+            //    position: absolute;
+            //    width: 40px;
+            //    height: 3px;
+            //    left: 50%;
+            //    margin-left: -20px;
+            //    bottom: 0;
+            //    background: #fff;
+            //    display: none;
+            //
+            //    &.active {
+            //        display: block;
+            //    }
+            //}
+            //
+            //&:hover {
+            //    font {
+            //        display: block;
+            //    }
+            //}
+        }
+    }
+}
+
+.no-tab {
+    margin-top: 20px;
+}
+
+.news-con {
+    width: 1200px;
+
+    &.news-box-con {
+        margin: 30px auto 20px;
+
+        .news-list-wrap {
+            float: left;
+            width: 800px;
+            height: auto;
+            padding: 0 0 100px;
+            background: #fff;
+
+            .new-left-more {
+                font-size: 18px;
+                display: block;
+                width: 100%;
+                height: 38px;
+                border: 1px #b3e5fc solid;
+                text-align: center;
+                line-height: 38px;
+                float: right;
+                margin: 30px 0;
+                color: #1482f0;
+            }
+        }
+
+        .new-right {
+            float: right;
+            width: 360px;
+            height: auto;
+
+            .author-panel {
+                background: #fff;
+                border-radius: 4px;
+                margin-bottom: 15px;
+            }
+
+            .news-author {
+                float: right;
+                width: 318px;
+                background: #fff;
+                margin-bottom: 20px;
+                border: 1px #eee solid;
+                border-top: 2px #0c7ff2 solid;
+                padding: 20px;
+
+                .authorinfo-top {
+                    width: 100%;
+                    height: auto;
+
+                    img {
+                        &.portrait {
+                            display: block;
+                            float: left;
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 100%;
+                        }
+                    }
+
+                    .introduce {
+                        position: relative;
+                        width: 225px;
+                        height: auto;
+                        float: right;
+
+                        .attention {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 80px;
+                            height: 30px;
+                            background: #0c7ff2;
+                            color: #fff;
+                            border-radius: 3px;
+                            font-size: 14px;
+                            text-align: center;
+                            line-height: 30px;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: #4ea7ff;
+                            }
+
+                            &.active {
+                                background: #d5dbe4;
+                            }
+                        }
+
+                        h3 {
+                            font-size: 18px;
+                            color: #222;
+                            font-weight: 700;
+                            line-height: 35px;
+                            width: 140px;
+                            height: 35px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+
+                            a {
+                                color: #222;
+                            }
+                        }
+
+                        p {
+                            width: 100%;
+                            // height: 40px;
+                            font-size: 14px;
+                            color: #828a92;
+                            line-height: 20px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            //display: -webkit-box;
+                            //-webkit-box-orient: vertical;
+                            //-webkit-line-clamp: 2;
+                        }
+                    }
+                }
+
+                .authorinfo-infolist {
+                    width: 100%;
+                    height: auto;
+
+                    h5 {
+                        color: #222;
+                        font-size: 16px;
+                        width: 100%;
+                        line-height: 30px;
+                        padding: 20px 0 10px;
+                        font-weight: 600;
+                    }
+
+                    .authorinfo-news {
+                        width: 100%;
+                        height: auto;
+
+                        a {
+                            display: block;
+                            font-size: 14px;
+                            color: #222;
+                            line-height: 20px;
+                            padding: 18px 0;
+                            border-bottom: 1px #e1e1e1 solid;
+
+                            span {
+                                display: block;
+                                width: 5px;
+                                height: 5px;
+                                float: left;
+                                border-radius: 100%;
+                                background: #e1e1e1;
+                                margin-top: 8px;
+                            }
+
+                            p {
+                                width: 300px;
+                                float: right;
+                            }
+
+                            &:hover {
+                                color: #1482f0;
+                            }
+
+                            &:first-child {
+                                padding-top: 0;
+                            }
+
+                            &:last-child {
+                                padding-bottom: 0;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ad-recomend {
+                width: 358px;
+                height: auto;
+                float: right;
+                border: 1px #eee solid;
+            }
+        }
+    }
+}

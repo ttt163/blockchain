@@ -1,0 +1,51 @@
+<div class="marketHeat">
+    <div class="market-rate-switch" id="rate-switch">
+        <ul class="rate-switch-control clearfix">
+            <li>货币切换 :</li>
+            <li class="act-rate">
+                <div class="switch-item">
+                    <input type="radio" class="switch-radio" data-cur="1" name="rateType" value="CNY" checked>
+                </div>
+                CNY
+            </li>
+            <li>
+                <div class="switch-item">
+                    <input type="radio" class="switch-radio" data-cur="0" name="rateType" value="USD">
+                </div>
+                USD
+            </li>
+            <li>
+                <div class="switch-item">
+                    <input type="radio" class="switch-radio" data-cur="0" name="rateType" value="EUR">
+                </div>
+                EUR
+            </li>
+        </ul>
+    </div>
+    <h2>市场温度</h2>
+    <ul class="market-list clearfix">
+        <li>
+            <p class="item-data heat-rank">
+                ￥<%= tranFormat(numTrans(data.marketHeat.cap_total * data.getRate.getCNY)) %></p>
+            <p class="item-title">市值</p>
+        </li>
+        <li>
+            <p class="item-data heat-ud"><%= (data.marketHeat.cap_change_percent_24h > 0 ? '+' : '') + (Math.round(data.marketHeat.cap_change_percent_24h * 10000) / 100).toFixed(2) + '%' %>
+                (￥<%= tranFormat(numTrans(data.marketHeat.current_price * data.getRate.getCNY)) %>)</p>
+            <p class="item-title">市值变动</p>
+        </li>
+        <li>
+            <p class="item-data heat-vol24">
+                ￥<%= tranFormat(numTrans(data.marketHeat.volume_24h * data.getRate.getCNY)) %></p>
+            <p class="item-title">24H成交额</p>
+        </li>
+        <li>
+            <p class="item-data heat-coinNum"><%= tranFormat(data.marketHeat.coin_count) %>个</p>
+            <p class="item-title">币种</p>
+        </li>
+        <li>
+            <p class="item-data heat-bourse"><%= data.marketHeat.market_count %>个</p>
+            <p class="item-title">交易所</p>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,16 @@
+@@include('public/m-header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/m-index.css"]
+})
+
+<div class="clearfix">
+    @@include('./m-index/main.ejs')
+</div>
+
+@@include('public/m-footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.js"],
+"private": ["../js/m-common.js", " ../js/m-index.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

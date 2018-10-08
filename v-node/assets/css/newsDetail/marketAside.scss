@@ -1,0 +1,191 @@
+/**
+ * Author：tantingting
+ * Time：2018/3/30
+ * Description：Description
+ */
+@import "../markets";
+
+.aside-market {
+    width: 100%;
+
+    .aside-market-top {
+        & > div {
+            float: left;
+
+            h5 {
+                color: #999;
+                font-size: 16px;
+                float: left;
+                cursor: pointer;
+                height: 30px;
+                line-height: 30px;
+
+                &:nth-of-type(1) {
+                    margin-right: 16px;
+                }
+
+                &.active {
+                    color: #424242;
+                    border-bottom: 1px #424242 solid;
+                }
+            }
+        }
+
+        .more {
+            float: right;
+            display: block;
+            font-size: 13px;
+            color: #bdbdbd;
+        }
+
+        .interval {
+            width: 155px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 12px;
+            border: 1px solid #b8c2d1;
+            border-radius: 4px;
+            float: right;
+            margin-top: 2px;
+            color: #a1a1a1;
+
+            p {
+                text-align: center;
+                user-select: none;
+                float: left;
+                width: 51px;
+                cursor: pointer;
+                background: #fff;
+
+                &.active {
+                    color: #fbfbfb;
+                    background: #b8c2d1;
+                }
+
+                &:nth-of-type(2) {
+                    border-left: 1px solid #b8c2d1;
+                    border-right: 1px solid #b8c2d1;
+                }
+            }
+        }
+    }
+
+    .market-column-box {
+        width: 100%;
+        margin-top: 14px;
+
+        .market-box-list {
+            font-size: 13px;
+            color: #bbb;
+
+            .market-tab {
+                height: 30px;
+                line-height: 30px;
+
+                .table-title-ul {
+                    li {
+                        height: 30px;
+                        width: 82px;
+                        font-size: 14px;
+
+                        &:nth-of-type(1) {
+                            width: 20%;
+                            text-align: left;
+                        }
+
+                        &:nth-of-type(2) {
+                            width: 20% !important;
+                            text-align: left;
+                        }
+
+                        &:nth-of-type(3) {
+                            width: 30%;
+                        }
+
+                        &:nth-of-type(4) {
+                            width: 25%;
+                            text-align: right;
+                            padding-right: 5%;
+                        }
+                    }
+                }
+            }
+
+            table {
+                tr {
+                    background-color: #fff;
+                    height: 42px;
+
+                    &:hover {
+                        background-color: #f6f6f6;
+                    }
+
+                    td {
+                        font-size: 13px;
+                        height: 42px;
+                        line-height: 42px;
+                        white-space: nowrap;
+                        //color: #424242;
+
+                        &.grey {
+                            color: #999;
+                        }
+
+                        &:nth-of-type(1) {
+                            width: 17%;
+                            color: #d4d4d4;
+                            font-size: 16px;
+                            font-weight: bold;
+                            text-align: left;
+                            padding-left: 3%;
+                        }
+
+                        &:nth-of-type(2) {
+                            width: 20% !important;
+                            text-align: left;
+                        }
+
+                        &:nth-of-type(3) {
+                            width: 30%;
+                            color: #424242;
+                        }
+
+                        &:nth-of-type(4) {
+                            width: 27%;
+                            text-align: right;
+                            padding-right: 3%;
+                        }
+
+                        .img-log {
+                            img {
+                                width: 16px;
+                                padding: 0;
+                                border: 0;
+                                vertical-align: middle;
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(1) {
+                        td:nth-of-type(1) {
+                            color: #0c7ff2;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        td:nth-of-type(1) {
+                            color: #5cbcff;
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        td:nth-of-type(1) {
+                            color: #95e7ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

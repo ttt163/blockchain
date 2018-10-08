@@ -1,0 +1,17 @@
+<!-- 公共头部 -->
+@@include('public/m-header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/m-liveNewsDetail.css"]
+})
+
+<!-- 内容 -->
+@@include('m-liveNewsDetail/main.ejs')
+
+<!-- 公共底部 -->
+@@include('public/m-footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.js"],
+"private": ["../js/m-common.js", "../js/m-liveNewsDetail.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

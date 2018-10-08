@@ -1,0 +1,117 @@
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+@import "./modules/m-topNav";
+
+.m-activity-detail {
+    width: rem(640);
+    height: auto;
+    padding-top: rem(185);
+
+    .m-banner {
+        width: rem(640);
+        height: rem(460);
+
+        img {
+            width: rem(640);
+            height: rem(460);
+        }
+    }
+
+    .detail-introduce {
+        width: rem(590);
+        padding: rem(25);
+        border-bottom: rem(1) #f1f1f1 solid;
+        color: #222;
+
+        h1 {
+            font-size: rem(36);
+            line-height: rem(44);
+            margin-bottom: rem(20);
+        }
+
+        h6 {
+            font-size: rem(26);
+            line-height: rem(38);
+
+            span {
+                display: block;
+                width: rem(450);
+                float: right;
+            }
+        }
+
+        .apply,
+        .notApply {
+            display: block;
+            width: rem(240);
+            height: rem(76);
+            margin: rem(50) auto 0;
+            background: #0c7ff2;
+            border-radius: 50px;
+            color: #fff;
+            font-size: rem(26);
+            text-align: center;
+            line-height: rem(76);
+        }
+
+        .notApply {
+            background: #eee;
+        }
+    }
+
+    .detail-feature {
+        width: rem(590);
+        padding: rem(25);
+        border-bottom: rem(1) #f1f1f1 solid;
+        color: #222;
+
+        h5 {
+            border-left: rem(4) #0c7ff2 solid;
+            padding-left: rem(10);
+            font-size: rem(28);
+            color: #222;
+            margin-bottom: rem(20);
+        }
+
+        p {
+            font-size: rem(24);
+            color: #666;
+            line-height: rem(34);
+        }
+    }
+
+    .detail-cont {
+        width: rem(590);
+        padding: rem(25);
+        border-bottom: rem(1) #f1f1f1 solid;
+        color: #222;
+
+        &.simditor {
+            border: none;
+        }
+
+        h5 {
+            border-left: rem(4) #0c7ff2 solid;
+            padding-left: rem(10);
+            font-size: rem(28);
+            color: #222;
+            margin-bottom: rem(20);
+        }
+
+        .detail-text {
+            font-size: rem(24);
+            color: #666;
+            line-height: rem(34);
+
+            img {
+                display: block;
+                max-width: rem(590);
+                height: auto;
+                margin: rem(10) auto;
+            }
+        }
+    }
+}

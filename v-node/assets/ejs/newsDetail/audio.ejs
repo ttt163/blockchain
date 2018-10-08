@@ -1,0 +1,37 @@
+<!-- 音频 -->
+<%
+var audioData = newsData.current.audio
+if (!!audioData) {
+    audioData = JSON.parse(audioData)
+if (audioData.length > 0) {
+    audioData = audioData[0]
+%>
+<div id="react-music-player" data-info="<%= JSON.stringify(audioData) %>" style="margin-bottom: 20px;">
+    <div class="react-music-player-wrapper">
+        <div class="react-music-player-inner">
+            <div class="left-control">
+                <span class="play-btn icon-play"></span>
+            </div>
+            <div class="music-box">
+                <div class="music-info">
+                    <div class="music-name"><%= audioData.fileName.substring(0, audioData.fileName.lastIndexOf('.')) %></div>
+                    <div class="progress-wrapper">
+                        <div class="progress">
+                            <!--<div class="progress-buffered" style="width: 22.5571%;"></div>-->
+                            <div class="progress-played" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="time clearfix">
+                        <div class="remain-time">00:00</div>
+                        <div class="total-time">--:--</div>
+                    </div>
+                </div>
+            </div>
+            <audio rel="nofollow" src="<%= audioData.fileUrl %>"></audio>
+        </div>
+    </div>
+</div>
+<%
+}
+}
+%>

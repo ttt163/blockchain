@@ -1,0 +1,371 @@
+/**
+ * Author：yangbo
+ * Time：2018/8/24 11:44
+ * Description：m-coinEncyclopedia.scss
+ */
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+
+html,
+body {
+    background-color: #fff;
+}
+
+.coin-main {
+    padding: rem(22) rem(26);
+}
+
+h2 {
+    font-size: rem(26);
+    font-weight: bold;
+    margin-bottom: rem(24);
+}
+
+// 编辑评语
+.edit-info {
+    .edit-remark {
+        position: relative;
+        display: flex;
+        border: 1px solid #eee;
+        border-radius: rem(8);
+        padding: rem(17) rem(20);
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: rem(-19);
+            right: rem(62);
+            width: rem(21);
+            height: rem(37);
+            background: url("../img/coin-pen.png") center no-repeat #fff;
+            -webkit-background-size: contain;
+            background-size: contain;
+        }
+
+        .remark-img {
+            width: rem(88);
+            height: rem(88);
+            margin-top: rem(5);
+            margin-right: rem(16);
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .remark-info {
+            .plate {
+                display: flex;
+                align-items: center;
+                margin-bottom: rem(10);
+
+                label {
+                    margin-right: rem(10);
+                }
+
+                span {
+                    font-size: rem(18);
+                    padding: 0 rem(15);
+                    border-radius: rem(6);
+                    border: 1px solid #777;
+                    line-height: rem(27);
+                }
+            }
+
+            .author {
+                color: #777;
+                font-size: rem(20);
+                margin-bottom: rem(10);
+            }
+
+            .review {
+                color: #777;
+                line-height: 140%;
+            }
+        }
+    }
+}
+
+// 基本信息
+.base-info {
+    margin-top: rem(30);
+    border-bottom: 1px solid #eee;
+
+    .info-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 38%;
+            box-sizing: border-box;
+            margin-bottom: rem(36);
+            word-break: break-all;
+            padding-right: rem(30);
+            flex-shrink: 0;
+
+            &.spe-li {
+                display: flex;
+
+                img {
+                    width: rem(45);
+                    height: rem(45);
+                    border-radius: 50%;
+                    overflow: hidden;
+                    flex-shrink: 0;
+                    margin-top: rem(7);
+                }
+
+                .spe-li-item {
+                    margin-left: rem(12);
+
+                    p {
+                        font-size: rem(21);
+                        word-break: normal;
+                    }
+                }
+            }
+
+            &:nth-child(3n - 1) {
+                width: 32%;
+            }
+
+            &:nth-child(3n) {
+                width: 30%;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            h3 {
+                font-size: rem(21);
+                margin-bottom: rem(12);
+                color: #777;
+                white-space: nowrap;
+            }
+
+            p {
+                font-size: rem(23);
+            }
+
+            .progess {
+                .bar {
+                    width: rem(163);
+                    height: rem(13.6);
+                    position: relative;
+                    border-radius: rem(13.6);
+                    overflow: hidden;
+                    background-color: #eee;
+                    margin-bottom: rem(6);
+
+                    .bar-full {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 100%;
+                        border-radius: rem(13.6);
+                        background-color: #1f88eb;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 简介
+.base-intro {
+    padding: rem(30) 0 rem(22);
+    border-bottom: 1px solid #eee;
+
+    h2 {
+        margin-bottom: rem(22);
+    }
+
+    p {
+        color: #777;
+        font-size: rem(23);
+        line-height: 140%;
+        text-align: justify;
+
+        &.maxShow {
+            height: rem(3*23*1.4);
+            overflow: hidden;
+        }
+    }
+
+    .intro-action {
+        float: right;
+        color: #999;
+        font-size: rem(23);
+
+        i {
+            display: inline-block;
+            font-size: rem(21);
+            margin-left: rem(5);
+        }
+
+        &.closed {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+// ico
+.ico-info {
+    padding: rem(30) 0 rem(17);
+    border-bottom: 1px solid #eee;
+
+    .info-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 34%;
+            box-sizing: border-box;
+            margin-bottom: rem(36);
+
+            &:nth-child(2n) {
+                width: 66%;
+            }
+
+            h3 {
+                font-size: rem(21);
+                margin-bottom: rem(14);
+                color: #777;
+            }
+
+            p {
+                font-size: rem(23);
+
+                .up {
+                    color: #24c423;
+                }
+
+                .down {
+                    color: #f14025;
+                }
+            }
+        }
+    }
+
+    .stat-table {
+        p {
+            color: #666;
+        }
+
+        .state-canvas {
+            width: 98%;
+            height: rem(275);
+            padding: rem(14) 0;
+        }
+    }
+}
+
+// 团队介绍
+.team-info {
+    padding: rem(30) 0 rem(22);
+    border-bottom: 1px solid #eee;
+
+    h2 {
+        margin-bottom: rem(18);
+    }
+
+    p {
+        color: #777;
+        line-height: 140%;
+
+        &.maxShow {
+            height: rem(3*23*1.45);
+            overflow: hidden;
+        }
+    }
+
+    .intro-action {
+        float: right;
+        color: #999;
+        font-size: rem(23);
+
+        i {
+            display: inline-block;
+            font-size: rem(21);
+            margin-left: rem(5);
+        }
+
+        &.closed {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+// 社区和相关网站
+.com-web {
+    padding-top: rem(30);
+
+    .com {
+        .com-link {
+            display: flex;
+            flex-wrap: wrap;
+            padding: rem(21) 0 0;
+
+            a {
+                width: rem(57);
+                height: rem(57);
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: rem(50);
+                background-color: #eee;
+                margin-bottom: rem(21);
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .web {
+        p {
+            margin-bottom: rem(18);
+        }
+
+        .web-link {
+            position: relative;
+
+            a {
+                color: #1f88eb;
+                display: block;
+                padding-bottom: rem(2);
+                border-bottom: 1px solid #1f88eb;
+
+                &.link1 {
+                    float: left;
+                }
+
+                &.link2 {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                &.link3 {
+                    float: right;
+                }
+            }
+        }
+    }
+}

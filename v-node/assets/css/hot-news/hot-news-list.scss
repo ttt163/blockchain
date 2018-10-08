@@ -1,0 +1,196 @@
+/**
+ * Author：tantingting
+ * Time：2018/6/12
+ * Description：Description
+ */
+
+.w1200 {
+    $warpWidth: 1200px;
+
+    .hot-news-warp {
+        .hot-news-list {
+            width: $warpWidth;
+
+            .news-item {
+                .news-item-contain {
+                    width: 355px;
+
+                    .desc {
+                        a {
+                            width: 338px;
+                        }
+                    }
+
+                    .mews-item-top {
+                        h3 {
+                            width: 355px - 94px -15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.col-3 {
+    .hot-news-warp {
+        .hot-news-list {
+            .news-item {
+                &:nth-of-type(3n) {
+                    .news-item-contain {
+                        border-right: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.w850 {
+    $warpWidth: 850px;
+
+    .hot-news-warp {
+        .hot-news-list {
+            width: $warpWidth;
+
+            .news-item {
+                .news-item-contain {
+                    width: 375px;
+
+                    .desc {
+                        a {
+                            width: 358px;
+                        }
+                    }
+
+                    .mews-item-top {
+                        h3 {
+                            width: 375px - 94px -15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.col-2 {
+    .hot-news-warp {
+        .hot-news-list {
+            .news-item {
+                &:nth-of-type(2n) {
+                    .news-item-contain {
+                        border-right: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hot-news-warp {
+    position: relative;
+
+    .hot-news-list {
+        width: 100%;
+        background-color: #fff;
+        padding-left: 20px;
+        box-sizing: border-box;
+
+        .news-item {
+            border-bottom: 1px dashed #e8e8e8;
+            box-sizing: border-box;
+            padding-top: 20px;
+            float: left;
+
+            &:nth-last-of-type(1) {
+                .news-item-contain {
+                    border-right: 0;
+                }
+            }
+
+            .news-item-contain {
+                border-right: 1px dashed #e8e8e8;
+                margin-bottom: 20px;
+                padding-right: 20px;
+                margin-right: 20px;
+                height: 140px;
+                padding-top: 20px;
+
+                .mews-item-top {
+                    color: #212121;
+                    font-size: 0;
+
+                    img {
+                        width: 90px;
+                        height: 65px;
+                        margin-right: 15px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        float: left;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        font-weight: bold;
+                        float: left;
+                        margin-top: 5px;
+                        //display: inline-block;
+                        vertical-align: middle;
+                        line-height: 26px;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                    }
+                }
+
+                .desc {
+                    margin-top: 30px;
+
+                    a {
+                        float: left;
+                        font-size: 14px;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        line-height: 24px;
+                        color: #828a92;
+                        height: 45px;
+                    }
+
+                    span {
+                        color: #387dea;
+                    }
+
+                    .round {
+                        float: left;
+                        width: 7px;
+                        height: 7px;
+                        //border: 1px #4b4b4b solid;
+                        border-radius: 50%;
+                        margin-top: 9px;
+                        vertical-align: text-top;
+                        margin-right: 10px;
+                        background-color: #828a92;
+                    }
+                }
+            }
+        }
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        background-color: #fff;
+    }
+}

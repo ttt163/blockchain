@@ -1,0 +1,21 @@
+<!-- 公共头部 -->
+@@include('public/header-prue.ejs', {
+"plugin": [],
+"private": ["../css/error.css"]
+})
+<div style="display: none">
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+</div>
+<!-- 内容 -->
+<div class="error-warp">
+    <img src="../img/error/404.png">
+    <p>抱歉，页面似乎被抓去火星了</p>
+</div>
+
+<!-- 公共底部 -->
+@@include('public/footer-prue.ejs', {
+"plugin": [],
+"private": ["../js/error.js"]
+})

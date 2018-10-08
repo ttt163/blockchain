@@ -1,0 +1,152 @@
+/**
+ * Author：tantingting
+ * Time：2018/4/25
+ * Description：Description
+ */
+
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./public/newsList";
+@import "./modules/newsRecommend";
+@import "./hot-news/hot-news-list";
+@import "./author/author-list";
+@import "./flashNews/flashNewsList";
+
+.search-content {
+    width: 1200px;
+    height: auto;
+    margin: 30px auto;
+
+    .search-content-left {
+        float: left;
+        width: 800px;
+
+        .search-import {
+            width: 848px;
+            height: 54px;
+
+            .search-input {
+                background: url("../img/search-btn.png") #fff left no-repeat;
+                background-position: 15px;
+                width: 750px;
+                height: 54px;
+                padding-left: 48px;
+                border: 1px #e5e5e5 solid;
+                color: #757575;
+
+                &:hover {
+                    border: 1px #bdbdbd solid;
+                }
+            }
+        }
+
+        .search-contet-top {
+            height: 70px;
+            line-height: 70px;
+            overflow: hidden;
+
+            .tabs {
+                float: left;
+                font-size: 0;
+
+                li {
+                    font-size: 16px;
+                    color: #999;
+                    display: inline-block;
+                    margin-right: 18px;
+                    cursor: pointer;
+
+                    &.active {
+                        color: #0e7ff2;
+                    }
+                }
+            }
+
+            .result-num {
+                font-size: 14px;
+                color: #757575;
+                float: right;
+
+                span {
+                    color: #e61e1e;
+                    padding: 0 7px;
+                }
+            }
+        }
+
+        .search-result-list {
+            //width: 810px;
+            //padding: 0 20px;
+            height: auto;
+            //background: #fff;
+            border-radius: 3px;
+
+            .index-news-list {
+                padding: 20px 0;
+                background-color: #fff;
+                margin-bottom: 15px;
+                float: none;
+                box-sizing: border-box;
+                height: 200px;
+
+                .list-right {
+                    .list-bottom {
+                        .lock-time {
+                            right: 0;
+                        }
+                    }
+                }
+            }
+
+            .author-list-item {
+                width: 253px;
+                height: 212px;
+
+                .author-desc {
+                    padding: 0 18px;
+                    color: #757575;
+                }
+
+                .author-name {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: block;
+                }
+
+                &:nth-of-type(3n) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .pagination {
+            width: 850px;
+            padding: 50px 0 0 0;
+        }
+    }
+
+    .search-content-right {
+        width: 358px;
+        border: 1px #eee solid;
+        float: right;
+    }
+}
+
+.no-data {
+    width: 300px;
+    margin: 150px auto 230px auto;
+
+    p {
+        font-size: 16px;
+        color: #5da7f1;
+        line-height: 22px;
+
+        span {
+            color: #e61e1e;
+            margin: 0 12px;
+        }
+    }
+}

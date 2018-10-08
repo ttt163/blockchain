@@ -1,0 +1,21 @@
+<!-- public -->
+<script src="http://static.huoxing24.com/assets/jquery-1.12.0.min.js"></script>
+
+<!-- plugin -->
+@@for (var i = 0 in plugin) {
+<script src="`+plugin[i]+`"></script>
+}
+
+<!-- private -->
+<script src="../js/vendors.js"></script>
+@@for (var i = 0 in private) {
+<script src="`+private[i]+`"></script>
+}
+
+<!-- statistics -->
+<div style="display: none">
+    <script src="https://s22.cnzz.com/z_stat.php?id=1272858809&web_id=1272858809" language="JavaScript"></script>
+</div>
+
+</body>
+</html>

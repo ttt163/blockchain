@@ -1,0 +1,93 @@
+<div id="loginWarp" class="login-warp">
+    <div class="mask"></div>
+    <div class="login-body">
+        <div class="login-contain">
+            <a class="close" href="javascript:void(0)">
+                <i class="iconfont iconfont-close"></i>
+            </a>
+            <div class="login-top clearfix">
+                <h1>账号密码登录</h1>
+                <a class="to-res" href="javascript:void(0)">
+                    <span>注册新账号</span>
+                    <i class="iconfont iconfont-right"></i>
+                </a>
+            </div>
+            <div class="form-contain">
+                <div class="form-item phone">
+                    <div class="form-item-cont">
+                        <input data-name="phone" placeholder="输入手机号码" />
+                        <i class="iconfont iconfont-close"></i>
+                    </div>
+                    <span class="error"></span>
+                </div>
+                <div class="form-item img-code">
+                    <div class="form-item-left">
+                        <div class="form-item-cont">
+                            <input data-name="imgCode" placeholder="图形验证" />
+                            <i class="iconfont iconfont-close"></i>
+                        </div>
+                        <span class="error"></span>
+                    </div>
+                    <div class="form-item-right">
+                        <div class="img-code-box">
+                            <img src="/passport/account/getGraphCode" alt="验证码">
+                            <span>看不清，刷新一下</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-item phone-code">
+                    <div class="form-item-left">
+                        <div class="form-item-cont">
+                            <input data-name="textCode" placeholder="验证码" />
+                            <i class="iconfont iconfont-close"></i>
+                        </div>
+                        <span class="error"></span>
+                    </div>
+                    <div class="form-item-right">
+                        <a class="code-btn" href="javascript:void(0)">发送验证码</a>
+                    </div>
+                </div>
+                <div class="form-item password">
+                    <div class="form-item-cont">
+                        <input data-name="pwd" placeholder="密码" type="password" />
+                        <i class="iconfont iconfont-close"></i>
+                    </div>
+                    <span class="error"></span>
+                    <a class="to-forget" href="javascript:void(0)">忘记密码</a>
+                </div>
+                <a href="javascript:void(0)" class="form-submit">确定</a>
+                <a href="javascript:void(0)" class="res-tip">
+                    <span>已有账号，直接登录</span>
+                    <i class="iconfont iconfont-right"></i>
+                </a>
+            </div>
+            <!--微信登录-->
+            <div class="weChat-contain">
+                <iframe name="weChatBox" id="weChatBox" src="" frameborder="0"></iframe>
+            </div>
+            <!--其它方式登录-->
+            <div class="other-login">
+                <h6>其他方式登录</h6>
+                <div class="other-ways clearfix">
+                    <a class="wechart" href="javascript:void(0)">
+                        <img src="../../img/login/img-weixin.png">
+                        <!--<i class="iconfont icon-weixin"></i>-->
+                        <span>微信</span>
+                    </a>
+                    <a class="account" href="javascript:void(0)">
+                        <i class="img-phone">
+                            <img src="../../img/login/img-phone.png">
+                        </i>
+                        <span>账号</span>
+                    </a>
+                    <a class="message" href="javascript:void(0)">
+                        <i class="img-message">
+                            <img src="../../img/login/img-message.png">
+                        </i>
+                        <span>短信</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

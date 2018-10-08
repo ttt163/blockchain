@@ -1,0 +1,93 @@
+/**
+ * Author：tantingting
+ * Time：2018/5/3
+ * Description：Description
+ */
+
+.f-pagination {
+    font-size: 12px;
+
+    li {
+        a {
+            color: #666;
+        }
+    }
+
+    .pagination-dot {
+        color: #ccc;
+        font-size: 10px;
+        border-radius: 6px;
+        list-style: none;
+        min-width: 28px;
+        height: 28px;
+        line-height: 28px;
+        float: left;
+        text-align: center;
+        letter-spacing: 2px;
+        margin-right: 8px;
+    }
+
+    .next,
+    .prev {
+        cursor: pointer;
+        color: #ccc;
+        font-size: 10px;
+        border-radius: 6px;
+        list-style: none;
+        min-width: 28px;
+        height: 28px;
+        line-height: 28px;
+        float: left;
+        text-align: center;
+        border: 1px solid #d9d9d9;
+
+        .iconfont {
+            font-size: 12px;
+        }
+    }
+
+    .prev {
+        margin-right: 8px;
+    }
+
+    .pagination-item {
+        cursor: pointer;
+        border-radius: 6px;
+        min-width: 28px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        list-style: none;
+        float: left;
+        border: 1px solid #d9d9d9;
+        background-color: #fff;
+        margin-right: 8px;
+
+        &:hover {
+            background-color: #fff;
+            border-color: #2db7f5;
+
+            a {
+                color: #2db7f5;
+            }
+        }
+
+        &.curr {
+            background-color: #2db7f5;
+            border-color: #2db7f5;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.pagination {
+    padding: 50px 0;
+    text-align: center;
+
+    .f-pagination {
+        display: inline-block;
+    }
+}

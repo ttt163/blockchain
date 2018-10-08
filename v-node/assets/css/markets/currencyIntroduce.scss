@@ -1,0 +1,220 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：项目资料  货币介绍组件
+ */
+
+.currency-introduce {
+    position: relative;
+    width: 680px;
+    float: left;
+    padding: 25px 0 25px 0;
+    color: #fff;
+
+    .attention {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        line-height: 30px;
+
+        font {
+            vertical-align: 3px;
+        }
+
+        span {
+            display: inline-block;
+            width: 22px;
+            height: 21px;
+            cursor: pointer;
+            background: url("../../img/market/attention-img.png") center no-repeat;
+
+            &.active {
+                background: url("../../img/market/attention-img2.png") center no-repeat;
+            }
+        }
+    }
+
+    .currency-title {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+
+        span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            float: left;
+            background: #fff;
+            border-radius: 5px;
+
+            img {
+                display: block;
+                width: 21px;
+                height: 21px;
+                margin: 4px auto;
+            }
+        }
+
+        h1 {
+            display: inline-block;
+            float: left;
+            color: #fff;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+    }
+
+    .currency-text {
+        width: 100%;
+        height: 50px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 25px;
+        margin-top: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .particulars-btn {
+        float: right;
+        width: 100px;
+        text-align: right;
+        line-height: 30px;
+        font-size: 14px;
+        color: #ffcd40;
+        cursor: pointer;
+
+        &.none {
+            display: none;
+        }
+    }
+
+    .currency-bazaar {
+        width: 100%;
+        height: 28px;
+        margin: 25px 0 15px;
+
+        p {
+            float: left;
+            font-size: 14px;
+
+            &.putaway {
+                margin-left: 90px;
+            }
+
+            span {
+                margin: 0 5px 0 15px;
+
+                font {
+                    padding: 0 10px;
+                    color: #ffcd40;
+                }
+            }
+
+            &.ranking {
+                float: right;
+
+                span {
+                    border: 1px #fff solid;
+                    padding: 5px 15px;
+                }
+            }
+        }
+    }
+
+    .white-book {
+        font-size: 14px;
+        width: 378px;
+        float: left;
+        color: #fff;
+        margin-bottom: 20px;
+
+        p {
+            float: left;
+            margin-right: 15px;
+        }
+    }
+
+    .block {
+        font-size: 14px;
+        width: 300px;
+        height: 50px;
+        float: right;
+        line-height: 28px;
+
+        p {
+            margin-right: 10px;
+            float: left;
+            height: 100%;
+        }
+
+        span {
+            float: left;
+
+            a {
+                &:hover {
+                    color: #ffcd40;
+                }
+            }
+        }
+    }
+
+    .official {
+        font-size: 14px;
+        width: 325px;
+        height: 50px;
+        float: left;
+        line-height: 28px;
+
+        span {
+            float: left;
+
+            a {
+                color: #fff;
+
+                &:hover {
+                    color: #ffcd40;
+                }
+            }
+        }
+
+        p {
+            margin-right: 10px;
+            float: left;
+            height: 100%;
+        }
+    }
+
+    .block,
+    .official,
+    .white-book {
+        span {
+            display: inline-block;
+            width: 233px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    .grade {
+        font-size: 14px;
+        float: left;
+
+        span {
+            font-weight: bold;
+            color: #ffcd40;
+        }
+
+        p {
+            float: left;
+        }
+    }
+}

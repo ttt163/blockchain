@@ -1,0 +1,24 @@
+/**
+ * Author：tantingting
+ * Time：2018/5/16
+ * Description：Description
+ */
+@import "../public/rem";
+
+.alert-warp {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    color: #fff;
+    z-index: 999;
+    font-size: rem(24);
+
+    .alert-contain {
+        padding: rem(28) rem(52);
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: rem(3);
+    }
+}
+

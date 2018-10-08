@@ -1,0 +1,17 @@
+@@include("public/m-header.ejs", {
+"plugin": [],
+"private": ["../css/m-appDown.css"]
+})
+<div class="m-appDown">
+    <img src="../img/m-appDown/appDownWx.jpg" alt="">
+    <h1 data-id="<%-data.current.id%>"><%= data.current.title%></h1>
+    <div class="m-appDownWx" id="mAppDownWx" data-id="<%=data.current.id%>">立即下载 </div>
+</div>
+
+@@include("public/m-footer-prue.ejs", {
+"plugin": [],
+"private": ["../js/m-appDown.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

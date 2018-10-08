@@ -1,0 +1,50 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-21 21:43
+ * Description：index news left
+ */
+@import "../newsDetail/marketAside";
+
+.market-box {
+    padding: 20px 0;
+
+    .index-market {
+        float: right;
+        width: 318px;
+        border: 1px #eee solid;
+        padding: 10px 20px 0;
+        //height: 465px;
+        min-height: 465px;
+
+        .market-tab-list {
+            padding-bottom: 0;
+        }
+
+        .market-title {
+            padding: 10px 0 15px;
+
+            h3 {
+                float: left;
+                font-weight: bold;
+                font-size: 16px;
+                color: #222;
+            }
+
+            a {
+                float: right;
+                font-size: 12px;
+                color: #b2b2b2;
+
+                &.more {
+                    display: inline-block;
+                    border-right: 3px solid;
+                    border-bottom: 3px solid;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(-45deg);
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}

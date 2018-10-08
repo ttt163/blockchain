@@ -1,0 +1,62 @@
+@@include('public/m-header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/m-search.css"]
+})
+
+<div class="search-group">
+    <div class="input-group">
+        <i class="iconfont iconfount-fangdajing"></i>
+        <input type="search" class="input search" placeholder="请输入关键词">
+    </div>
+    <span class="cancel-search">取消</span>
+</div>
+<div class="search-main">
+    <div class="search-empty">
+        <h3>热点</h3>
+        <div class="hot-link">
+            <% for(let i = 0; i < data.length;i++) { let item = data[i] %>
+            <span><%= item %></span>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="search-res" style="display: none">
+        <ul class="res-tab">
+            <li data-type="all" data-flag="yes" data-page="2" data-index="0" class="active">全部</li>
+            <li data-type="news" data-flag="yes" data-page="2" data-index="1">新闻</li>
+            <li data-type="lives" data-flag="yes" data-page="2" data-index="2">快讯</li>
+        </ul>
+
+        <div class="scroll-box" data-type="all">
+            <div class="scroll-item item-show" id="all">
+                <div class="lives-box" id="livesAll">
+                    <div class="lives-title">
+                        <span class="title">快讯</span>
+                        <a title="更多" href="javascript:;" class="more-link" data-type="lives">更多 ></a>
+                    </div>
+
+                    <div class="lives-content"></div>
+                </div>
+                <div class="news-box" id="newsAll">
+                    <div class="news-title">
+                        <span class="title">新闻</span>
+                        <a title="更多" href="javascript:;" class="more-link" data-type="news">更多 ></a>
+                    </div>
+
+                    <div class="news-content"></div>
+                </div>
+            </div>
+
+            <div class="scroll-item" id="news"></div>
+            <div class="scroll-item" id="lives"></div>
+        </div>
+    </div>
+</div>
+
+@@include('public/m-footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.js"],
+"private": ["../js/m-common.js", " ../js/m-search.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

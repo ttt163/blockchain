@@ -1,0 +1,73 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": ["/plugin/share/share.min.css", "/plugin/simditor.css"],
+"private": ["../css/activityDetail.css"]
+})
+<%
+const formatDate = (date, str) => {
+    let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return y + '年' + zero(m) + '月' + zero(d) + '日'
+    } else {
+        return ''
+    }
+}
+%>
+<div class="activity-wrap">
+    <div class="activity-top">
+        <div class="a-top-box clearfix">
+            <%
+            var coverPic = JSON.parse(data.coverPic)
+            %>
+            <div class="activity-img"><img src="<%=coverPic.pc%>" title="" alt=""></div>
+            <div class="activity-right">
+                <div class="activity-message">
+                    <h1><%=data.title%></h1>
+                    <div class="message-left">
+                        <div class="sponsor"><span>主办方：</span><p><%=data.sponsor%></p></div>
+                        <div class="person-num" style="display: <%=data.numPeople === undefined ? 'none' : 'block'%>"><span>活动人数：</span><p><%=data.numPeople%>人</p></div>
+                        <div class="contact"><span>联系方式：</span><p><%=data.connection%></p></div>
+                    </div>
+                    <div class="message-right">
+                        <div class="site"><span>活动地点：</span><p><%=data.detailPlace%></p></div>
+                        <div class="time"><span>活动时间：</span><p><%=parseInt(data.endTime) - parseInt(data.startTime) < 86400000 ? formatDate(data.startTime) : (formatDate(data.startTime) + '-' + formatDate(data.endTime))%></p></div>
+                        <div class="money" style="display: <%=data.fee === '' ? 'none' : 'block'%>"><span>费用：</span><p><%=data.fee%> CNY</p></div>
+                    </div>
+                    <a class="activityBtn" style="display: <%=data.url === '' ? 'none' : 'block'%>" href="<%=data.url%>" title="立即参与" target="_blank">立即参与</a>
+                    <div class="notActivityBtn" style="display: <%=data.url === '' ? 'block' : 'none'%>" href="<%=data.url%>" title="立即参与" target="_blank">立即参与</div>
+                    <div id="shareBox"><font>分享</font></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="activity-bottom">
+        <div class="a-bottom-box">
+            <div class="feature">
+                <h6><span></span>活动特色</h6>
+                <div class="feature-cont">
+                    <p><%=data.synopsis%></p>
+                </div>
+            </div>
+            <div class="activity-cont simditor">
+                <h6><span></span>活动内容</h6>
+                <div class="activity-text simditor-body">
+                    <%-data.content%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/share/jquery.share.min.js"],
+"private": ["../js/common.js", "../js/activityDetail.js"]
+})
+

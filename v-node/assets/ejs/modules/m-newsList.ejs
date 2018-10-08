@@ -1,0 +1,19 @@
+<%
+    if(!data.inforList || !data.inforList) {} else {
+    data.inforList.map((item) => {%>
+        <div class="news-list-more ">
+            <a title="<%= item.title %>" href="<%= domain %>/newsdetail/<%=`${item.id}.html` %>">
+                <div class="title"><%= item.title %></div>
+                <div class="list-text">
+                    <div class="author read-number clearfix"><sapn><%= item.hotCounts %></sapn></div>
+                    <div class="bottom-left clearfix">
+                        <div class="nick-name"><%= item.nickName %></div>
+                        <div class="time"><span><%= getTimeContent(item.publishTime, data.currentTime) %></span></div>
+                    </div>
+                </div>
+                <div class="cover-img-sma"><img src="<%= !item.coverPic || !JSON.parse(item.coverPic).wap_small ? '' : JSON.parse(item.coverPic).wap_small %>" alt="<%= item.title %>"></div>
+            </a>
+        </div>
+    <%})
+    }
+%>

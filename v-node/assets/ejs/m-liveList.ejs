@@ -1,0 +1,41 @@
+@@include("public/m-header.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/liveList.css"]
+})
+<div class="wrap">
+    <input type="hidden" id="refreshed" value="no">
+    <div class="banner-box">
+        <img class="banner-img" src="../img/textLive/live-banner.jpg" alt="">
+        <!-- <div class="introduction-btn"><span><img src="../img/left-l.png" alt=""></span>直播简介</div>
+        <div class="introduction-cont"><span id="left-btn"><img src="../img/right-r.png" alt=""></span>
+            <p>直播简介直播简，介直播简介直播，简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介。</p></div>
+        <div class="live-time"><p class="time">开始时间：<span>2018-03-07 22:00</span></p><font>直播中...</font></div> -->
+    </div>
+    <div class="inform-btn">
+        <p class="wx-btn" id="wxBtn">参与讨论</p>
+        <p><a href="http://m.huoxing24.com/">进入官网</a></p>
+    </div>
+    <div class="live-box">
+        <div class="live-list clearfix">
+            <!-- <div class="list">
+                <a href="/html/liveDetails.html">
+                    <p class="list-img"><img src="../img/list-01.png" alt=""></p>
+                    <p class="list-text">介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介直播简介</p>
+                </a>
+            </div> -->
+        </div>
+    </div>
+    <div class="live-ewm">
+        <p><img src="../img/textLive/live-ewm.jpg" alt=""></p>
+        <span>长按识别二维码加入微信群聊</span>
+    </div>
+    <div class="live-shade" id="liveShade"></div>
+</div>
+
+@@include("public/m-footer-prue.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.js"],
+"private": ["../js/m-liveList.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

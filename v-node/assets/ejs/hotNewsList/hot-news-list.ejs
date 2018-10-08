@@ -1,0 +1,30 @@
+<div class="hot-news-warp">
+    <div class="hot-news-list clearfix">
+        <%
+        data.inforList.map((d) => {
+            let item = d.topic
+            let news = !d.contentList ? [] : d.contentList
+        %>
+        <div class="news-item">
+            <div class="news-item-contain">
+                <a target="_blank" class="mews-item-top clearfix" href="<%= `${domain}/hot/${item.tags}/${item.id}` %>">
+                    <img src="<%= !item.newSmallPcImgSrc ? '../../img/default-img.svg' : item.newSmallPcImgSrc %>" alt="<%= item.topicName %>">
+                    <h3><%= item.topicName %></h3>
+                </a>
+                <%
+                if (news.length > 0) {%>
+                <div class="desc clearfix">
+                    <i class="round"></i>
+                    <a target="_blank"  href="<%= news.length > 0 ? `${domain}/newsdetail/${news[0].id}.html` : '' %>">
+                        <%= news.length > 0 ? news[0].title : '' %>
+                    </a>
+                </div>
+                <%}
+                 %>
+            </div>
+        </div>
+        <%})
+        %>
+    </div>
+</div>
+

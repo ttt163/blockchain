@@ -1,0 +1,117 @@
+@@include("public/header-prue.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/applyList.css"]
+})
+<%
+const formatDateMore = (time) => {
+    const timemap = new Date(time)
+    const y = timemap.getFullYear()
+    const m = (timemap.getMonth() + 1) < 10 ? '0' + (timemap.getMonth() + 1) : timemap.getMonth() + 1
+    const d = timemap.getDate() < 10 ? '0' + timemap.getDate() : timemap.getDate()
+    const h = timemap.getHours() < 10 ? '0' + timemap.getHours() : timemap.getHours()
+    const mn = timemap.getMinutes() < 10 ? '0' + timemap.getMinutes() : timemap.getMinutes()
+    return `${y}-${m}-${d} ${h}:${mn}`
+}
+ %>
+<div class="clearfix">
+    <div class="apply-list">
+        <h1>火星训练营报名列表</h1>
+        <div class="apply-title" id="applyTitle" style="<%= dataList === false ? 'display:none' : 'display:block'%>">
+            <p class="active" data-index="1">来源一</p>
+            <p data-index="2">来源二</p>
+            <p data-index="3">来源三</p>
+            <p data-index="4">来源四</p>
+            <p data-index="5">来源五</p>
+            <p data-index="0">全部</p>
+            <a class="downLoad" id="downLoad" href="http://www.huoxing24.com/mgr/marstrainenroll/download" target="_blank">下载</a>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th class="list1">编号</th>
+                <th class="list3">报名时间</th>
+                <th class="name list2">姓名</th>
+                <th class="age list1">年龄</th>
+                <th class="phone list3">手机</th>
+                <th class="wechat list3">微信</th>
+                <th class="mail list3">邮箱</th>
+                <th class="cyty list2">所在城市</th>
+                <th class="firm list3">公司名称</th>
+                <th class="position list2">身份属性</th>
+                <th class="about list3">简介</th>
+                <th class="school list3">目的</th>
+                <th class="train list3">名校培训</th>
+                <th class="source list2">获知渠道</th>
+                <th class="video list3">视频地址</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% if (dataList === false) {%>
+                    <div class="user-box">
+                        <p class="user-name"><input id="userName" type="text" placeholder="用户名"></p>
+                        <p class="user-pass"><input id="userPass" type="password" placeholder="密码"></p>
+                        <p class="user-btn">提交</p>
+                        <p class="cancel" style="display: none">取消</p>
+                    </div>
+                <%} else {%>
+                <% for(var i = 0; i < dataList.length; i++){ %>
+                <tr>
+                <td><%= i %></td>
+                <td><%= formatDateMore(dataList[i].createTime)%></td>
+                <td class="name"><%= dataList[i].name %></td>
+                <td class="age"><%= dataList[i].age %></td>
+                <td class="phone"><%= dataList[i].phoneNum %></td>
+                <td class="wechat"><%= dataList[i].wechat %></td>
+                <td class="mail"><%= dataList[i].email %></td>
+                <td class="cyty"><%= dataList[i].city %></td>
+                <td class="firm"><%= dataList[i].company %></td>
+                <td class="position">
+                    <% let x = null;
+                    switch (dataList[i].identityAttr) { case 1: x = '创始人';%>
+                    <%= x %>
+                    <% break%>
+                    <% case 2: x = '投资人'%>
+                    <%= x %>
+                    <% break%>
+                    <% case 3: x = '合伙人'%>
+                    <%= x %>
+                    <% break%>
+                    <% case 4: x = '高管'%>
+                    <%= x %>
+                    <% break%>
+                    <% case 5: x = '其他职员'%>
+                    <%= x %>
+                    <% break%>
+                    <%}%>
+                </td>
+                <td class="about"><%= dataList[i].companyInfo %></td>
+                <td class="school"><%= dataList[i].attentReason %></td>
+                <td class="train"><%= dataList[i].trainingInfo %></td>
+                <td class="source"><%= dataList[i].acquireChannel %></td>
+                <td class="video">
+                <%
+                    let videoArr = dataList[i].refereeVideo.split(',')
+                    let str = ''
+                    for (var j = 0; j < videoArr.length; j++) {
+                        if (videoArr[j] === '') { continue } else {%>
+                        <span class="video-url" data-src="<%= videoArr[j] %>">视频<%= j + 1 %></span>
+                    <% } %>
+                <%}%>
+                </td>
+                </tr>
+                <% } %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="videoplay-wrap" id="videoplayWrap">
+    <a title="关闭" class="videoplay-close" id="videoplayClose"><img alt="关闭" src="../img/m-apply/videoplay-close.png" /></a>
+    <video src="" controls="controls" autoplay="autoplay">您的浏览器不支持该视频</video>
+</div>
+<div class="videoplay-mask" id="videoplayMask"></div>
+
+@@include("public/footer-prue.ejs", {
+"plugin": [],
+"private": ["../js/applyList.js", "../css/applyList.css"]
+})

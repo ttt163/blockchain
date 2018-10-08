@@ -1,0 +1,244 @@
+<%
+const add0 = (m) => {
+    return m < 10 ? '0' + m : m
+}
+// 格式化时间, 没有年,今天之内不显示日期
+const formatDateTime = (publishDate, currDate, str) => {
+    str = !str ? '-' : str
+    let curr = new Date()
+    let publish = new Date(publishDate)
+    if (currDate && !isNaN(currDate)) {
+        curr = new Date(currDate)
+    } else {
+        str = currDate
+    }
+    let m = publish.getMonth() + 1
+    let d = publish.getDate()
+    const h = publish.getHours()
+    const mn = publish.getMinutes()
+    let dateStr = ''
+    if (publish.getDate() !== curr.getDate()) {
+        // 当天之外
+        dateStr = `${add0(m)}${str}${add0(d)} ${add0(h)}:${add0(mn)}`
+    } else {
+        // 当天之内
+        dateStr = `${add0(h)}:${add0(mn)}`
+    }
+    return dateStr
+}
+const formatDate = (publishDate, str) => {
+    str = !str ? '-' : str
+    let publish = new Date(publishDate)
+    let y = publish.getFullYear()
+    let m = publish.getMonth() + 1
+    let d = publish.getDate()
+    const h = publish.getHours()
+    const mn = publish.getMinutes()
+    return `${y}${str}${add0(m)}${str}${add0(d)} ${add0(h)}:${add0(mn)}`
+}
+const getTimeContent = (publishTime, requestTime, str) => {
+    requestTime = !requestTime ? new Date().getTime() : requestTime
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime, '/')
+    }
+    return content
+}
+ %>
+<div class="summit-warp">
+    <div class="summit-page1">
+        <div class="page-contain clearfix">
+            <img class="left" src="../../img/nyc-topic-img/pc-topic-top-left.png" alt="<%= webSiteInfo.title %>">
+            <img class="right" src="../../img/nyc-topic-img/pc-topic-top-right.png" alt="<%= webSiteInfo.title %>">
+            <!--视频-->
+            <!--<div class="video-box">
+                <div class="video-contain">
+                    <video controls autoplay="autoplay" src="https://hx24-media.huoxing24.com/meeting/2018-08-29-00-02-20_2018-08-29-01-02-20.mp4"></video>
+                    <div class="mask">
+                        <a href="<%= domain %>/liveDetail/20180827104056328239" target="_blank" class="video-play-btn"></a>
+                    </div>
+                </div>
+            </div>-->
+            <!--直播-->
+            <!--<div class="live-box">
+                <div class="live-contain">
+                    <div class="live-content">
+                        <div class="prism-player" id="player-con"></div>
+                    </div>
+                    <div class="mask"></div>
+                    <a href="<%= domain %>/liveDetail/20180827104056328239" target="_blank" class="live-play-btn"></a>
+                    &lt;!&ndash;<span class="live-text">正在直播</span>&ndash;&gt;
+                </div>
+            </div>-->
+            <!--购买门票-->
+            <a target="_blank" class="btn-buy" href="http://www.huodongxing.com/event/9459423816400"></a>
+        </div>
+    </div>
+    <!--峰会热点-->
+    <div class="summit-page2">
+        <div class="page-contain">
+            <img class="page-title" src="../../img/nyc-topic-img/pc-hot-title.png" alt="峰会热点">
+            <div class="page2-content clearfix">
+                <div class="left">
+                    <!--轮播图-->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <%
+                            data.recommend.map((item) =>{%>
+                            <div class="swiper-slide">
+                                <a href="<%= item.url %>" title="<%= item.title %>">
+                                    <img src="<%= item.pcRecommendImg %>">
+                                    <span class="mode"></span>
+                                    <h3 class="title"><%= item.title %></h3>
+                                </a>
+                            </div>
+                            <%})
+                             %>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button-prev"><i class="iconfont iconfont-left"></i></div>
+                        <div class="swiper-button-next"><i class="iconfont iconfont-right"></i></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <!--快讯-->
+                    <div class="live-box">
+                        <h2 class="live-box-title">峰会快讯</h2>
+                        <div class="live-list">
+                            <%
+                            data.lives.map((item) => {
+                                let title = ''
+                                let content = item.content
+                                if (!item.title) {
+                                    let startIndex = item.content.indexOf('【') === -1 ? 0 : item.content.indexOf('【') + 1
+                                    let endIndex = item.content.indexOf('】') === -1 ? 0 : item.content.indexOf('】')
+                                    title = item.content.substring(startIndex, endIndex)
+                                    content = item.content.substring(endIndex + 1)
+                                } else {
+                                    title = item.title
+                                    content = item.content
+                                }
+                            %>
+                            <a class="live-item clearfix" href="<%= domain %>/liveNewsDetail/<%= item.id %>" title="<%= title %>" target="_blank">
+                                <span><%= formatDateTime(item.createdTime, '/') %></span>
+                                <h3><%= title %></h3>
+                            </a>
+                            <%})
+                            %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--峰会新闻-->
+    <div class="summit-page3">
+        <div class="bg-top"></div>
+        <div class="bg-bottom"></div>
+        <div class="page3-contain">
+            <div class="page-contain">
+                <img class="page-title" src="../../img/nyc-topic-img/pc-news-title.png" alt="峰会新闻">
+                <div class="news-list clearfix">
+                    <%
+                    let newsList = !data.news.inforList || !data.news.inforList.length ? [] : data.news.inforList
+                    newsList.map((item) => {
+                        let pcImg = '../../img/default-img.svg'
+                        if (item.coverPic) {
+                            let coverPic = JSON.parse(item.coverPic)
+                            if (coverPic.pc) {
+                                pcImg = coverPic.pc
+                            }
+                        }
+                    %>
+                    <a class="news-item" href="<%= domain %>/newsdetail/<%= item.id %>" title="<%= item.title %>" target="_blank">
+                        <div class="news-img">
+                            <img src="<%= pcImg %>" alt="<%= item.title %>" >
+                        </div>
+                        <h3><%= item.title %></h3>
+                        <span>发布时间：<%= getTimeContent(item.publishTime, data.news.currentTime, '/') %></span>
+                    </a>
+                    <%})
+                    %>
+                </div>
+                <a style="display: <%= data.news.recordCount > data.news.pageSize ? 'block' : 'none' %>" class="news-more-btn" data-size="<%= data.news.pageSize %>" data-page="<%= data.news.currentPage %>" data-count="<%= data.news.pageCount %>" data-time="<%= !data.news.inforList || !data.news.inforList.length ? 0 : data.news.inforList[data.news.inforList.length - 1].publishTime %>" href="javascript:void(0)" title="加载更多"></a>
+                <a style="display: <%= data.news.recordCount > data.news.pageSize ? 'none' : 'block' %>" class="news-no-more" title="暂无更多"></a>
+            </div>
+        </div>
+    </div>
+    <!--现场图集-->
+    <div class="summit-page4" style="display: <%= (!data.smallImg || !data.smallImg.length) && (!data.largeImg || !data.largeImg.length) ? 'none' : 'block'%>">
+        <div class="page-contain">
+            <img class="page-title" src="../../img/nyc-topic-img/pc-alts-title.png" alt="现场图集">
+            <div class="alts-content clearfix">
+                <div class="left">
+                    <!--轮播图-->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <%
+                            data.largeImg.map((item) =>{%>
+                            <div class="swiper-slide">
+                                <img src="<%= item.pcBigImg %>" alt="<%= item.title %>">
+                            </div>
+                            <%})
+                            %>
+                        </div>
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button-prev"><i class="iconfont iconfont-left"></i></div>
+                        <div class="swiper-button-next"><i class="iconfont iconfont-right"></i></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <%
+                        let smallImg = data.smallImg
+                        if (smallImg.length > 0) {
+                            if (smallImg.length > 4) {
+                                smallImg = smallImg.slice(0, 4)
+                            }
+                            let len = 2
+                            for (let i = 0; i < Math.ceil(smallImg.length / len); i++) {
+                    %>
+                                <div class="img-row clearfix">
+                                    <%
+                                        for (let j = 0; j < len; j++) {
+                                            let item = smallImg[i*2 + j]
+                                        if (item) {%>
+                                    <img src="<%= item.pcSmallImg %>" alt="<%= item.title %>" />
+                                    <%}
+                                            %>
+                                    <%
+                                        }
+                                    %>
+                                </div>
+                    <%
+                    }
+                        }
+                     %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--合作伙伴-->
+    <div class="summit-page5">
+        <div class="page-contain clearfix">
+            <div class="page5-zb">
+                <label>主办</label>
+                <img src="../../img/nyc-topic-img/pc-topic-zb.png" />
+            </div>
+            <div class="page5-lhzb">
+                <label>联合主办</label>
+                <img src="../../img/nyc-topic-img/pc-topic-lhzb.png" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<!-- 公共头部 -->
+@@include('public/m-header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/m-videoDetail.css"]
+})
+<img style="display: none" src="http://static.huoxing24.com/images/wxshare-icon.png">
+<!-- 内容 -->
+@@include('m-video/m-main.ejs')
+<!-- 公共底部 -->
+@@include('public/m-footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.js"],
+"private": ["../js/m-common.js", "../js/m-video.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "<%= 'http://static.huoxing24.com/images/wxshare-icon.png' %>"
+})

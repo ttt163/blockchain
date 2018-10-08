@@ -1,0 +1,99 @@
+@@include("public/m-header.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/m-login.css"]
+})
+<div class="m-login-register">
+    <div class="m-register">
+        <div class="weChat-img"><img src="../img/m-img/wechat-img.png" alt=""></div>
+        <ul>
+            <li class="weChat-name"><i class="iconfont icon-wo"></i>
+                <input type="text" id="nickname" class="phone" placeholder="昵称">
+            </li>
+            <li>
+                <i class="iconfont icon-shouji"></i>
+                <input type="text" id="registerPhone" class="phone" placeholder="手机号">
+            </li>
+            <li>
+                <i class="iconfont icon-shoujiyanzheng"></i>
+                <input type="text" id="registerCode" class="code" placeholder="验证码">
+                <button class="code-btn" id="registerCodeBtn">获取验证码</button>
+            </li>
+            <li>
+                <i class="iconfont icon-jiesuo"></i>
+                <input type="password" id="registerPassw" class="name" placeholder="请输入密码">
+            </li>
+            <li>
+                <i class="iconfont icon-jiesuo"></i>
+                <input type="password" id="registerPassw2" class="passw" placeholder="请再次输入密码">
+            </li>
+        </ul>
+        <div id="registerBtn" class="confirm-btn">确定</div>
+        <div id="alreadyAccount" class="already">已有火星账号</div>
+    </div>
+    <div class="m-login show">
+        <ul>
+            <li><i class="iconfont icon-shouji"></i><input type="text" id="loginPhone" class="phone" placeholder="手机号">
+            </li>
+            <li><i class="iconfont icon-jiesuo"></i><input type="password" id="loginPassw" class="passw"
+                                                           placeholder="密码"></li>
+        </ul>
+        <p class="forget-passw clearfix">忘记密码？</p>
+        <div class="confirm-btn login" id="loginBtn">确定</div>
+        <div class="new-register">新注册账号 ><span></span></div>
+        <div class="wechat-login" id="wechatLogin" style="display: none">
+            <p>第三方登录</p>
+            <p><img src="../img/m-img/wx-logo.png" alt=""></p>
+        </div>
+    </div>
+    <div class="m-modification">
+        <ul>
+            <li>
+                <i class="iconfont icon-shouji"></i>
+                <input type="text" id="modificationPhone" class="phone" placeholder="手机号">
+            </li>
+            <li>
+                <i class="iconfont icon-shoujiyanzheng"></i>
+                <input type="text" id="modificationCode" class="code" placeholder="验证码">
+                <button class="code-btn" id="modificationCodeBtn">获取验证码</button>
+            </li>
+            <li>
+                <i class="iconfont icon-jiesuo"></i>
+                <input type="password" id="modificationPassw1" class="passw" placeholder="新密码">
+            </li>
+            <li>
+                <i class="iconfont icon-jiesuo"></i>
+                <input type="password" id="modificationPassw2" class="passw" placeholder="再次输入新密码">
+            </li>
+        </ul>
+        <div id="modificationBtn" class="confirm-btn">确定</div>
+    </div>
+    <div class="code-img">
+        <p class="code-text">
+            <i class="iconfont icon-zhucedengluyanzhengma"></i>
+            <input id="codeText" type="text" placeholder="请输入验证码"/>
+            <span id="codeImg"><img src="" alt=""></span>
+        </p>
+        <div class="refresh-img" id="refreshImg"><img src="../img/m-img/refresh.png" alt="">看不清，换一张</div>
+        <div class="code-btn" id="codeImgBtn">确定</div>
+    </div>
+    <!--关联-->
+    <div class="relevance">
+        <ul>
+            <li><i class="iconfont icon-shouji"></i><input type="text" id="relevancePhone" class="phone" placeholder="手机号">
+            </li>
+            <li><i class="iconfont icon-jiesuo"></i><input type="password" id="relevancePassw" class="passw"
+                                                           placeholder="密码"></li>
+        </ul>
+        <p class="forget-passw clearfix">忘记密码？</p>
+        <div class="confirm-btn login" id="relevanceBtn">关联</div>
+    </div>
+</div>
+<div class="shade"></div>
+<iframe id="iframe"></iframe>
+@@include("public/m-footer-prue.ejs", {
+"plugin": [],
+"private": ["../js/m-login.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

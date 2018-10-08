@@ -1,0 +1,35 @@
+<div class="swiper-container wrap-box" id="hxwrap">
+    @@include('../modules/m-topNav.ejs')
+    <div class="swiper-wrapper overall-box" id="overAllBox">
+        <!--新闻-->
+        <div id="currNewsBox" class="video-detail white-bg" data-id="<%= data.searchId %>">
+            <div class="video-list-box">
+                <%
+                var dataList = data.inforList
+                for (var i = 0; i < dataList.length; i++) {
+                    var videoImg = !dataList[i].coverPic || dataList[i].coverPic.indexOf('{') === -1 ? '' : JSON.parse(dataList[i].coverPic)
+                %>
+                <div class="video-list">
+                    <div class="list-img" data-id=<%= dataList[i].id %>>
+                        <img src=<%= videoImg.video_m %> alt="">
+                        <h5><%= dataList[i].title %></h5>
+                        <a class="btn" href="/videoDetails/<%= dataList[i].id %>/<%= dataList[i].createTime%>/"><img src="../../img/m-img/btn.png" alt=""></a>
+                        <p class="shade"></p>
+                    </div>
+                    <div class="list-bottom">
+                        <div class="user">
+                            <img src=<%= dataList[i].iconUrl%>>
+                            <span><%= dataList[i].nickName%></span>
+                        </div>
+                        <div class="m-comment"><font></font><span><%= dataList[i].commentCounts%></span></div>
+                        <span><%= data.createTimeCont[i]%></span>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <div class="video-more" data-page="<%=data.pageCount%>"><p>查看更多</p></div>
+        </div>
+    </div>
+</div>
+
+

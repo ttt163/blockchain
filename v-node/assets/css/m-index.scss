@@ -1,0 +1,301 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-04-08 15:45
+ * Description：index
+ */
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+@import "./m-index/blockchain";
+@import "./m-index/newsFash";
+@import "./modules/m-topNav";
+@import "./modules/m-newsList";
+
+.newsWrap {
+    span.img-news-title {
+        padding: 0 5%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #fff;
+        font-size: rem(24);
+        line-height: rem(60);
+        text-align: center;
+    }
+}
+
+.swiper-slide {
+    height: 100%;
+}
+
+.white-bg {
+    margin-top: rem(10);
+    background: #fff;
+}
+
+.wrap-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #757575;
+    background: #f5f5f5;
+
+    .index-ad {
+        width: rem(630);
+        margin: 0 auto;
+        height: auto;
+
+        .href-btn {
+            display: inline-block;
+            width: 100%;
+            height: auto;
+
+            img {
+                width: 100%;
+                border-radius: rem(10);
+            }
+        }
+    }
+
+    .back-top {
+        position: fixed;
+        bottom: rem(100);
+        right: rem(20);
+        z-index: 999999;
+        width: rem(60);
+        height: rem(60);
+        background: url("../img/m-img/backTop.png") #fff no-repeat;
+        background-size: 100%;
+        border-radius: 100%;
+        opacity: 0;
+
+        &.top {
+            opacity: 1;
+        }
+    }
+
+    .overall-box.active {
+        margin-top: rem(90);
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+
+        .out-box {
+            width: 100%;
+            height: 100%;
+
+            .swiper-container {
+                width: 100%;
+                height: rem(258);
+
+                &.banner {
+                    width: 100%;
+                    height: rem(320);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination {
+            font-size: 0;
+            bottom: rem(8);
+
+            .swiper-pagination-bullet {
+                width: rem(18);
+                height: rem(3);
+                border-radius: rem(1);
+                background-color: #b1b1b1;
+
+                &.swiper-pagination-bullet-active {
+                    background-color: #00b0ff;
+                }
+            }
+        }
+    }
+
+    .currency-price {
+        width: rem(630);
+        height: rem(194);
+        background: #f5f5f5;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        .price-list {
+            width: rem(207);
+            height: rem(154);
+            margin: rem(20) 0;
+            float: left;
+            color: #fff;
+
+            &:nth-child(1) {
+                background: url("../img/m-img/list-01.png") no-repeat;
+                background-size: 100%;
+            }
+
+            &:nth-child(2) {
+                background: url("../img/m-img/list-02.png") no-repeat;
+                background-size: 100%;
+            }
+
+            &:nth-child(3) {
+                background: url("../img/m-img/list-03.jpg") no-repeat;
+                background-size: 100%;
+
+                .price-number {
+                    background: rgba(0, 0, 0, 0.3);
+                }
+            }
+
+            .price-number {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    position: absolute;
+                    bottom: rem(20);
+                    font-size: rem(20);
+                    width: 100%;
+                    text-align: center;
+                }
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            h2 {
+                margin: 0;
+                font-size: rem(24);
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+
+    .news-box {
+        width: rem(590);
+        padding: 0 rem(25) rem(25);
+        background: #fff;
+        height: auto;
+        margin: 0 auto;
+
+        h6 {
+            position: relative;
+            width: 100%;
+            height: rem(70);
+            line-height: rem(60);
+            font-size: rem(24);
+            color: #212121;
+            margin: rem(10) 0 0;
+            padding-left: rem(10);
+            box-sizing: border-box;
+
+            span {
+                position: absolute;
+                top: rem(20);
+                width: rem(20);
+                height: rem(20);
+                left: 0;
+                float: left;
+                border-left: 2px solid #00b0ff;
+            }
+        }
+
+        a {
+            color: #212121;
+            text-decoration: none;
+        }
+
+        .news-list-first {
+            width: 100%;
+            height: auto;
+            padding: rem(20) 0;
+
+            .cover-img {
+                margin-bottom: rem(10);
+
+                img {
+                    width: rem(590);
+                    height: rem(255);
+                }
+            }
+
+            .title {
+                width: 100%;
+                height: rem(40);
+                line-height: rem(30);
+                font-size: rem(24);
+                color: #212121;
+                padding-bottom: rem(10);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .list-text {
+                width: 100%;
+                height: rem(50);
+                border-bottom: 1px #eee solid;
+
+                .author,
+                .time {
+                    color: #bdbdbd;
+                    float: left;
+                    font-size: rem(18);
+
+                    span {
+                        float: left;
+                        margin-left: rem(10);
+                    }
+                }
+
+                .time {
+                    float: right;
+
+                    span {
+                        float: right;
+                        margin-left: rem(10);
+                    }
+                }
+            }
+        }
+    }
+
+    .list-box {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* app快讯页面 */
+.lives-page {
+    margin: 0;
+
+    .fash-title {
+        margin-top: 0;
+    }
+}
+
+.swiper-wrapper.overall-box.lives-page.active {
+    margin-top: 0;
+}
+

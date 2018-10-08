@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset>
+    <url>
+        <!--必填标签,这是具体某一个链接的定义入口，每一条数据都要用<url>和</url>包含在里面，这是必须的 -->
+        <loc>http://www.huoxing24.com/newsdetail?id=2018050412065591803</loc>
+        <!--必填,URL链接地址,长度不得超过256字节-->
+        <lastmod>2009-12-14</lastmod>
+        <!--可以不提交该标签,用来指定该链接的最后更新时间-->
+        <changefreq>daily</changefreq>
+        <!--可以不提交该标签,用这个标签告诉此链接可能会出现的更新频率 -->
+        <priority>0.8</priority>
+        <!--可以不提交该标签,用来指定此链接相对于其他链接的优先权比值，此值定于0.0-1.0之间-->
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/news</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/personal</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/livenews</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/markets</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/newsauthor</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/primer</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/newsdetail</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/newcoins</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/newcoinsList</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/newcoinsDetail</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/copyright</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/about</loc>
+    </url>
+    <url>
+        <loc>http://www.huoxing24.com/app</loc>
+    </url>
+    <url>
+        <loc>http://bbs.huoxing24.com</loc>
+    </url>
+    <url>
+        <loc>http://baike.huoxing24.com</loc>
+    </url>
+</urlset>

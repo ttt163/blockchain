@@ -1,0 +1,108 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": [],
+"private": ["../css/videoDetails.css"],
+"title": "火星财经-区块链先锋门户"
+})
+
+<!-- 内容 -->
+<div class="video-details clearfix"
+     data-info="<%= JSON.stringify({
+         id: newsData.current.id,
+         tags: newsData.current.tags,
+         createdBy: newsData.current.createdBy
+     }) %>">
+    <div class="video-details-box clearfix">
+        <div class="video-box clearfix">
+            <div class="video-left">
+                <%
+                var videoUrl = JSON.parse(newsData.current.url)
+                var posterImg = JSON.parse(newsData.current.coverPic).video_pc
+                %>
+                <video src=<%= videoUrl[0].fileUrl %>
+                       preload="auto" autoplay poster=<%= posterImg %> controls=""
+                       style="width: 100%; height: 100%;"></video>
+            </div>
+            <div class="video-right">
+                <% if (newsData.pre) { %>
+                <p class="prev">上一篇</p>
+                <div class="video-list" data-src="">
+                    <a title="<%= newsData.pre.title %>"
+                       href="<%= domain %>/videoDetails/<%= newsData.pre.id %>/<%= newsData.pre.publishTime %>">
+                        <div class="list-img"><img
+                                    src=<%= JSON.parse(newsData.pre.coverPic).pc %> alt="<%= newsData.pre.title %>">
+                        </div>
+                        <div class="list-text">
+                            <h3><%= newsData.pre.title %></h3>
+                            <p><%= newsData.videoTime[0] %></p>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+                <% if (newsData.next) { %>
+                <p class="next">下一篇</p>
+                <div class="video-list" data-src="">
+                    <a title="<%= newsData.next.title %>"
+                       href="<%= domain %>/videoDetails/<%= newsData.next.id %>/<%= newsData.next.publishTime %>">
+                        <div class="list-img"><img
+                                    src=<%= JSON.parse(newsData.next.coverPic).pc %> alt="<%= newsData.next.title %>">
+                        </div>
+                        <div class="list-text">
+                            <h3><%= newsData.next.title %></h3>
+                            <p><%= newsData.videoTime[1] %></p>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+                <p class="news-title">最新视频</p>
+                <div class="newest-video">
+                </div>
+            </div>
+        </div>
+        <div class="video-box-bottom">
+            <h1><%= newsData.current.title %></h1>
+            <div>
+                <div class="user">
+                    <img src="<%= newsData.current.iconUrl %>" alt="<%= newsData.current.nickName %>">
+                    <span><%= newsData.current.nickName %></span>
+                </div>
+                <div>
+                    发布时间：<%= newsData.current.publishDate %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="details-bottom-box">
+    <div class="video-details-bottom clearfix">
+        <!-- 底部相关新闻 -->
+        <div class="bottom-recommend-news clearfix">
+            <!--<div class="recommend-title">相关新闻</div>-->
+            <!--<div class="news-contain"></div>-->
+            <!-- 底部作者介绍 -->
+            <!--<div class="authorinfo-bottom"></div>-->
+            <!-- 评论 -->
+            <div id="replyBox"></div>
+        </div>
+        <div class="bottom-recommend-right">
+            <!---最新内容--->
+            <div class="d-new-cont">
+                <div class="title clearfix">
+                    <h3>最新快讯</h3>
+                    <a href="/livenews" target="_blank" class="more"></a>
+                </div>
+                <div id="listContent" class="list-items-box">
+                    <div class="item-box"></div>
+                    <a class="filsh-more" target="_blank" href="/livenews" title="查看更多">查看更多</a>
+                </div>
+            </div>
+            <div class="bottom-gradual"></div>
+        </div>
+    </div>
+</div>
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": [],
+"private": ["../js/common.js", "../js/videoDetails.js"]
+})
+

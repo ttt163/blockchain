@@ -1,0 +1,229 @@
+@@include('public/m-header.ejs', {
+"plugin": [],
+"private": ["../css/m-coinEncyclopedia.css"]
+})
+
+<%
+let tranFormat = (num) => {
+    let d = null
+    if (num.toString().indexOf('.') !== -1) {
+        let q = num.toString().split('.')
+        q[0] = q[0].replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,')
+        d = q.join('.')
+    } else {
+        d = num.toString().replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,')
+    }
+    return d
+}
+const numTrans = (num) => {
+    num = Number(num)
+    if (num > 99999999) {
+        return (num / 100000000).toFixed(2) + '亿'
+    } else if (num > 9999 && num < 99999999) {
+        return (num / 10000).toFixed(2) + '万'
+    } else {
+        return num.toFixed(2)
+    }
+}
+const add0 = num => num < 10 ? '0' + num : num
+const getTime = (time) => {
+    let newDate = new Date(time * 1000)
+    let year = newDate.getFullYear()
+    let mouth = newDate.getMonth() + 1
+    let day = newDate.getDate()
+    return `${add0(mouth)}/${add0(day)}/${year}`
+}
+%>
+
+<div class="coin-main">
+    <% if(coinBase.zh_editor_review){ %>
+    <div class="edit-info">
+        <h2>编辑评语</h2>
+        <div class="edit-remark">
+            <div class="remark-img">
+                <img src="../img/hxcj.jpg" alt="">
+            </div>
+            <div class="remark-info">
+                <p class="plate"><label>版块:</label><span>支付概念</span></p>
+                <p class="author">由Emma撰写</p>
+                <p class="review"><%= coinBase.zh_editor_review %></p>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+    <div class="base-info">
+        <h2>基本信息</h2>
+        <ul class="info-list">
+            <li class="spe-li">
+                <img src="<%= coinInfo.icon %>" alt="">
+                <div class="spe-li-item">
+                    <h3>全称</h3>
+                    <p><%= coinInfo.name %></p>
+                </div>
+            </li>
+            <li>
+                <h3>排名</h3>
+                <p>#<%= tranFormat(coinInfo.rank) %></p>
+            </li>
+            <li>
+                <h3>流通量</h3>
+                <p><%= tranFormat(coinInfo.circulate) %></p>
+            </li>
+            <li>
+                <h3>市值</h3>
+                <p><%= coinInfo.circulate ? tranFormat(numTrans(coinInfo.circulate * coinInfo.price * CNY)) : '--' %></p>
+            </li>
+            <li>
+                <h3>24小时成交额</h3>
+                <p><%= coinInfo.volume_24h ? tranFormat(numTrans(coinInfo.volume_24h * CNY)) : 0 %></p>
+            </li>
+            <li>
+                <h3>总发行量</h3>
+                <p><%= tranFormat(coinInfo.supply) %></p>
+            </li>
+            <li>
+                <h3>全球货币市值占比</h3>
+                <div class="progess">
+                    <div class="bar">
+                        <b class="bar-full"
+                           style="width: <%= coinInfo.cap_percent ? (100 * coinInfo.cap_percent).toFixed(2) : 0 %>%;"></b>
+                    </div>
+                    <span><%= coinInfo.cap_percent ? (100 * coinInfo.cap_percent).toFixed(2) + '%' : 0 %></span>
+                </div>
+            </li>
+            <li>
+                <h3>换手率</h3>
+                <div class="progess">
+                    <div class="bar">
+                        <b class="bar-full"
+                           style="width: <%= coinInfo.cap_percent ? (100 * coinInfo.turnover_rate).toFixed(2) : 0 %>%;"></b>
+                    </div>
+                    <span><%= coinInfo.cap_percent ? (100 * coinInfo.turnover_rate).toFixed(2) + '%' : 0 %></span>
+                </div>
+            </li>
+            <li>
+                <h3>流通率</h3>
+                <div class="progess">
+                    <div class="bar">
+                        <b class="bar-full"
+                           style="width: <%= coinInfo.circulate ? (100 * coinInfo.circulate / coinInfo.supply).toFixed(2) : 0 %>%;"></b>
+                    </div>
+                    <span><%= coinInfo.circulate ? (100 * coinInfo.circulate / coinInfo.supply).toFixed(2) + '%' : 0 %></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <% if(coinBase.zh_descriptions){ %>
+    <div class="base-intro clearfix">
+        <h2>简介</h2>
+        <p class="<%= coinBase.desLen > 300 ? 'maxShow' : '' %> self-action"><%= coinBase.zh_descriptions %></p>
+        <% if(coinBase.desLen > 300){ %>
+        <span class="intro-action">展开<i class="iconfont iconfont-open"></i></span>
+        <% } %>
+    </div>
+    <% } %>
+    <% if(coinBase.ico_publish_time || coinBase.ico_price || coinBase.zh_country || coinBase.fundraising_goal){ %>
+    <div class="ico-info">
+        <h2>ICO信息</h2>
+        <ul class="info-list">
+            <li>
+                <h3>ICO日期</h3>
+                <p><%= coinBase.ico_publish_time ? getTime(coinBase.ico_publish_time) : '--' %></p>
+            </li>
+            <li>
+                <h3>ICO价格</h3>
+                <% if (coinBase.ico_price && coinInfo.price) { %>
+                <p><%= (coinBase.ico_price * CNY).toFixed(4) %> CNY（<span
+                            class="<%= coinBase.ico_price < coinInfo.price ? 'up' : 'down' %>"><%= (coinBase.ico_price < coinInfo.price ? '+' : '') + Math.round(((coinInfo.price - coinBase.ico_price) / coinBase.ico_price) * 100) + '%' %></span>）
+                </p>
+                <% } else { %>
+                <p>--</p>
+                <% } %>
+            </li>
+            <li>
+                <h3>ICO国家</h3>
+                <p><%= coinBase.zh_country ? coinBase.zh_country : '--' %></p>
+            </li>
+            <li>
+                <h3>筹集资金</h3>
+                <p><%= coinBase.fundraising_goal ? numTrans(coinBase.fundraising_goal * CNY) + ' CNY' : '--' %></p>
+            </li>
+        </ul>
+
+        <% if (coinBase.coin_ratio && Object.keys(coinBase.coin_ratio).length > 0) { %>
+        <div class="stat-table">
+            <p>集资分布</p>
+            <div class="state-canvas" id="pie"></div>
+        </div>
+        <% } %>
+    </div>
+    <% } %>
+    <% if(coinBase.zh_team_info){ %>
+    <div class="team-info clearfix">
+        <h2>团队介绍</h2>
+        <p class="<%= coinBase.teamLen > 300 ? 'maxShow' : '' %> self-action"><%= coinBase.zh_team_info %></p>
+        <% if(coinBase.teamLen > 300){ %>
+        <span class="intro-action">展开<i class="iconfont iconfont-open"></i></span>
+        <% } %>
+    </div>
+    <% } %>
+    <div class="com-web">
+        <h2>社区与相关网站</h2>
+        <div class="com">
+            <p>社区</p>
+            <div class="com-link">
+                <% if(coinBase.community.facebook){ %>
+                <a href="<%= coinBase.community.facebook %>">
+                    <img src="<%= coinBase.community_url + 'facebook.png' %>" alt="">
+                </a>
+                <% } %>
+                <% if(coinBase.community.github){ %>
+                <a href="<%= coinBase.community.github %>">
+                    <img src="<%= coinBase.community_url + 'github.png' %>" alt="">
+                </a>
+                <% } %>
+                <% if(coinBase.community.reddit){ %>
+                <a href="<%= coinBase.community.reddit %>">
+                    <img src="<%= coinBase.community_url + 'reddit.png' %>" alt="">
+                </a>
+                <% } %>
+                <% if(coinBase.community.telegram){ %>
+                <a href="<%= coinBase.community.telegram %>">
+                    <img src="<%= coinBase.community_url + 'telegram.png' %>" alt="">
+                </a>
+                <% } %>
+                <% if(coinBase.community.twitter){ %>
+                <a href="<%= coinBase.community.twitter %>">
+                    <img src="<%= coinBase.community_url + 'twitter.png' %>" alt="">
+                </a>
+                <% } %>
+            </div>
+        </div>
+        <div class="web">
+            <p>相关网站</p>
+            <div class="web-link clearfix">
+                <a class="link1" href="<%= coinBase.website ? coinBase.website : 'javascript:;' %>">官方网站</a>
+                <a class="link2" href="<%= coinBase.whitepaper ? coinBase.whitepaper : 'javascript:;' %>">白皮书</a>
+                <a class="link3" href="<%= coinBase.explorers[0] ? coinBase.explorers[0] : 'javascript:;' %>">区块站</a>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden"
+       id="dataInfo"
+       data-total="<%= coinInfo.supply %>"
+        <% if(coinBase.coin_ratio){ %>
+        <% for(key in coinBase.coin_ratio) { %>
+       data-<%= key %> ="<%= coinBase.coin_ratio[key] %>"
+        <% } %>
+        <% } %>
+>
+
+@@include('public/m-footer-prue.ejs', {
+"plugin": [],
+"private": ["../js/m-coinEncyclopedia.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

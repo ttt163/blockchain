@@ -1,0 +1,94 @@
+/**
+ * Author：tantingting
+ * Time：2018/8/13
+ * Description：Description
+ */
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+
+.live-warp {
+    position: relative;
+    //background: url("../img/summitLive/live-bg.jpg") center no-repeat;
+    //background-size: 1920px 844px;
+    //width: 100%;
+    //max-height: 844px;
+
+    .live-contain {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        //width: 1300px;
+        width: 67.7%;
+        //height: 800px;
+        height: 94.787%;
+        //margin: 0 auto;
+        //padding-top: 20px;
+    }
+
+    .live-bg {
+        display: block;
+        width: 100%;
+    }
+}
+
+// 底部
+.footer-main {
+    background: #210661;
+    color: #8271ac;
+
+    .footer-copyright {
+        .hot-label {
+            .relation,
+            .send {
+                color: #8271ac;
+            }
+
+            h5 {
+                color: #ededed;
+            }
+        }
+    }
+
+    .footer-partner-con {
+        h3 {
+            color: #ededed;
+        }
+
+        .ft-partner-link-in {
+            a {
+                color: #8271ac;
+            }
+        }
+    }
+
+    .copy-info {
+        .info-left {
+            p {
+                color: #8271ac;
+            }
+        }
+
+        .info-right {
+            .fo-left {
+                a {
+                    color: #8271ac;
+                }
+
+                .cutline {
+                    background: #8271ac;
+                }
+            }
+
+            .footer-share-con {
+                .footer-share {
+                    .list {
+                        background: url("../img/sv-topic/share.png");
+                    }
+                }
+            }
+        }
+    }
+}

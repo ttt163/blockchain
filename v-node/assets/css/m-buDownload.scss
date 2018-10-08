@@ -1,0 +1,241 @@
+/**
+ * @Author：zhoushuanglong
+ * @Time：2018-08-13 17:42
+ * @Desc：Desc
+ */
+
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/rem";
+
+.bu-warp {
+    width: rem(640);
+    height: auto;
+
+    .section-one {
+        width: 100%;
+        height: rem(694);
+        background: url("../img/biyou/m-section0.jpg") no-repeat;
+        background-size: 100%;
+
+        h1 {
+            font-size: rem(66);
+            color: #fff;
+            text-align: center;
+            padding-top: rem(181);
+        }
+
+        h2 {
+            font-size: rem(44);
+            text-align: center;
+            color: #fff;
+            line-height: rem(80);
+        }
+
+        a {
+            display: block;
+            width: rem(250);
+            height: rem(75);
+            line-height: rem(75);
+            font-size: rem(35);
+            color: #fff;
+            border: rem(1) #fff solid;
+            border-radius: rem(10);
+            text-align: center;
+            margin: rem(60) auto;
+        }
+    }
+
+    .section-two {
+        width: 100%;
+        height: rem(1171);
+        background: url("../img/biyou/m-section1.jpg") no-repeat;
+        background-size: 100%;
+
+        h2 {
+            font-size: rem(40);
+            color: #222;
+            text-align: center;
+            line-height: rem(100);
+        }
+
+        h6 {
+            font-size: rem(32);
+            color: #222;
+            text-align: center;
+            padding-bottom: rem(20);
+        }
+
+        p {
+            font-size: rem(24);
+            color: #222;
+            text-align: center;
+            line-height: rem(40);
+        }
+
+        .administration {
+            width: rem(400);
+            height: rem(890);
+            margin-top: rem(40);
+
+            .swiper-wrapper {
+                width: 100%;
+                height: 100%;
+
+                .swiper-slide {
+                    width: rem(400);
+                    height: rem(813);
+
+                    img {
+                        width: rem(400);
+                    }
+                }
+            }
+
+            .adminP {
+                .swiper-pagination-bullet {
+                    background: #666;
+                    width: rem(10);
+                    height: rem(10);
+                    border: rem(1) #666 solid;
+
+                    &.swiper-pagination-bullet-active {
+                        border: rem(1) #666 solid;
+                        border-radius: 100%;
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .section-three {
+        width: 100%;
+        height: rem(1195);
+        background: url("../img/biyou/m-section2.jpg") no-repeat;
+        background-size: 100%;
+
+        h2 {
+            font-size: rem(40);
+            color: #222;
+            text-align: center;
+            line-height: rem(100);
+        }
+
+        h6 {
+            font-size: rem(32);
+            color: #222;
+            text-align: center;
+            padding-bottom: rem(20);
+        }
+
+        p {
+            width: rem(475);
+            font-size: rem(24);
+            color: #222;
+            text-align: center;
+            line-height: rem(40);
+            margin: 0 auto;
+        }
+
+        .data {
+            width: rem(400);
+            height: rem(890);
+            margin-top: rem(40);
+
+            .swiper-wrapper {
+                width: 100%;
+                height: 100%;
+
+                .swiper-slide {
+                    width: rem(400);
+                    height: rem(815);
+
+                    img {
+                        width: rem(400);
+                    }
+                }
+            }
+
+            .swiper-pagination-bullet {
+                border: rem(1) #fff solid;
+                background: #fff;
+                width: rem(10);
+                height: rem(10);
+
+                &.swiper-pagination-bullet-active {
+                    border: rem(1) #fff solid;
+                    border-radius: 100%;
+                    background: #0074f0;
+                }
+            }
+        }
+    }
+
+    .section-four {
+        width: 100%;
+        height: rem(1039);
+        background: url("../img/biyou/m-section3.jpg") no-repeat;
+        background-size: 100%;
+        margin-top: rem(-5);
+
+        h2 {
+            font-size: rem(40);
+            color: #fff;
+            text-align: center;
+            line-height: rem(100);
+        }
+
+        h6 {
+            font-size: rem(32);
+            color: #fff;
+            text-align: center;
+            padding-bottom: rem(20);
+            margin-bottom: rem(20);
+        }
+
+        img {
+            display: block;
+            width: rem(515);
+            margin: 0 auto;
+        }
+    }
+
+    .section-five {
+        width: 100%;
+        height: rem(857);
+        background: url("../img/biyou/m-section4.jpg") no-repeat;
+        background-size: 100%;
+
+        h2 {
+            font-size: rem(40);
+            color: #222;
+            text-align: center;
+            line-height: rem(100);
+            padding-top: rem(40);
+        }
+
+        p {
+            width: rem(530);
+            font-size: rem(24);
+            color: #222;
+            text-align: center;
+            line-height: rem(40);
+            margin: 0 auto;
+        }
+
+        .img-box {
+            width: rem(560);
+            height: rem(511);
+            margin: rem(40) auto;
+
+            img {
+                width: rem(265);
+
+                &:last-child {
+                    margin-left: rem(20);
+                }
+            }
+        }
+    }
+}

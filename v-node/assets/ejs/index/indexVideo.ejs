@@ -1,0 +1,19 @@
+<!--热门视频-->
+<div class="video-box clearfix">
+    <div class="indev-video">
+        <div class="video-title clearfix">
+            <h3>热门视频</h3>
+            <a href="/video" target="_blank" class="more"></a>
+        </div>
+        <div class="hot-video">
+            <% data.videoDataList.map((item, index) => {%>
+            <a class="video-list" title="<%=item.title%>" target="_blank" href="/videoDetails/<%=item.id%>/<%=item.publishTime%>">
+                <img class="video-img" src="<%=JSON.parse(item.coverPic).pc%>" alt="">
+                <h6><%= item.title%></h6>
+                <span><img class="video-btn" src="../../img/indexNew/video-btn.png" alt=""></span>
+            </a>
+            <%
+            })%>
+        </div>
+    </div>
+</div>

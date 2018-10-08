@@ -1,0 +1,131 @@
+/**
+ * Author：tantingting
+ * Time：2018/5/23
+ * Description：Description
+ */
+
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./public/Pagination";
+@import "./author/author-list";
+
+.author-warp {
+    width: 1200px;
+    margin: 20px auto 0;
+    color: #757575;
+    font-size: 16px;
+
+    a {
+        color: #757575;
+        font-size: 16px;
+    }
+
+    .author-top {
+        color: #999;
+        margin-bottom: 20px;
+
+        & > div {
+            float: left;
+
+            a {
+                float: left;
+                display: block;
+                margin-right: 18px;
+                color: #999;
+
+                &.active {
+                    color: #387dea;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        width: 28px;
+                        height: 2px;
+                        margin: 10px auto 0;
+                        background-color: #387dea;
+                    }
+                }
+            }
+        }
+
+        & > p {
+            float: right;
+
+            span {
+                color: #387dea;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .author-list-box {
+        width: 1200px;
+
+        .author-list-item {
+            width: 285px;
+            height: 318px;
+
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .pagination {
+        padding: 30px 0;
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .f-pagination {
+        li {
+            a {
+                color: #fff;
+            }
+        }
+
+        .next,
+        .prev {
+            border: 0;
+            background: transparent;
+            color: #666;
+            margin-left: 22px;
+
+            a {
+                color: #666;
+            }
+        }
+
+        .prev {
+            margin-right: 30px;
+        }
+
+        .pagination-item {
+            background: #d7d7d7;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: #fff;
+                border-color: #387dea;
+
+                a {
+                    color: #387dea;
+                }
+            }
+
+            &.curr {
+                background-color: #387dea;
+                border-color: #387dea;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

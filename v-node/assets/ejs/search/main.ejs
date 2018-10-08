@@ -1,0 +1,91 @@
+<%
+const zero = (m) => {
+    return m < 10 ? '0' + m : m
+}
+const formatDate = (date) => {
+    let time = new Date(date)
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return `${m}月${d}日`
+    } else {
+        return ''
+    }
+}
+const getTimeContent = (publishTime, requestTime) => {
+    requestTime = !requestTime ? new Date().getTime() : requestTime
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime)
+    }
+    return content
+}
+const keyLight = (content, key, color) => {
+    let bgColor = color || '#e61e1e'
+    let sKey = `<span style='color: ${bgColor}'>${key}</span>`
+    return content.split(key).join(sKey)
+}
+
+const tabType = [
+    {type: 1, label: '新闻'},
+    {type: 2, label: '快讯'},
+    {type: 3, label: '作者'},
+    {type: 4, label: '专题'}
+]
+%>
+<div class="search-content clearfix" id="searchPage">
+    <div class="search-content-left">
+        <div class="search-import">
+            <input type="text" class="search-input" placeholder="输入关键词搜索" value="<%= data.searchVal %>">
+        </div>
+        <div class="search-contet-top clearfix">
+            <ul class="tabs">
+                <%
+                tabType.map((item) => {%>
+                <li class="<%= parseInt(data.searchType) === item.type ? 'active' : '' %>" data-type="<%= item.type %>"><%= item.label %></li>
+                <%})
+                 %>
+            </ul>
+            <div class="result-num">搜索出<span><%= data.recordCount %></span>条结果</div>
+        </div>
+        <div class="search-result-list w850  col-2">
+            <div id="newsListContent" class="clearfix" data-currpage="<%= data.currentIndex %>" data-pagecount="<%= data.totalIndex %>" data-pagesize="<%= data.pageSize%>">
+                <%
+                if (!data.inforList || !data.inforList.length) {%>
+                @@include('./no-data.ejs')
+                <%}else {%>
+                @@include('./news-list.ejs')
+                <!--@@include('./hot-news-list.ejs')-->
+                <!--@@include('./author-list.ejs')-->
+                <!--@@include('./flash-news-list.ejs')-->
+                <%}
+                %>
+            </div>
+            <!--<div class="clearfix"></div>
+            <div data-currpage="<%= data.currentIndex %>" data-pagecount="<%= data.totalIndex %>" data-pagesize="<%= data.pageSize%>"
+                 class="check-more-load clearfix">查看更多
+            </div>-->
+        </div>
+    </div>
+    <div class="search-content-right">
+        <div class="aside-section">
+            <div class="aside-title-name clearfix"><span class="aside-title-title">热门新闻</span></div>
+            <div class="aside-title">
+                <div class="aside-title-con">
+                    <div class="news-recommend clearfix" style="width: 100%;">
+                        <div class="new-list-box">
+                            <div class="loading">暂无相关新闻</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

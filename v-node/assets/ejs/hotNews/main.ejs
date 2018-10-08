@@ -1,0 +1,111 @@
+<%
+const zero = (m) => {
+    return m < 10 ? '0' + m : m
+}
+
+const formatDate = (date, str) => {
+    // let _str = !str ? '-' : str
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return zero(m) + '-' + zero(d)
+    } else {
+        return ''
+    }
+}
+const getTimeContent = (publishTime, requestTime) => {
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime)
+    }
+    return content
+}
+%>
+<div class="news-hot-label" data-currtime="<%= data.currentTime %>">
+    <div class="hot-top-bg show <%= info && info.description ? 'bigH' : '' %>"
+         style="<%= !info || !info.pcBackImage ? '' : `background: url('${info.pcBackImage}') center center no-repeat` %>">
+        <h6><%= !info || !info.topicName ? '' : info.topicName %></h6>
+        <% if(info && !info.description) { %>
+        <span><%= !info || !info.createTime ? '' : `${zero(parseInt(new Date(info.createTime).getMonth()) + 1)}月${zero(parseInt(new Date(info.createTime).getDate()))}日` %></span>
+        <% } %>
+        <div class="masking" style=""></div>
+    </div>
+    <div class="news-con clearfix <%= info && info.description ? 'special' : '' %>">
+        <% if(info && info.description) { %>
+        <div class="news-deco">
+            <h3>专题介绍:</h3>
+            <p><%= info.description %></p>
+        </div>
+        <% } %>
+        <div class="news-list-wrap block-style clearfix">
+            <div id="newsListContent" data-queryid="<%= data.queryId %>" data-querytags="<%= data.queryTags %>">
+                <% data.inforList.map((item) => { %>
+                <div class="index-news-list">
+                    <a title="<%= item.title %>" target="_blank"
+                       href="<%= domain %>/newsdetail/<%= `${item.id}.html` %>">
+                    <div class="list-left">
+                            <img alt="<%= item.title %>"
+                                 src="<%= (!item.coverPic || !JSON.parse(item.coverPic).pc ? `http://static.huoxing24.com/images/2018/03/05/1520243882098653.svg` : JSON.parse(item.coverPic).pc) %>">
+                    </div>
+                    <div class="list-right" style="width: 560px;">
+                        <h6 class="headline"><%= item.title %></h6>
+                        <div class="details"><%= item.synopsis %></div>
+                    </div>
+                    </a>
+                    <div class="list-bottom index-mian clearfix">
+                        <!--<p class="portrait">-->
+                        <!--<a title="<%= item.author %>" target="_blank"-->
+                        <!--href="<%= domain %>/newsauthor/<%= item.passportId %>">-->
+                        <!--<img alt="<%= item.author %>" src="<%= item.iconUrl %>">-->
+                        <!--</a>-->
+                        <!--</p>-->
+                        <p class="name"><%= item.author %></p>
+                        <p class="lock-time"><%= getTimeContent(item.publishTime, data.currentTime) %></p>
+                        <p class="read-num main-read-num">
+                            <span class="count-eye">关键字:</span>
+                            <%
+                                let arr = !item.tags ? '' : item.tags.split(',')
+                            arr.map((item, index) => {
+                            if (index === 0) { %>
+                            <a title="<%= item %>" target="_blank" href="<%= domain %>/hot/<%= item %>"><%= item %></a>
+                            <% } else if (index > 0 && index <= 2) { %>
+                            , <a title="<%= item %>" target="_blank"
+                                 href="<%= domain %>/hot/<%= item %>"><%= item %></a>
+                            <% }})
+                            %>
+                        </p>
+                    </div>
+                    <div class="shadow"></div>
+                </div>
+                <% }) %>
+            </div>
+            <div class="clearfix"></div>
+            <div data-currpage="<%= data.currentPage %>" data-pagecount="<%= data.pageCount %>"
+                 class="check-more-load clearfix">查看更多
+            </div>
+        </div>
+        <div class="new-right hot-label-right hot-top">
+            <div class="news-author active"></div>
+            <div class="ad-recomend">
+                <div class="aside-section">
+                    <div class="aside-title-name clearfix"><span class="aside-title-title">热门新闻</span></div>
+                    <div class="aside-title">
+                        <div class="aside-title-con">
+                            <div class="news-recommend clearfix" style="width: 318px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": [],
+"private": ["../css/newsAuthor.css"],
+"title": "火星财经-区块链先锋门户"
+})
+
+<!-- 内容 -->
+@@include('./newsAuthor/main.ejs')
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": [],
+"private": ["../js/common.js", "../js/newsAuthor.js"]
+})
+

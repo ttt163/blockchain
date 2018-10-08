@@ -1,0 +1,48 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-29
+ * Description：index
+ */
+@import "../public/rem";
+
+.btb,
+.blockchain {
+    background: #fff;
+}
+
+.blockchain,
+.btb,
+.newCurrency,
+.huoxingYx {
+    position: relative;
+    width: 100%;
+    height: auto;
+    color: #757575;
+
+    .blockchain-box,
+    .btb-box,
+    .newCurrency-box,
+    .huoxingYx-box {
+        width: rem(590);
+        padding: rem(20) rem(25) 0;
+        background: #fff;
+        height: auto;
+        margin: 0 auto;
+
+        a {
+            color: #212121;
+            text-decoration: none;
+        }
+    }
+
+    //.btn-more {
+    //    width: rem(590);
+    //    height: rem(80);
+    //    margin: 0 auto;
+    //
+    //    img {
+    //        width: rem(590);
+    //        height: rem(80);
+    //    }
+    //}
+}

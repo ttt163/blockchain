@@ -1,0 +1,15 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": [],
+"private": ["../css/download.css"]
+})
+
+<!-- 内容 -->
+@@include('./download/main.ejs')
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": [],
+"private": ["../js/common.js", "../js/download.js"]
+})
+

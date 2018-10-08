@@ -1,0 +1,45 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2017/8/10
+ * Description：index
+ */
+
+.index-news {
+    width: 800px;
+    height: auto;
+    margin-top: 30px;
+
+    .index-right-contain {
+        float: right;
+
+        .index-news-center {
+            float: right;
+        }
+
+        .ad-contain {
+            .ad-box {
+                .ad-left {
+                    float: left;
+                    width: 300px;
+                    margin-right: 15px;
+                }
+
+                .ad-right {
+                    float: right;
+                    width: 240px;
+                }
+            }
+        }
+    }
+}
+
+.inquire-img {
+    width: 1200px;
+    margin: 15px auto 10px;
+}
+
+.two-sessions {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+}

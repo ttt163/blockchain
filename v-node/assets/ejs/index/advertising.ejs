@@ -1,0 +1,36 @@
+<!--推广-->
+<div class="advertising-box" >
+    <div class="advertising">
+        <div class="advertising-title" style="color: #999; font-size: 12px;">推广</div>
+        <div class="swiper-container ad">
+            <div class="swiper-wrapper">
+                <%
+                let generalizeNew = []
+                for (let i = 0; i < data.adData[10].length; i += 6) {
+                    generalizeNew.push(data.adData[10].slice(i, i + 6))
+                }
+                generalizeNew.map((ele, index) => {
+                %>
+                <div class="swiper-slide">
+                    <%
+                    ele.map((item, i) => {
+                    %>
+                    <a href="<%= item.url %>" target="_blank" class="slide-list clearfix" rel="nofollow">
+                        <div class="ad-icon"><img src="<%= item.img_url %>" title="<%= item.title %>" alt="<%= item.title %>"></div>
+                        <div class="ad-text" title="<%= item.title %>">
+                            <h5><%= item.title %></h5>
+                            <p><%= item.description %></p>
+                        </div>
+                    </a>
+                    <%
+                    })
+                    %>
+                </div>
+                <%
+                })
+                %>
+            </div>
+            <div class="swiper-pagination ad-page"></div>
+        </div>
+    </div>
+</div>

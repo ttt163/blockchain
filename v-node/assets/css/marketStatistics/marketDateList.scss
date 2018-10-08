@@ -1,0 +1,245 @@
+/**
+ * Author：yangbo
+ * Time：2018/9/3 16:36
+ * Description：marketDateList.scss
+ */
+
+.marketDateList {
+    padding-top: 13px;
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+}
+
+.market-list-title {
+    height: 67px;
+    border: 1px solid #eee;
+    background-color: #fff;
+
+    .market-list-tab {
+        float: left;
+        font-size: 0;
+        padding: 24px 29px 23px 14px;
+
+        span {
+            display: inline-block;
+            padding: 0 15px;
+            line-height: 20px;
+            font-size: 16px;
+            cursor: pointer;
+
+            &.act {
+                font-weight: bold;
+            }
+        }
+    }
+
+    //.market-list-set {
+    //    float: right;
+    //}
+}
+
+.market-list-sort {
+    background-color: #f6f6f6;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+
+    li {
+        position: relative;
+        float: left;
+        width: 16.666667%;
+        line-height: 28px;
+        font-size: 12px;
+        text-align: center;
+        color: #999;
+
+        p {
+            display: inline-block;
+            cursor: default;
+
+            &.cursor {
+                cursor: default;
+            }
+
+            b {
+                display: inline-block;
+                position: relative;
+                width: 10px;
+                height: 12px;
+                margin-left: 4px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border: 4px solid transparent;
+                    border-bottom: 4px solid #aaa;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 9px;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border: 4px solid transparent;
+                    border-top: 4px solid #aaa;
+                }
+            }
+        }
+
+        &.zx {
+            b {
+                &:before {
+                    border-bottom-color: #222;
+                }
+
+                &:after {
+                    border-top-color: #aaa;
+                }
+            }
+        }
+
+        &.dx {
+            b {
+                &:before {
+                    border-bottom-color: #aaa;
+                }
+
+                &:after {
+                    border-top-color: #222;
+                }
+            }
+        }
+    }
+}
+
+.market-list-todo {
+    background-color: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    height: 615px;
+
+    li {
+        border-bottom: 1px solid #eee;
+
+        p {
+            float: left;
+            width: 16.666667%;
+            line-height: 60px;
+            font-size: 14px;
+            text-align: center;
+            color: #222;
+            box-sizing: border-box;
+
+            &.vol {
+                span {
+                    display: block;
+                    width: 86px;
+                    height: 26px;
+                    line-height: 26px;
+                    text-align: center;
+                    margin: 17px auto;
+                    color: #fff;
+                    background-color: #3ae4a7;
+                    border-radius: 4px;
+
+                    &.drop {
+                        background-color: #f43974;
+                    }
+                }
+            }
+
+            &.turnover {
+                span {
+                    display: block;
+                    width: 86px;
+                    height: 26px;
+                    line-height: 26px;
+                    text-align: center;
+                    margin: 17px auto;
+                    color: #fff;
+                    background-color: #3ae4a7;
+                    border-radius: 4px;
+                }
+            }
+
+            .range {
+                display: block;
+                width: 90px;
+                height: 50px;
+                margin: 5px auto;
+            }
+
+            &:first-of-type {
+                color: #999;
+                text-align: left;
+                padding-left: 50px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 20px;
+                    vertical-align: -4px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &:last-of-type {
+            border-bottom: 0;
+        }
+    }
+}
+
+//.simple-pagination {
+//    text-align: center;
+//    padding: 38px 48px;
+//
+//    li {
+//        display: inline-block;
+//        width: 38px;
+//        text-align: center;
+//        line-height: 38px;
+//        -webkit-user-select: none;
+//        -moz-user-select: none;
+//        -ms-user-select: none;
+//        user-select: none;
+//        border: 1px solid #ccc;
+//        border-radius: 4px;
+//        color: #ccc;
+//        margin: 0 3px;
+//
+//        &.active {
+//            background-color: #4f74ce;
+//            color: #fff;
+//        }
+//
+//        &:hover a,
+//        &:hover .ellipse {
+//            color: #4f74ce;
+//        }
+//
+//        a {
+//            color: #999;
+//        }
+//    }
+//
+//    span,
+//    a {
+//        display: block;
+//        font-size: 14px;
+//        white-space: nowrap;
+//        text-align: center;
+//    }
+//}

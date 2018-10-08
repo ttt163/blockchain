@@ -1,0 +1,244 @@
+/**
+ * Author: liushaozong
+ * Time: 2018-08-20
+ * Description: activity
+ */
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+@import "./modules/m-topNav";
+
+body {
+    color: #222;
+    background-color: #fff;
+}
+
+.m-activity-box {
+    width: rem(640);
+    height: auto;
+    padding-top: rem(185);
+
+    .m-activity-banner {
+        width: 100%;
+        height: rem(465);
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+
+            .swiper-slide {
+                width: 100%;
+                height: 100%;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                background: #000;
+
+                &.swiper-pagination-bullet-active {
+                    background: #000;
+                }
+            }
+        }
+    }
+
+    .site-scope {
+        width: 100%;
+        height: rem(85);
+        line-height: rem(85);
+        background: #fff;
+        border-bottom: rem(1) #e1e1e1 solid;
+        overflow: hidden;
+
+        .site-box {
+            width: rem(580);
+            height: rem(85);
+            line-height: rem(85);
+            color: #222;
+            margin: 0 auto;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                display: none !important;
+                width: 0 !important;
+            }
+
+            .site-con {
+                position: relative;
+                line-height: rem(81);
+                white-space: nowrap;
+                display: flex;
+
+                span {
+                    float: left;
+                    margin-right: rem(40);
+                    font-size: rem(24);
+                    flex-direction: column;
+
+                    &.active {
+                        border-bottom: rem(4) #0c7ff2 solid;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    .scope-box {
+        width: 100%;
+        height: rem(80);
+        line-height: rem(80);
+        border-bottom: rem(1) #e1e1e1 solid;
+
+        span {
+            display: block;
+            float: left;
+            width: 33%;
+            height: rem(80);
+            line-height: rem(80);
+            text-align: center;
+            color: #888;
+            font-size: rem(24);
+
+            &.active {
+                color: #0c7ff2;
+            }
+        }
+    }
+
+    .activity-list {
+        width: 100%;
+        height: auto;
+        // background: #f4f4f4;
+
+        .not-available {
+            width: rem(592);
+            height: rem(444);
+            background: url("../img/activity/not-available.jpg") no-repeat;
+            background-size: 100%;
+            margin: 0 auto;
+        }
+
+        .list {
+            width: rem(590);
+            height: rem(185);
+            margin: 0 auto;
+            padding: rem(25) 0;
+            border-bottom: rem(1) #eee solid;
+
+            img {
+                display: block;
+                float: left;
+                width: rem(255);
+                height: rem(185);
+                border-radius: rem(5);
+            }
+
+            .list-right {
+                width: rem(310);
+                height: rem(185);
+                float: right;
+
+                h5 {
+                    width: rem(310);
+                    height: rem(90);
+                    font-size: rem(26);
+                    color: #222;
+                    line-height: rem(30);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    margin-bottom: rem(10);
+                }
+
+                .state {
+                    display: block;
+                    width: rem(70);
+                    height: rem(40);
+                    background: #0c7ff2;
+                    font-size: rem(16);
+                    color: #fff;
+                    text-align: center;
+                    line-height: rem(40);
+                    border-radius: rem(5);
+                    margin-bottom: rem(10);
+
+                    &.end {
+                        background: #e6e6e6;
+                        color: #999;
+                    }
+                }
+
+                .list-site,
+                .list-time {
+                    width: 35%;
+                    height: rem(30);
+                    line-height: rem(30);
+                    float: left;
+                    font-size: rem(20);
+                    color: #222;
+                }
+
+                .list-time {
+                    float: right;
+                    width: 65%;
+                    text-align: right;
+
+                    span {
+                        display: inline-block;
+                        width: rem(16);
+                        height: rem(16);
+                        margin-right: rem(10);
+
+                        img {
+                            width: rem(16);
+                            height: rem(16);
+                        }
+                    }
+                }
+
+                .list-site {
+                    span {
+                        display: inline-block;
+                        width: rem(14);
+                        height: rem(19);
+                        margin-right: rem(10);
+
+                        img {
+                            width: rem(14);
+                            height: rem(19);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .activity-more {
+        width: rem(600);
+        height: rem(70);
+        line-height: rem(70);
+        margin: 0 auto rem(50);
+        text-align: center;
+        font-size: rem(22);
+        background: #f5f5f5;
+    }
+}

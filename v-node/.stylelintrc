@@ -1,0 +1,31 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": [
+    "./demo/*",
+    "./assets/css/public/share.min.scss"
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "indentation": 4,
+    "selector-pseudo-element-colon-notation": null,
+    "at-rule-no-unknown": null,
+    "font-family-no-duplicate-names": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "font-smoothing"
+        ]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ]
+  }
+}

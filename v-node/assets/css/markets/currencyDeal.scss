@@ -1,0 +1,123 @@
+/**
+ * Author：tantingting
+ * Time：2018/5/4
+ * Description：Description
+ */
+
+.currency-deal {
+    position: relative;
+    float: right;
+    width: 390px;
+    height: 260px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 1px 3px 5px 0 #888;
+
+    .kind {
+        position: absolute;
+        right: 30px;
+        width: 68px;
+        height: 38px;
+        padding: 0 10px;
+
+        a {
+            display: none;
+            width: 100%;
+            height: 100%;
+            line-height: 38px;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        font {
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            width: 15px;
+            height: 9px;
+        }
+    }
+
+    .Select {
+        width: 100px;
+        right: 10px;
+    }
+
+    .currency-price {
+        line-height: 40px;
+        width: 100%;
+        height: 50px;
+
+        h6 {
+            font-weight: bold;
+            float: left;
+            color: #212121;
+            font-size: 36px;
+        }
+
+        p {
+            float: left;
+            padding-top: 8px;
+            color: #66bb6a;
+            font-size: 18px;
+            margin-left: 20px;
+
+            &.lose {
+                color: #ef5350;
+            }
+        }
+    }
+
+    .deal-24 {
+        width: 100%;
+        height: 70px;
+        line-height: 60px;
+        color: #757575;
+        border-bottom: 1px #eee solid;
+
+        .highest-24,
+        .lowest-24 {
+            width: 50%;
+            float: left;
+
+            span {
+                color: #66bb6a;
+            }
+        }
+
+        .lowest-24 {
+            span {
+                color: #ef5350;
+            }
+        }
+    }
+
+    .market-price,
+    .sum-issue {
+        width: 100%;
+        height: 60px;
+        margin: 10px 0;
+        line-height: 30px;
+
+        .market-num,
+        .deal-num,
+        .market-quantity,
+        .issue-num {
+            width: 50%;
+            float: left;
+
+            span {
+                font-weight: bold;
+                color: #212121;
+            }
+
+            font {
+                display: block;
+                width: 100%;
+                color: #757575;
+            }
+        }
+    }
+}

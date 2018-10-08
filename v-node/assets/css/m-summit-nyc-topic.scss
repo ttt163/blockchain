@@ -1,0 +1,549 @@
+/**
+ * Author：tantingting
+ * Time：2018/8/13
+ * Description：Description
+ */
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+
+.page-contain {
+    width: rem(580);
+    margin: 0 auto;
+}
+
+.summit-warp {
+    background-color: #0a0f6b;
+
+    .page-title {
+        width: rem(508);
+        margin: 0 auto rem(38);
+        display: block;
+    }
+
+    .summit-page1 {
+        background: url("../img/nyc-topic-img/m--topic-bg1.png") left top no-repeat;
+        background-size: 100%;
+        width: 100%;
+        //height: rem(1135);
+        //height: rem(1275);
+        height: rem(760);
+        position: relative;
+
+        .btn-buy {
+            position: absolute;
+            top: rem(645);
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            background: url("../img/nyc-topic-img/m-topic-buy-bth.png");
+            width: rem(498);
+            height: rem(71);
+            background-size: contain;
+        }
+
+        .video-box {
+            position: absolute;
+            top: rem(930);
+            left: rem(70);
+
+            .video-contain {
+                width: rem(500);
+                height: rem(280);
+                position: relative;
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .mask {
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.8);
+                    z-index: 9;
+
+                    .video-play-btn {
+                        position: absolute;
+                        background: url("../img/nyc-topic-img/m-play-btn.png") no-repeat;
+                        background-size: contain;
+                        width: rem(109);
+                        height: rem(144);
+                        top: 50%;
+                        left: 50%;
+                        margin-top: rem(-72);
+                        margin-left: rem(-54.5);
+                    }
+                }
+            }
+        }
+
+        .live-box {
+            position: absolute;
+            top: rem(930);
+            left: rem(70);
+
+            .live-contain {
+                width: rem(500);
+                height: rem(280);
+                position: relative;
+
+                .live-content {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .mask {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.6);
+                    width: 100%;
+                    height: 100%;
+                    z-index: 9;
+                }
+
+                .live-play-btn {
+                    position: absolute;
+                    background: url("../img/nyc-topic-img/m-play-btn.png") no-repeat;
+                    background-size: contain;
+                    width: rem(109);
+                    height: rem(144);
+                    top: 50%;
+                    left: 50%;
+                    margin-top: rem(-72);
+                    margin-left: rem(-54.5);
+                    z-index: 10;
+                }
+
+                .live-text {
+                    font-size: rem(16);
+                    color: #fff;
+                    position: absolute;
+                    z-index: 10;
+                    top: rem(56);
+                    left: 50%;
+                    white-space: nowrap;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        .page-contain {
+            width: rem(500);
+        }
+
+        img {
+            display: block;
+        }
+
+        .top {
+            margin-bottom: rem(62);
+
+            .left {
+                float: left;
+                margin-top: rem(52);
+
+                .logo-img {
+                    width: rem(150);
+                    height: rem(47);
+                    margin-bottom: rem(36);
+                }
+
+                .top-left-img {
+                    width: rem(350);
+                    height: rem(466);
+                }
+            }
+
+            .right {
+                float: right;
+                margin-top: rem(68);
+                width: rem(108);
+                height: rem(104);
+            }
+        }
+
+        .title-img {
+            width: rem(498);
+            height: rem(93);
+        }
+    }
+
+    .summit-page2 {
+        background: url("../img/nyc-topic-img/m--topic-bg2.png") left top no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: rem(666);
+
+        .page2-swiper {
+            width: 100%;
+            height: rem(315);
+            margin-bottom: rem(60);
+
+            .swiper-container {
+                height: 100%;
+
+                .swiper-slide {
+                    width: rem(500);
+                    //width: 78.125% !important;
+                    height: 100%;
+                    margin: 0 auto;
+
+                    a {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .mode {
+                            display: block;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 30%;
+                            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+                        }
+
+                        h3 {
+                            font-size: rem(28);
+                            color: #fff;
+                            position: absolute;
+                            bottom: rem(22);
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .live-box {
+            position: relative;
+            height: rem(170);
+
+            .live-list-warp {
+                //height: 100%;
+                overflow: hidden;
+                background: url("../img/nyc-topic-img/m-topic-borer.png") no-repeat;
+                background-size: contain;
+                width: rem(580);
+                height: rem(160);
+            }
+
+            .live-list {
+                transition: all 1s ease;
+
+                .live-item {
+                    color: #fff;
+                    font-size: rem(26);
+                    display: block;
+                    padding-left: rem(18);
+                    padding-top: rem(22);
+                    box-sizing: border-box;
+                    width: rem(580);
+                    height: rem(160);
+                    margin-bottom: rem(20);
+
+                    &:nth-last-of-type(1) {
+                        margin-bottom: 0;
+                    }
+
+                    .live-data {
+                        float: left;
+
+                        span {
+                            display: block;
+                            color: #59b3ff;
+                        }
+
+                        .time {
+                            font-size: rem(28);
+                            margin-bottom: rem(12);
+                        }
+
+                        .date {
+                            font-size: rem(16);
+                        }
+                    }
+
+                    h3 {
+                        color: #fff;
+                        float: left;
+                        width: rem(425);
+                        line-height: rem(40);
+                        margin-left: 16px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 3;
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            .button-next {
+                position: absolute;
+                top: rem(50);
+                right: rem(-18);
+                z-index: 3;
+                width: rem(40);
+                height: rem(60);
+                background: rgba(1, 82, 229, 0.8);
+                text-align: center;
+                line-height: rem(60);
+
+                .iconfont {
+                    font-size: rem(30);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .summit-page3 {
+        position: relative;
+        width: 100%;
+        min-height: rem(759);
+        background-color: #040377;
+        padding-bottom: rem(95);
+        box-sizing: border-box;
+
+        /* .bg-top {
+            display: none;
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: rem(317);
+            background: url("../img/nyc-topic-img/m--topic-bg3-top.jpg") top left no-repeat;
+            background-size: contain;
+        } */
+
+        .bg-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("../img/nyc-topic-img/m--topic-bg3.png") bottom left no-repeat;
+            background-size: 100%;
+        }
+
+        .page3-contain {
+            position: relative;
+            z-index: 2;
+
+            .news-list {
+                .news-item {
+                    display: block;
+                    color: #fff;
+                    margin-bottom: rem(30);
+                    height: rem(142);
+
+                    &:nth-last-of-type(1) {
+                        margin-bottom: 0;
+                    }
+
+                    .news-img {
+                        width: rem(230);
+                        height: 100%;
+                        overflow: hidden;
+                        float: left;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .news-right {
+                        position: relative;
+                        float: right;
+                        width: rem(330);
+                        height: 100%;
+
+                        h3 {
+                            line-height: rem(34);
+                            font-size: rem(28);
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
+                            opacity: 0.8;
+                        }
+
+                        span {
+                            color: #727fe6;
+                            font-size: rem(20);
+                            display: block;
+                            position: absolute;
+                            bottom: 0;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+
+            .news-no-more {
+                display: block;
+                background: url("../img/nyc-topic-img/m-topic-no-more.png") no-repeat;
+                background-size: contain;
+                width: rem(116);
+                height: rem(23);
+                margin: rem(70) auto 0;
+            }
+
+            .news-more-btn {
+                display: block;
+                background: url("../img/nyc-topic-img/m-topic-more-bth.png") no-repeat;
+                background-size: contain;
+                width: rem(580);
+                height: rem(80);
+                margin: rem(40) auto 0;
+            }
+        }
+    }
+
+    .summit-page5 {
+        background-color: #01045e;
+
+        .page-contain {
+            width: rem(427);
+            margin: 0 auto;
+            font-size: 0;
+            color: #8580ee;
+            text-align: center;
+        }
+
+        label {
+            margin-bottom: rem(20);
+            font-size: rem(18);
+            display: block;
+        }
+
+        img {
+            display: inline-block;
+        }
+
+        .page5-zb {
+            margin-bottom: 40px;
+
+            img {
+                width: rem(427);
+                height: rem(38);
+            }
+        }
+
+        .page5-lhzb {
+            margin-bottom: 50px;
+
+            img {
+                width: rem(362);
+                height: rem(42);
+            }
+        }
+    }
+}
+
+// 底部
+footer {
+    padding-top: rem(42);
+    padding-bottom: rem(50);
+    background-color: #1b1771;
+
+    .top {
+        border-bottom: 1px solid #242075;
+        padding-bottom: rem(18);
+        opacity: 0.8;
+        display: none;
+
+        h4 {
+            font-size: rem(22);
+            color: #fff;
+            margin-bottom: rem(28);
+        }
+
+        .contact-box {
+            font-size: rem(20);
+            color: #929bbd;
+
+            p {
+                margin-bottom: rem(24);
+            }
+
+            .right {
+                float: right;
+            }
+
+            .left {
+                float: left;
+                margin-right: rem(48);
+            }
+        }
+    }
+
+    .bottom {
+        margin-top: rem(20);
+        opacity: 0.8;
+
+        .left {
+            float: left;
+            font-size: rem(16);
+            color: #929bbd;
+        }
+
+        .right {
+            float: right;
+            font-size: 0;
+
+            a {
+                display: inline-block;
+                vertical-align: middle;
+
+                img {
+                    &.telegram {
+                        width: rem(31);
+                        height: rem(25);
+                    }
+
+                    &.weibo {
+                        width: rem(35);
+                        height: rem(27);
+                    }
+                }
+            }
+
+            .v-line {
+                display: inline-block;
+                vertical-align: middle;
+                height: rem(16);
+                width: 1px;
+                background-color: #31186c;
+                margin: 0 rem(18);
+            }
+        }
+    }
+}
+
+a {
+    color: #374fa9;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}

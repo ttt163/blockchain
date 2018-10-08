@@ -1,0 +1,81 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-04-08 15:45
+ * Description：index
+ */
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/rem";
+
+body {
+    background: #fff;
+}
+
+.m-appDown {
+    width: rem(640);
+    height: auto;
+    position: relative;
+
+    img {
+        display: block;
+        width: rem(640);
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .app-down1,
+    .app-down2 {
+        position: absolute;
+        left: rem(135);
+        width: rem(370);
+        height: rem(80);
+        font-size: rem(28);
+        text-align: center;
+        line-height: rem(80);
+        border-radius: rem(50);
+    }
+
+    .app-down1 {
+        top: rem(465);
+        background: #2889f4;
+        color: #fff;
+    }
+
+    .app-down2 {
+        bottom: rem(80);
+        background: #fff;
+        color: #409afd;
+    }
+
+    h1 {
+        position: absolute;
+        top: rem(528);
+        left: rem(150);
+        width: rem(340);
+        height: rem(80);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: rem(40);
+        margin: 0 auto;
+        font-size: rem(26);
+        color: #4a4a4a;
+    }
+
+    .m-appDownWx {
+        position: absolute;
+        right: rem(44);
+        top: rem(850);
+        width: rem(180);
+        height: rem(60);
+        background: #2687f4;
+        border-radius: 50px;
+        line-height: rem(60);
+        text-align: center;
+        font-size: rem(24);
+        color: #fff;
+    }
+}

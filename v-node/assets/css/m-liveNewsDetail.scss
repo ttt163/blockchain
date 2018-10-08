@@ -1,0 +1,100 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：header roll msg
+ */
+
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+@import "./modules/m-topNav";
+
+.flash-news-content {
+    position: relative;
+    width: rem(589);
+    margin: 0 auto;
+    padding: rem(32) 0 rem(50);
+
+    .flash-news-list {
+        background-color: #fff;
+        color: #757575;
+        font-size: rem(20.47);
+        box-sizing: border-box;
+
+        .flash-news-date-box {
+            color: #424242;
+
+            .left {
+                float: left;
+                width: rem(69);
+                height: rem(69);
+                background-color: #0a7ff2;
+                color: #fff;
+                margin-right: rem(18);
+                text-align: center;
+                border-radius: 50%;
+
+                h2 {
+                    font-size: rem(34.12);
+                    font-weight: bold;
+                    margin-top: rem(4);
+                    //margin-bottom: rem(4);
+                }
+
+                p {
+                    font-size: rem(17.06);
+                    color: #8ed0ff;
+                }
+            }
+
+            .right {
+                display: inline-block;
+                font-size: rem(23.89);
+                margin-top: rem(16);
+                line-height: rem(40);
+                color: #424242;
+
+                div {
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    span {
+                        margin-right: rem(16);
+                    }
+                }
+
+                h2 {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        .live-news-contain {
+            h3 {
+                font-size: rem(28);
+                line-height: rem(40);
+                color: #212121;
+                margin: rem(20) 0;
+            }
+
+            p {
+                font-size: rem(24);
+                color: #424242;
+                line-height: rem(40);
+                margin-bottom: rem(24);
+                text-align: justify;
+            }
+
+            img {
+                margin-bottom: 24px;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

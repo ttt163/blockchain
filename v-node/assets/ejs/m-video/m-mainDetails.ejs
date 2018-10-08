@@ -1,0 +1,41 @@
+<div class="swiper-container wrap-box" id="hxwrap">
+    @@include('../modules/m-topNav.ejs')
+    <div class="swiper-wrapper overall-box" id="overAllBox">
+        <!--新闻-->
+        <div id="currNewsBox"  class="video-detail white-bg" data-id="<%= data.searchId %>">
+            <div class="curr-video" data-id=<%= data.current.id %>>
+                <%
+                let notVideo = !data.current.url || data.current.url.indexOf('[{') || !JSON.parse(data.current.url)[0].fileUrl
+                 %>
+                <div class="video-wrap" style="display: <%= !notVideo ? 'block' : 'none' %>">
+                    <video poster="<%= !data.current.coverPic || !JSON.parse(data.current.coverPic).video_m ? '' : JSON.parse(data.current.coverPic).video_m%>" controls="controls" src="<%= !notVideo ? JSON.parse(data.current.url)[0].fileUrl : '' %>" preload="metadata"></video>
+                </div>
+                <div class="video-cont">
+                    <h4 class="v-title"><%= data.current.title %></h4>
+                    <div class="video-bottom clearfix">
+
+                        <div class="user">
+                            <img alt="<%= data.current.author %>" src="<%= data.current.iconUrl %>">
+                            <span><%= data.current.author %></span>
+                        </div>
+                        <div class="m-comment"><font></font><span><%= data.current.commentCounts %></span></div>
+                        <span><%= data.current.createTimeCont %></span>
+                    </div>
+                </div>
+            </div>
+            <!--最新视频-->
+            <div class="newest-video">
+                <h5>最新视频</h5>
+                <div class="newest-box"></div>
+            </div>
+            <!--评论-->
+            <div class="newest-video comment clearfix">
+                <h5>评论</h5>
+                <div class="comment-box clearfix"></div>
+            </div>
+            <a rel="nofollow" class="app-down clearfix" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.linekong.mars24">打开APP，参与讨论</a>
+        </div>
+    </div>
+</div>
+
+

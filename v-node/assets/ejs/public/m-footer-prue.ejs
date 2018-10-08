@@ -1,0 +1,87 @@
+<!-- public -->
+
+<script src="http://static.huoxing24.com/assets/zepto.min.js"></script>
+<script src="http://static.huoxing24.com/assets/touch.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<!--<script src="http://static.huoxing24.com/assets/jquery-1.12.0.min.js"></script>-->
+@@include('../modules/alertModal.ejs')
+<!-- plugin -->
+@@for (var i = 0 in plugin) {
+<script src="`+plugin[i]+`"></script>
+}
+
+<!-- private -->
+<script src="../js/vendors.js"></script>
+@@for (var i = 0 in private) {
+<script src="`+private[i]+`"></script>
+}
+
+<script>
+    function showAlert(content, time, callBack) {
+        var thisModal = $('#alertWarp')
+        var time = !time ? 2000 : time
+        thisModal.find('.alert-contain').html(content)
+        thisModal.css({'display': 'block'})
+        setTimeout(function(){
+            thisModal.find('.alert-contain').empty()
+            thisModal.css({'display': 'none'})
+            if (callBack) {
+                callBack()
+            }
+        }, time)
+    }
+    function isWeixin () {
+        const userAgent = window.navigator.userAgent.toLowerCase()
+
+        let flag = false
+        if (userAgent.indexOf('micromessenger') > -1) {
+            flag = true
+        }
+        return flag
+    }
+
+    if (isWeixin()) {
+        $.ajax({
+            type: 'post',
+            url: '/signture',
+            data: {url: window.location.href.split('#')[0]},
+            success: function (data) {
+                wx.config({
+                    debug: false,
+                    appId: 'wxec2dc083d4024311',
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ'
+                    ]
+                })
+                wx.ready(function () {
+                    var shareData = {
+                        title: '@@shreTitle',
+                        desc: '@@shareDesc',
+                        link: data.url,
+                        imgUrl: '@@shareImgurl'
+                    }
+                    wx.onMenuShareAppMessage(shareData)
+                    wx.onMenuShareTimeline(shareData)
+                    wx.onMenuShareQQ(shareData)
+                })
+                wx.error(function (err) {
+                    console.log(err.errMsg)
+                })
+            }
+        })
+    }
+</script>
+
+<!-- statistics -->
+<div style="display: none">
+    <script src="https://s22.cnzz.com/z_stat.php?id=1272858809&web_id=1272858809" language="JavaScript"></script>
+</div>
+
+</body>
+</html>

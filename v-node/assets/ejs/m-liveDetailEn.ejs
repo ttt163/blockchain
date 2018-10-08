@@ -1,0 +1,43 @@
+@@include("public/m-header.ejs", {
+"plugin": [""],
+"private": ["../css/liveListEn.css"]
+})
+<div class="wrap english" data-id=<%= data.castId %>>
+    <input type="hidden" id="refreshed" value="no">
+    <div class="banner-box">
+        <img class="banner-img" src="../../img/textLive/live-bannerEn.jpg" alt="">
+        <div class="introduction-btn" style="display: none"><span><img src="../img/textLive/left-l.png" alt=""></span>直播简介</div>
+        <div class="introduction-cont"><span id="left-btn"><img src="../img/textLive/right-r.png" alt=""></span>
+            <p></p></div>
+        <div class="live-time"><p class="time">Start time：<span></span></p>
+            <p class="lives-state"></p></div>
+    </div>
+    <div class="cont-box clearfix">
+        <div class="details-box clearfix" id="informBox">
+            <div id="informM" class="not-message">暂无直播内容...</div>
+        </div>
+        <div class="details-box clearfix" id="informComment">
+            <div id="commentM" class="not-message">暂无直播内容...</div>
+        </div>
+    </div>
+</div>
+<div class="live-ewm">
+    <p><img src="../img/textLive/live-ewm.jpg" alt=""></p>
+    <span>长按识别二维码加入微信群聊</span>
+</div>
+<div class="live-shade" id="liveShade"></div>
+</div>
+<footer class="details-bottom" style="display: none">
+    <img id="fileImg" src="../img/textLive/file-img.png" alt="" style="display:none">
+    <input type="file" id="fileInput" accept="" style="display:none">
+    <input id="liveComment" class="comment" type="text" placeholder="在这里输入你的评论"/>
+    <button class="submit" id="commentBtn">发送</button>
+</footer>
+
+@@include("public/m-footer-prue.ejs", {
+"plugin": [""],
+"private": ["../js/m-liveListEn.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

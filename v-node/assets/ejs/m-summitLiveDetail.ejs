@@ -1,0 +1,52 @@
+<!-- 公共头部 -->
+@@include("public/m-header.ejs", {
+"plugin": ["//g.alicdn.com/de/prismplayer/2.7.1/skins/default/aliplayer-min.css"],
+"private": ["../css/m-summitLiveDetail.css"]
+})
+
+<!-- 内容 -->
+<div class="wrap" data-id=<%= data.castId %>>
+    <input type="hidden" id="refreshed" value="no">
+    <!--峰会直播-->
+    <div class="summit-page1">
+        <div class="page-contain">
+            <div class="live-contain">
+                <video controls src="https://hx24-media.huoxing24.com/meeting/2018-08-29-00-02-20_2018-08-29-01-02-20.mp4"></video>
+                <!--<div class="prism-player" id="player-con"></div>-->
+            </div>
+        </div>
+    </div>
+    <div class="banner-box">
+        <div class="live-text">
+            <div class="cont-box clearfix">
+                <div class="swiper-pagination inform-btn"><span class="active" id="broadcastingRoom">直播厅</span><span
+                            id="discussionNum">讨论 <font id="personNum"></font></span></div>
+                <div class="details-box clearfix" id="informBox">
+                    <div id="informM" class="not-message">暂无直播内容...</div>
+                </div>
+                <div class="details-box clearfix" id="informComment">
+                    <div id="commentM" class="not-message">暂无直播内容...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="live-ewm">-->
+    <!--<p><img src="../img/textLive/live-ewm.jpg" alt=""></p>-->
+    <!--<span>长按识别二维码加入微信群聊</span>-->
+    <!--</div>-->
+    <!--<div class="live-shade" id="liveShade"></div>-->
+</div>
+<footer class="details-bottom">
+    <!--<img id="fileImg" src="../img/textLive/file-img.png" alt="" style="display:none">-->
+    <!--<input type="file" id="fileInput" accept="" style="display:none">-->
+    <input id="liveComment" class="comment" type="text" placeholder="在这里输入你的评论"/>
+    <button class="submit" id="commentBtn">发送</button>
+</footer>
+<!-- 公共底部 -->
+@@include("public/m-footer-prue.ejs", {
+"plugin": ["//g.alicdn.com/de/prismplayer/2.7.1/aliplayer-min.js"],
+"private": ["../js/m-summitLiveDetail.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

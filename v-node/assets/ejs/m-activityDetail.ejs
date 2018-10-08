@@ -1,0 +1,56 @@
+<!-- 公共头部 -->
+@@include('public/m-header.ejs', {
+"plugin": [],
+"private": ["../css/m-activityDetail.css", "/plugin/simditor.css"]
+})
+<%
+const formatDate = (date, str) => {
+    let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return y + '年' + zero(m) + '月' + zero(d) + '日'
+    } else {
+        return ''
+    }
+}
+%>
+@@include('./modules/m-topNav.ejs')
+<%
+var coverPic = JSON.parse(data.desData.coverPic)
+%>
+<div class="m-activity-detail">
+    <div class="m-banner"><img src="<%=coverPic.wap_small%>" alt=""></div>
+    <div class="detail-introduce">
+        <h1><%=data.desData.title%></h1>
+        <h6>活动时间：<%=parseInt(data.desData.endTime) - parseInt(data.desData.startTime) < 86400000 ? formatDate(data.desData.startTime) : (formatDate(data.desData.startTime) + '-' + formatDate(data.desData.endTime))%></h6>
+        <h6 class="site clearfix">活动地点：<span><%=data.desData.detailPlace%></span></h6>
+        <h6>联系方式：<%=data.desData.connection%></h6>
+        <h6>费用：<%=data.desData.fee%>CNY</h6>
+        <a class="apply" style="display: <%=data.desData.url === '' ? 'none' : 'block'%>" href="<%=data.desData.url%>" target="_blank">立即参与</a>
+        <div class="notApply" style="display: <%=data.desData.url === '' ? 'block' : 'none'%>" href="<%=data.desData.url%>" target="_blank">立即参与</div>
+    </div>
+    <div class="detail-feature">
+        <h5>活动特色</h5>
+        <p><%=data.desData.synopsis%></p>
+    </div>
+    <div class="detail-cont simditor">
+        <h5>活动内容</h5>
+        <div class="detail-text simditor-body">
+            <%-data.desData.content%>
+        </div>
+    </div>
+</div>
+<!-- 公共底部 -->
+@@include("public/m-footer-prue.ejs", {
+"plugin": [],
+"private": ["../js/m-common.js", "../js/m-activityDetail.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

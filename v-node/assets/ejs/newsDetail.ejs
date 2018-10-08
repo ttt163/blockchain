@@ -1,0 +1,14 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.min.css", "/plugin/share/share.min.css"],
+"private": ["../css/newsDetail.css"]
+})
+
+<!-- 内容 -->
+@@include('newsDetail/newsDetailMain.ejs')
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.jquery.min.js", "http://static.huoxing24.com/assets/share/jquery.share.min.js"],
+"private": ["../js/common.js", "../js/newsDetail.js"]
+})

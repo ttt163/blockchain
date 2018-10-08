@@ -1,0 +1,99 @@
+<%
+const formatDate = (date, str) => {
+    // let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return zero(m) + '-' + zero(d)
+    } else {
+        return ''
+    }
+}
+const getTimeContent = (publishTime, requestTime) => {
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime)
+    }
+    return content
+}
+%>
+@@include('../modules/m-topNav.ejs')
+<div class="swiper-container wrap-box" id="hxwrap">
+    <div class="swiper-wrapper overall-box" id="overAllBox">
+        <!--新闻-->
+        <div id="currNewsBox" class="details openClass" data-tags="<%= data.current.tags %>" data-id="<%= data.current.id %>" data-score="<%= data.current.score %>">
+            <div class="details-header">
+                <h6 id="flashNewsTime"><%= data.current.title %></h6>
+                <div class="list-text">
+                    <div class="author">
+                        <%= data.current.cateId === 1 ? data.current.nickName : data.current.author %>
+                    </div>
+                    <div class="time clearfix">
+                        <span><%= getTimeContent(data.current.publishTime, data.timestamp) %></span></div>
+                    <div class="read-number"><%= data.current.hotCounts %></div>
+                </div>
+            </div>
+
+            <div class="<%= !data.current.synopsis ? 'details-synopsis' : 'details-synopsis active' %>"
+                 id="detailsSynopsis">
+                <p>
+                    <%= data.current.synopsis %>
+                </p>
+            </div>
+            <%
+            let notAudio = !data.current.audio || data.current.audio.indexOf('[{') || !JSON.parse(data.current.audio)[0].fileUrl
+            let notVideo = !data.current.video || data.current.video.indexOf('[{') || !JSON.parse(data.current.video)[0].fileUrl
+            %>
+            <div class="audio-wrap" data-audio="<%= !notAudio ? data.current.audio : null %>">
+                <%
+                if (!notAudio) {
+                %>
+                @@include('./smusic.ejs')
+                <%
+                }
+                %>
+            </div>
+
+            <div class="video-wrap" style="display: <%= !notVideo ? 'block' : 'none' %>">
+                <video poster="<%= !data.current.coverPic || !JSON.parse(data.current.coverPic).video_m ? '' : JSON.parse(data.current.coverPic).video_m %>"
+                       src="<%= !notVideo ? JSON.parse(data.current.video)[0].fileUrl : '' %>" controls="controls"
+                       preload="metadata"></video>
+            </div>
+            <div class="simditor">
+                <div class="details-cont simditor-body">
+                    <%- data.current.content %>
+                </div>
+                <div class="lock-box">
+                    <a href="javascript:void(0)" class="lock-btn"><img src="../../img/m-img/news-lock.png"></a>
+                    <p>还有70%的精彩内容，下载APP解锁全文</p>
+                </div>
+                <!--<div class="conceal-box active">
+                    <div class="conceal-unfold" id="concealUnfold"><img src="../../img/m-img/unfold.png" alt=""></div>
+                    <a class="conceal-btn clearfix" id="concealBtn" data-id="<%=data.current.id%>">打开火星财经，阅读体验更佳</a>
+                </div>-->
+            </div>
+            <!--广告-->
+            <!--社区图片-->
+            <div class="community-img"><img src="../../img/m-img/community-img.png" alt="火星财经公众号"></div>
+            <div class="advertising">
+            </div>
+            <div class="news-correlation">
+                <h6><span></span>相关新闻</h6>
+                <div class="news-list-box">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

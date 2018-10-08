@@ -1,0 +1,179 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./hot-news/hot-news-list";
+@import "./public/Pagination";
+
+.news-hot-label {
+    .hot-top {
+        width: 1200px;
+        margin: 20px auto;
+        position: relative;
+
+        .hot-top-swiper {
+            width: 100%;
+
+            .hot-swiper {
+                .swiper-slide {
+                    height: 430px;
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    h3 {
+                        width: 100%;
+                        color: #fff;
+                        font-size: 18px;
+                        position: absolute;
+                        bottom: 0;
+                        text-align: center;
+                        height: 40px;
+                        line-height: 40px;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        z-index: 9;
+                    }
+                }
+
+                .swiper-pagination-bullets {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    width: 16px;
+                    bottom: auto;
+                    height: auto;
+                    left: auto;
+                    transform: translateY(-50%);
+
+                    .swiper-pagination-bullet {
+                        width: 16px;
+                        height: 16px;
+                        background-color: #fff;
+                        opacity: 0.4;
+                        margin: 0 0 14px;
+
+                        &:nth-last-of-type(1) {
+                            margin-bottom: 0;
+                        }
+
+                        &.swiper-pagination-bullet-active {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .news-con {
+        width: 1200px;
+        margin: 20px auto;
+
+        .news-con-top {
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #999;
+
+            .tabs {
+                float: left;
+
+                a {
+                    display: block;
+                    float: left;
+                    padding: 0 20px;
+                    background-color: #f9f9f9;
+                    margin-right: 8px;
+                    color: #666;
+
+                    &.active {
+                        background-color: #fff;
+                        color: #387dea;
+                    }
+                }
+            }
+
+            & > p {
+                float: right;
+                height: 50px;
+
+                span {
+                    color: #387dea;
+                    font-size: 20px;
+                    margin: 0 5px;
+                }
+            }
+        }
+
+        .news-con-warp {
+            width: 100%;
+            background-color: #fff;
+            padding-bottom: 35px;
+        }
+
+        .pagination {
+            padding: 50px 0 0;
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+
+        .f-pagination {
+            li {
+                a {
+                    color: #fff;
+                    font-size: 16px;
+                }
+            }
+
+            .next,
+            .prev {
+                border: 0;
+                background: transparent;
+                color: #666;
+                margin-left: 22px;
+
+                a {
+                    color: #666;
+                }
+            }
+
+            .prev {
+                margin-right: 30px;
+            }
+
+            .pagination-item {
+                background: #d7d7d7;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: #fff;
+                    border-color: #387dea;
+
+                    a {
+                        color: #387dea;
+                    }
+                }
+
+                &.curr {
+                    background-color: #387dea;
+                    border-color: #387dea;
+
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

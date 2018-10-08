@@ -1,0 +1,62 @@
+<!--最新快讯-->
+<%
+const getTimeContentToTime = (publishTime, requestTime) => {
+    requestTime = !requestTime ? new Date().getTime() : requestTime
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else {
+        content = formatDateToTime(publishTime)
+    }
+    return content
+}
+// 格式化时间, 没有年
+const formatDateToTime = (date) => {
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    const h = time.getHours()
+    const mn = time.getMinutes()
+    if (date) {
+        return `${zero(h)}:${zero(mn)}`
+    } else {
+        return ''
+    }
+}
+%>
+<div class="index-new-filsh">
+    <div class="d-new-cont">
+        <div class="title">
+            <h3><a href="<%= domain %>/livenews" target="_blank" title="7*24小时快讯">7x24H 快讯</a></h3>
+            <a href="<%= domain %>/livenews" target="_blank" title="7*24小时快讯" class="more"></a>
+        </div>
+        <div id="listContent" class="list-items-box">
+            <div class="item-box">
+                <% data.newsFlash.map((item, index) => {
+                    let startIndex = item.content.indexOf('【') === -1 ? 0 : item.content.indexOf('【') + 1
+                    let endIndex = item.content.indexOf('】') === -1 ? 0 : item.content.indexOf('】')
+                    let title = item.content.substring(startIndex, endIndex)
+                    let content = item.content.substring(endIndex + 1)
+                %>
+                <div class="item <%= parseInt(item.tag) === 2 ? 'item-icons import' : 'item-icons' %>"
+                     id="<%= item.id %>">
+                    <div class="time-left">
+                        <span><%= getTimeContentToTime(item.createdTime, '') %></span>
+                    </div>
+                    <a target="_blank" title="<%= content %>" href="<%= domain %>/liveNewsDetail/<%= item.id %>">
+                        <h3><%= title %></h3></a>
+                    <div class="share-box">
+                        <span>分享:</span>
+                        <div class="share-newFlash" data-description="<%= title %>"
+                             data-url="<%= domain %>/liveNewsDetail/<%= item.id %>" data-qq-title="<%= title %>"
+                             data-weibo-title="<%= title %>"></div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <a class="filsh-more" target="_blank" href="/livenews" title="查看更多">查看更多</a>
+    </div>
+</div>

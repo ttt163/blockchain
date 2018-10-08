@@ -1,0 +1,107 @@
+<div class="bottom-down">
+    <div class="b-logo">
+        <div class="swiper-container bottom-swiper" id="bottomSwiperBox">
+            <div class="swiper-wrapper" id="bottomSwiper"></div>
+            <div class="swiper-pagination bottom-pagination" id="bottomPagination"></div>
+        </div>
+        <a class="b-down">App打开</a>
+    </div>
+</div>
+
+<div class="hint"><img src="../img/m-img/wx-hint.png" alt="火星财经"></div>
+@@include('../modules/alertModal.ejs')
+<!-- public -->
+
+<script src="http://static.huoxing24.com/assets/zepto.min.js"></script>
+<script src="http://static.huoxing24.com/assets/touch.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<!--<script src="http://static.huoxing24.com/assets/jquery-1.12.0.min.js"></script>-->
+<!-- plugin -->
+@@for (var i = 0 in plugin) {
+<script src="`+plugin[i]+`"></script>
+}
+
+<!-- private -->
+<script src="../js/vendors.js"></script>
+@@for (var i = 0 in private) {
+<script src="`+private[i]+`"></script>
+}
+
+<script>
+    function showAlert(content, time, callBack) {
+        var thisModal = $('#alertWarp')
+        var time = !time ? 2000 : time
+        thisModal.find('.alert-contain').html(content)
+        thisModal.css({'display': 'block'})
+        setTimeout(function(){
+            thisModal.find('.alert-contain').empty()
+            thisModal.css({'display': 'none'})
+            if (callBack) {
+                callBack()
+            }
+        }, time)
+    }
+    function isWeixin () {
+        const userAgent = window.navigator.userAgent.toLowerCase()
+
+        let flag = false
+        if (userAgent.indexOf('micromessenger') > -1) {
+            flag = true
+        }
+        return flag
+    }
+
+    // 微信分享
+    if (isWeixin()) {
+        $.ajax({
+            type: 'post',
+            url: '/signture',
+            data: {url: window.location.href.split('#')[0]},
+            success: function (data) {
+                wx.config({
+                    debug: false,
+                    appId: 'wxec2dc083d4024311',
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ'
+                    ]
+                })
+                wx.ready(function () {
+                    var shareData = {
+                        title: '@@shreTitle',
+                        desc: '@@shareDesc',
+                        link: data.url,
+                        imgUrl: '@@shareImgurl',
+                        success: function () {
+                            // 用户确认分享后执行的回调函数
+                            showAlert('分享成功！')
+                        },
+                        cancel: function () {
+                            // 用户取消分享后执行的回调函数
+                            showAlert('取消分享！')
+                        }
+                    }
+                    wx.onMenuShareAppMessage(shareData)
+                    wx.onMenuShareTimeline(shareData)
+                    wx.onMenuShareQQ(shareData)
+                })
+                wx.error(function (err) {
+                    console.log(err.errMsg)
+                })
+            }
+        })
+    }
+</script>
+
+<!-- statistics -->
+<div style="display: none">
+    <script src="https://s22.cnzz.com/z_stat.php?id=1272858809&web_id=1272858809" language="JavaScript"></script>
+</div>
+
+</body>
+</html>

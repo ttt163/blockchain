@@ -1,0 +1,85 @@
+<%
+const formatDate = (date, str) => {
+    // let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return zero(m) + '-' + zero(d)
+    } else {
+        return ''
+    }
+}
+const getTimeContent = (publishTime, requestTime) => {
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime)
+    }
+    return content
+}
+%>
+<div class="news">
+    <div class="news-con news-box-con clearfix">
+        <div class="news-list-wrap block-style clearfix">
+            <div id="newsListContent" data-id="<%= data.userId %>">
+                <% data.inforList.map((item) => { %>
+                <div class="index-news-list">
+                    <a title="<%= item.title %>" target="_blank"
+                       href="<%= domain %>/newsdetail/<%= `${item.id}.html` %>">
+                        <div class="list-left">
+                            <img src="<%= (!item.coverPic || !JSON.parse(item.coverPic).pc ? `http://static.huoxing24.com/images/2018/03/05/1520243882098653.svg` : JSON.parse(item.coverPic).pc) %>"
+                                 alt="<%= item.title %>">
+                        </div>
+                        <div class="list-right" style="width: 560px;">
+                            <h6 class="headline"><%= item.title %></h6>
+                            <div class="details"><%= item.synopsis %></div>
+                        </div>
+                    </a>
+                    <div class="list-bottom index-mian clearfix">
+                        <!--<p class="name"><%= item.author %></p>-->
+                        <p class="lock-time"
+                           style="padding: 0"><%= getTimeContent(item.publishTime, data.currentTime) %></p>
+                        <p class="read-num main-read-num">
+                            <span class="count-eye"></span>
+                            <span class="read-count">热度: <%= item.hotCounts %></span>
+                        </p>
+                    </div>
+                    <div class="shadow"></div>
+                </div>
+                <% }) %>
+            </div>
+            <div class="clearfix"></div>
+            <% if (data.recordCount > 10) { %>
+            <div data-currpage="<%= data.currentPage %>" data-pagecount="<%= data.pageCount %>"
+                 class="check-more-load clearfix">查看更多
+            </div>
+            <% } %>
+        </div>
+        <div class="new-right">
+            <div class="news-author clearfix">
+            </div>
+            <div class="ad-recomend clearfix">
+                <div class="aside-section">
+                    <div class="aside-title-name clearfix"><span class="aside-title-title">热门新闻</span></div>
+                    <div class="aside-title">
+                        <div class="aside-title-con">
+                            <div class="news-recommend clearfix" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

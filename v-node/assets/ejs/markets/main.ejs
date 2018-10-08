@@ -1,0 +1,151 @@
+<%
+let marketTitle = `关注,排名,名称,流通市值,价格,流通数量,成交额(24h),涨幅(24h),价格趋势(7d)`.split(',')
+let marketSort = `涨幅从高到低,涨幅从低到高,流通市值从高到低,流通市值从低到高,价格从高到低,价格从低到高,成交额从高到低,成交额从低到高`.split(',')
+let marketSortItem = [
+    {value: 'percent_change_24h-desc', tend: 'desc', id: marketSort[0]},
+    {value: 'percent_change_24h-asc', tend: 'asc', id: marketSort[1]},
+    {value: 'rank-asc', tend: 'asc', id: marketSort[2]},
+    {value: 'rank-desc', tend: 'desc', id: marketSort[3]},
+    {value: 'price_usd-desc', tend: 'desc', id: marketSort[4]},
+    {value: 'price_usd-asc', tend: 'asc', id: marketSort[5]},
+    {value: 'volume_usd_24h-desc', tend: 'desc', id: marketSort[6]},
+    {value: 'volume_usd_24h-asc', tend: 'asc', id: marketSort[7]}
+]
+
+const numTrans = (num) => {
+    if (num > 99999999) {
+        return {value: (num / 100000000).toFixed(3), label: '亿'}
+    } else if (num > 9999 && num < 99999999) {
+        return {value: (num / 10000).toFixed(3), label: '万'}
+    } else {
+        return {value: num, label: ''}
+    }
+}
+
+// 格式化价格 保留6位有效数字
+const formatPrice = (val) => {
+    if (!val) {
+        return 0
+    }
+    let price = Number(val)
+    if (isNaN(price)) {
+        return 0
+    }
+    if (val > 1) {
+        price = price.toPrecision(6)
+    } else {
+        let valStr = val.toString()
+        let str = valStr.substring(valStr.indexOf('.') + 1)
+        if (str > 5) {
+            price = price.toFixed(5)
+        } else {
+            price = val
+        }
+    }
+    return price
+}
+%>
+<div class="market-column-box" data-rate="<%= JSON.stringify(data.rateData) %>">
+    <div class="market-cut-tab"><p class="all active">全部</p>
+        <p class="my-attention ">我关注的</p>
+        <p class="attention-market" style="display: none;">概念行情</p>
+        <div class="sort sort-div">
+            <select value="rank-asc" class="sort-select">
+                <%
+                marketSortItem.map((item) => { %>
+                <option <%= item.value === 'rank-asc' ? 'selected' : '' %> value="<%= item.value %>"><%= item.id %></option>
+                <% })
+                %>
+            </select>
+        </div>
+        <div class="currency-type sort-div">
+            <select class="currency-select">
+                <option value="0">美元</option>
+                <option selected value="1">人民币</option>
+            </select>
+        </div>
+        <!--<div class="mining sort-div">
+            <select class="mining-select">
+                <option value="all">全部</option>
+                <option value="true">可以挖矿</option>
+                <option value="false">不可以挖矿</option>
+            </select>
+        </div>-->
+        <p class="search-keyword">
+            <input type="text" placeholder="输入货币名称搜索">
+            <a title="搜索" class="search">
+                <img src="../../img/market/search-btn.png" alt="搜索">
+            </a>
+        </p>
+    </div>
+    <div class="market-box-list">
+        <div class="market-tab">
+            <ul class="table-title-ul">
+                <li>关注</li>
+                <li>排名</li>
+                <li>名称</li>
+                <li>流通市值</li>
+                <li>价格</li>
+                <li>流通数量</li>
+                <li>成交额(24h)</li>
+                <li>涨幅(24h)</li>
+                <li>价格趋势(7d)</li>
+            </ul>
+        </div>
+        <div id="tableContain" data-list="<%=JSON.stringify(data.coinsData.coin)%>">
+            <%
+            if (data.coinsData.coin.length < 1) { %>
+            <div class="loading">
+                暂无相关内容...
+            </div>
+            <% } else { %>
+            <div class="market-tab-list">
+                <table>
+                    <tbody>
+                    <%
+                    data.coinsData.coin.map((item) => { %>
+                    <tr data-id="<%= item.coin_id %>" data-name="<%= `${item.symbol + (item.cn_name ? ('-' + item.cn_name) : '')}` %>">
+                        <td>
+                            <div data-type="<%= item.ifCollect %>"
+                                 class="attention <%= item.ifCollect === 1 ? 'active' : '' %>"
+                                 data-id="<%= item.coin_id %>"></div>
+                        </td>
+                        <td><%= item.rank %></td>
+                        <td class="coins-name-column">
+                            <font class="img-log">
+                                <img src="<%= item.icon %>" >
+                            </font>
+                            <span class="blue"><%= `${item.symbol + (item.cn_name ? ('-' + item.cn_name) : '')}` %></span>
+                        </td>
+                        <td>
+                            ￥<span><%= numTrans(item.available_supply * item.price_usd * parseFloat(data.rateData.CNY)).value %></span><%= numTrans(item.available_supply * item.price_usd * parseFloat(data.rateData.CNY)).label %>
+                        </td>
+                        <td class="blue">￥<%= formatPrice(item.price_usd * parseFloat(data.rateData.CNY)) %></td>
+                        <td>
+                            <span><%= numTrans(item.available_supply).value %></span><%= numTrans(item.available_supply).label %>
+                        </td>
+                        <td class="blue">
+                            ￥<span><%= numTrans(item.volume_usd_24h).value %></span><%= numTrans(item.volume_usd_24h).label %>
+                        </td>
+                        <td class="<%= `${item.percent_change_24h >= 0 ? 'green' : 'red'}` %>"><%= item.percent_change_24h %>
+                            %
+                        </td>
+                        <td>
+                            <img src="<%= !item.price_chart ? '../../img/market/no-data-img.png' : item.price_chart %>" >
+                        </td>
+                    </tr>
+                    <% })
+                    %>
+                    </tbody>
+                </table>
+            </div>
+            <% }
+            %>
+        </div>
+        <div class="pagination">
+            <ul class="f-pagination clearfix" id="pagination"
+                data-total="<%= !data.coinsData.count ? 0 : data.coinsData.count %>">
+            </ul>
+        </div>
+    </div>
+</div>

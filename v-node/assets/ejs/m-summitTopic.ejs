@@ -1,0 +1,17 @@
+<!-- 公共头部 -->
+@@include('public/m-header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css", "//g.alicdn.com/de/prismplayer/2.7.1/skins/default/aliplayer-min.css"],
+"private": ["../css/m-summit-topic.css"]
+})
+
+<!-- 内容 -->
+@@include('./m-summit/topic.ejs')
+
+<!-- 公共底部 -->
+@@include('public/m-footer-prue.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.js", "//g.alicdn.com/de/prismplayer/2.7.1/aliplayer-min.js"],
+"private": ["../js/m-common.js", " ../js/m-summit-topic.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

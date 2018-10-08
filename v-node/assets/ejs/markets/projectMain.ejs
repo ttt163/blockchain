@@ -1,0 +1,40 @@
+<%
+// 格式化价格 保留6位有效数字
+const formatPrice = (val) => {
+    if (!val) {
+        return 0
+    }
+    let price = Number(val)
+    if (isNaN(price)) {
+        return 0
+    }
+    if (val > 1) {
+        price = price.toPrecision(6)
+    } else {
+        let valStr = val.toString()
+        let str = valStr.substring(valStr.indexOf('.') + 1)
+        if (str > 5) {
+            price = price.toFixed(5)
+        } else {
+            price = val
+        }
+    }
+    return price
+}
+
+const renderLen = 11
+%>
+<div id="containMain" data-rate="<%= JSON.stringify(data.rateData) %>" data-id="<%= data.coinId %>" data-cname="<%= data.coinName %>">
+    @@include('./messageBanner.ejs')
+    <!-- tab header -->
+    <div class="project-info-head">
+        <div class="info-head">
+            <a data-type="material" class="active" title="项目数据"  href="<%= domain %>/project/<%= data.coinId %>"><span>项目数据</span></a>
+            <a data-type="news" class="" title="相关新闻" href="<%= domain %>/projectNews/<%= data.coinId %>"><span>相关新闻</span></a>
+        </div>
+    </div>
+    <div class="project-classify">
+        <!-- 项目数据 -->
+        @@include('./projectMaterial.ejs')
+    </div>
+</div>

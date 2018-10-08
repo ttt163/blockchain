@@ -1,0 +1,76 @@
+<div class="project-material">
+    <div class="project-tab">
+        <div class="bazaary-market-title"><span>
+                        <img src="../../img/market/market-title.png" alt="市场行情"></span>
+            <h3>市场行情</h3>
+        </div>
+        <div class="bazaary-market-wrap clearfix">
+            <div class="bazaary-market-left">
+                <div class="bazaary-market">
+                    <div class="market-tab-box">
+                        <table>
+                            <thead>
+                            <tr class="sort-heade">
+                                <td><span>排名</span></td>
+                                <td><span>交易所</span></td>
+                                <td><span>交易对</span></td>
+                                <td><span>价格</span></td>
+                                <td><span>成交额</span></td>
+                                <td><span>占比</span></td>
+                                <td><span>更新时间</span></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%
+                            if (!data.obj || !data.obj.recordCount || !data.obj.inforList.length) {
+                            %>
+                            <tr class="market-table-tr"><td colspan="7">暂无数据！</td></tr>
+                            <%
+                            } else {
+                                let list = data.obj.inforList
+                                list = list.length < renderLen ? list :list.slice(0, renderLen)
+                            list.slice(0, renderLen).map((exchangeItem) => {%>
+                            <tr class="market-table-tr">
+                                <td><span><%= exchangeItem.rank %></span></td>
+                                <td class="blue"><span><%= exchangeItem.exchange_name %></span></td>
+                                <td class="blue"><span><%= exchangeItem.pair %></span></td>
+                                <td><span>￥<%= formatPrice(parseFloat(exchangeItem.price * data.rateData.CNY)) %></span></td>
+                                <td><span><%= parseFloat(exchangeItem.volume_in_24h).toFixed(7) %></span></td>
+                                <td><span><%= exchangeItem.volume_rate_24h %>%</span></td>
+                                <td><span><%= exchangeItem.updated %></span></td>
+                            </tr>
+                            <%})
+                            }
+                            %>
+                            </tbody>
+                        </table>
+                        <div class="clearfix"></div>
+                        <div data-len="<%= renderLen %>" data-record="<%= data.obj.recordCount %>" class="project-table-more check-more-load clearfix" style="border-top: 1px solid rgb(238, 238, 238);">
+                            查看更多
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bazaary-market-right">
+                <div class="trading-rate">
+                    <div class="trading-rate-btn">
+                        <a title="交易所成交比" class="active"><span>交易所成交比</span></a>
+                    </div>
+                    <textarea id="pieData" hidden><%= !data.obj || !data.obj.recordCount || !data.obj.inforList.length ? [] : JSON.stringify(data.obj.inforList) %></textarea>
+                    <div class="trading-rate-chart">
+                        <div class="echarts-content" id="tradingRateChart" style="height: 270px;">
+                        </div>
+                    </div>
+                    <ul class="trading-rate-legend clearfix">
+                        <li><span style="background: rgb(217, 220, 227);"></span><em>Other</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="price-trend">
+            <div class="price-trend-title"><h3>价格趋势</h3></div>
+            <div class="high-charts-content" id="highChartsContent" style="height: 400px">
+            </div>
+        </div>
+    </div>
+</div>

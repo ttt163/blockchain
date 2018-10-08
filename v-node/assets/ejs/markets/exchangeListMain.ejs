@@ -1,0 +1,72 @@
+<%
+// 格式化价格 保留6位有效数字
+const formatPrice = (val) => {
+    if (!val) {
+        return 0
+    }
+    let price = Number(val)
+    if (isNaN(price)) {
+        return 0
+    }
+    if (val > 1) {
+        price = price.toPrecision(6)
+    } else {
+        let valStr = val.toString()
+        let str = valStr.substring(valStr.indexOf('.') + 1)
+        if (str > 5) {
+            price = price.toFixed(5)
+        } else {
+            price = val
+        }
+    }
+    return price
+}
+ %>
+<div id="containMain" data-rate="<%= JSON.stringify(data.rateData) %>" data-id="<%= data.coinId %>" data-cname="<%= data.coinName %>">
+    @@include('./messageBanner.ejs')
+    <div class="exchange-list-wrap block-style">
+        <div class="bazaary-market">
+            <div class="market-tab-box">
+                <table id="tableContain">
+                    <thead>
+                    <tr class="sort-heade">
+                        <td><span>排名</span></td>
+                        <td><span>交易所</span></td>
+                        <td><span>交易对</span></td>
+                        <td><span>价格</span></td>
+                        <td><span>成交额</span></td>
+                        <td><span>占比</span></td>
+                        <td><span>更新时间</span></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                    if (!data.obj || !data.obj.recordCount || !data.obj.inforList.length) {
+                    %>
+                    <tr class="market-table-tr"><td colspan="7">暂无数据！</td></tr>
+                    <%
+                    } else {
+                    data.obj.inforList.map((exchangeItem) => {%>
+                    <tr class="market-table-tr">
+                        <td><span><%= exchangeItem.rank %></span></td>
+                        <td class="blue"><span><%= exchangeItem.exchange_name %></span></td>
+                        <td class="blue"><span><%= exchangeItem.pair %></span></td>
+                        <td><span>￥<%= formatPrice(parseFloat(exchangeItem.price * data.rateData.CNY)) %></span></td>
+                        <td><span><%= parseFloat(exchangeItem.volume_in_24h).toFixed(7) %></span></td>
+                        <td><span><%= exchangeItem.volume_rate_24h %>%</span></td>
+                        <td><span><%= exchangeItem.updated %></span></td>
+                    </tr>
+                    <%})
+                    }
+                    %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pagination">
+            <ul class="f-pagination clearfix" id="pagination"
+                data-total="<%= !data.obj.recordCount ? 0 : data.obj.recordCount %>">
+            </ul>
+        </div>
+    </div>
+</div>

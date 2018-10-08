@@ -1,0 +1,65 @@
+<!-- 专栏作家 -->
+<div class="index-news-right clearfix">
+    <div class="index-author clearfix">
+        <div class="author-title clearfix">
+            <h3>专栏作家</h3>
+            <a href="/author" class="more" target="_blank"></a>
+        </div>
+        <div class="swiper-container author">
+            <div class="swiper-wrapper">
+                <%
+                let result = []
+                for (let i = 0; i < data.authorList.length; i += 8) {
+                    result.push(data.authorList.slice(i, i + 8))
+                }
+                result.map((ele, index) => {
+                %>
+                <div class="swiper-slide">
+                    <%
+                    ele.map((item, i) => {
+                    %>
+                    <div class="list-author">
+                        <div class="portrait-img">
+                            <a target="_blank"
+                               href="<%= domain %>/newsauthor/<%= item.passportId %>">
+                                <img title="<%= item.nickName %>" data-src="<%= item.iconUrl %>"
+                                     src="../../img/default-img.png" alt="<%= item.nickName %>">
+                                <%
+                                if (parseInt(item.role) === 2) {
+                                %>
+                                <span class="v-compile" title="官方账号"></span>
+                                <%
+                                }
+                                %>
+                                <%
+                                if (parseInt(item.vGrade) === 0) {
+                                %>
+                                <span class="v-ordinary"></span>
+                                <%
+                                } else if (parseInt(item.vGrade) === 1) {
+                                %>
+                                <span class="v-personal"></span>
+                                <%
+                                } else if (parseInt(item.vGrade) === 2) {
+                                %>
+                                <span clas="v-enterprise"></span>
+                                <%
+                                }
+                                %>
+                                <h5 title="<%= item.nickName %>"><%= item.nickName %></h5>
+                                <p title="<%= item.introduce %>"><%= item.introduce %></p>
+                            </a>
+                        </div>
+                    </div>
+                    <%
+                    })
+                    %>
+                </div>
+                <%
+                })
+                %>
+            </div>
+            <div class="swiper-pagination author-page"></div>
+        </div>
+    </div>
+</div>

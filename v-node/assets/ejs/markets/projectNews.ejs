@@ -1,0 +1,71 @@
+<%
+const formatDate = (date, str) => {
+    // let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return zero(m) + '-' + zero(d)
+    } else {
+        return ''
+    }
+}
+%>
+<div class="market-correlation-news clearfix">
+    <div class="news-let">
+        <div id="newsListContent">
+            <%
+            data.obj.inforList.map((item) => { %>
+            <div class="index-news-list">
+                <a title="<%= item.title %>" target="_blank" href="<%= domain %>/newsdetail/<%= item.id %>.html">
+                    <div class="list-left">
+                        <img alt="<%= item.title %>"
+                             src="<%= (!item.coverPic || !JSON.parse(item.coverPic).pc) ? `http://static.huoxing24.com/images/2018/03/05/1520243882098653.svg` : JSON.parse(item.coverPic).pc %>">
+                    </div>
+                    <div class="list-right" style="width: 455px;">
+                        <h2 class="headline"><%= item.title %></h2>
+                        <h3 class="details"><%= item.synopsis %></h3>
+                    </div>
+                </a>
+                <div class="list-bottom index-mian clearfix" style=" width: 455px;">
+                    <p class="name"><%= item.author %></p>
+                    <p class="lock-time"><%= formatDate(item.publishTime) %></p>
+                    <p class="read-num main-read-num">
+                        <span class="count-eye"> </span>
+                        <span class="read-count">热度：<%= item.hotCounts %></span>
+                    </p>
+                </div>
+                <div class="shadow" style="width: 730px;"></div>
+            </div>
+            <% })
+            %>
+        </div>
+        <div class="clearfix"></div>
+        <div id="newsMore" data-pagecount="<%= data.obj.pageCount %>" data-currpage="<%= data.obj.currentPage %>"
+             class="check-more-load clearfix">查看更多
+        </div>
+    </div>
+    <div class="news-right">
+        <ul class="correlation-news-title">
+            <li>市场</li>
+            <li>交易对</li>
+            <li>价格</li>
+            <li>占比</li>
+        </ul>
+        <div class="market-correlation-list">
+            <table>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="clearfix"></div>
+            <div class="check-more-load clearfix project-table-more"
+                 style="border-top: 1px solid rgb(238, 238, 238); margin-right: 10px;">
+                查看更多
+            </div>
+        </div>
+    </div>
+</div>

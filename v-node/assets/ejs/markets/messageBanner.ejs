@@ -1,0 +1,77 @@
+<div class="message-banner">
+    <div class="message-banner-box">
+        <div class="currency-introduce">
+            <div class="currency-title" data-name="<%= !data.coidInfo.cn_name ? data.coidInfo.cn_name : data.coidInfo.cn_name %>">
+                <span>
+                    <img src="<%= data.coidInfo.icon %>" alt="<%= data.coidInfo.cn_name %><%= data.coidInfo.name %>">
+                </span>
+                <h1><%= data.coidInfo.cn_name %><%= data.coidInfo.name %></h1>
+            </div>
+            <div class="attention">
+                <font>关注：</font>
+                <span data-name="<%= data.coidInfo.name %>" class="<%= data.coidInfo.ifCollect === 1 ? 'active' : '' %>" data-id="<%= data.coidInfo.ifCollect %>"></span>
+            </div>
+            <h2 class="currency-text"><%= data.coidInfo.description === '' ? '暂无信息' : data.coidInfo.description %></h2>
+            <div class="<%= data.coidInfo.description === '' ? 'particulars-btn none' : 'particulars-btn' %>">查看介绍</div>
+            <div style="clear: both;"></div>
+            <div class="currency-bazaar">
+                <p class="time">发行时间: <span><%= !parseInt(data.coidInfo.release_time)? '暂无信息' : new Date(data.coidInfo.release_time).toLocaleString().split(' ')[0].split('/').join('-') %></span></p>
+                <p class="putaway">上架交易所: <span><%= data.coidInfo.marketcount %></span>家</p>
+                <p class="ranking">市场排名: <span>第<font><%= data.coidInfo.rank %></font>名</span></p>
+            </div>
+            <div class="official">
+                <p>官方网站：</p>
+                <%
+                let websites = data.coidInfo.websites.split(',')
+                let explorer = data.coidInfo.explorer.split(',')
+                 %>
+                <span>
+                    <a rel="nofollow" title="<%= !websites[0] ? '暂无信息' : websites[0] %>" href="<%= websites[0] %>" target="_blank"><%= !websites[0] ? '暂无信息' : websites[0] %></a>
+                </span>
+                <span>
+                    <a rel="nofollow" title="<%= websites[1] %>" target="_blank" href="<%= websites[1] %>"><%= websites[1] %></a>
+                </span>
+            </div>
+            <div class="block">
+                <p>区块站：</p>
+                <span>
+                    <a rel="nofollow" title="<%= !explorer[0] ? '暂无信息' : explorer[0] %>" href="<%= explorer[0] %>" target="_blank"><%= !explorer[0] ? '暂无信息' : explorer[0] %></a>
+                </span>
+                <span>
+                    <a rel="nofollow" title="<%= explorer[1] %>" target="_blank" href="<%= explorer[1] %>"><%= explorer[1] %></a>
+                </span>
+            </div>
+        </div>
+        <div class="currency-deal">
+            <div class="kind">
+                <select id="currencySelect" class="currency-select">
+                    <option selected="" value="1">人民币</option>
+                    <option value="0">美元</option>
+                </select>
+            </div>
+            <div id="currencyDealContent">
+                <div class="currency-price">
+                    <h6 data-cn="<%= data.coidPrice.price_usd_cn %>" data-en="<%= data.coidPrice.price_usd_en %>"><font style="font-size: 28px;">￥</font><span><%= data.coidPrice.price_usd_cn %></span></h6>
+                    <p class="<%= parseFloat(data.percent_change_24h) > 0 ? 'float' : 'float lose' %>"><span><%= data.coidPrice.percent_change_24h %></span>%</p></div>
+                <div class="deal-24">
+                    <div data-cn="<%= data.coidPrice.high_price_in_24h_cn %>" data-en="<%= data.coidPrice.high_price_in_24h_en %>" class="highest-24"><font>24H最高：</font><span><%= data.coidPrice.high_price_in_24h_cn %></span></div>
+                    <div data-cn="<%= data.coidPrice.low_price_in_24h_cn %>" data-en="<%= data.coidPrice.low_price_in_24h_en %>" class="lowest-24"><font>24H最低：</font><span><%= data.coidPrice.low_price_in_24h_cn %></span></div>
+                </div>
+                <div class="market-price">
+                    <div data-cn="<%= data.coidPrice.available_supply_price_cn %>" data-en="<%= data.coidPrice.available_supply_price_en %>" class="market-num"><font>流通市值</font><span><%= data.coidPrice.available_supply_price_cn %></span></div>
+                    <div data-cn="<%= data.coidPrice.volume_usd_24h_cn %>" data-en="<%= data.coidPrice.volume_usd_24h_en %>" class="deal-num"><font>24H成交额</font><span><%= data.coidPrice.volume_usd_24h_cn %></span></div>
+                </div>
+                <div class="sum-issue">
+                    <div class="market-quantity"><font>流通量</font><span><%= data.coidPrice.available_supply %></span></div>
+                    <div class="issue-num"><font>总发行量</font><span><%= data.coidPrice.max_supply %></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="currency-introduce-pop">
+        <div class="close"></div>
+        <h6>项目介绍</h6>
+        <h2 class="introduce-cont"><%= data.coidInfo.description === '' ? '暂无信息' : data.coidInfo.description %></h2>
+    </div>
+    <div class="shade"></div>
+</div>

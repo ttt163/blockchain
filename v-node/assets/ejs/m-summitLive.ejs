@@ -1,0 +1,18 @@
+<!-- 公共头部 -->
+@@include('public/m-header.ejs', {
+"plugin": ["//g.alicdn.com/de/prismplayer/2.7.1/skins/default/aliplayer-min.css"],
+"private": ["../css/m-summit-live.css"],
+"title": "火星财经-区块链先锋门户"
+})
+
+<!-- 内容 -->
+@@include('./m-summit/live.ejs')
+
+<!-- 公共底部 -->
+@@include('public/m-footer-prue.ejs', {
+"plugin": ["//g.alicdn.com/de/prismplayer/2.7.1/aliplayer-min.js"],
+"private": ["../js/m-summit-live.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

@@ -1,0 +1,48 @@
+<!--顶部推广-->
+<%
+    let adLen = 7
+    const topAdData = !data.adData[11].length ? [] : data.adData[11]
+    let adGroup = Math.ceil(topAdData.length / adLen)
+ %>
+<div class="top-ad-swiper-wrap" style="display: <%= topAdData.length < adLen ? 'none' : 'block' %>">
+    <h6 class="ad-text">推广</h6>
+    <div class="top-ad-swiper-contain">
+        <div class="swiper-container top-ad-swiper">
+            <div class="swiper-wrapper">
+                <%
+                for (let i = 0; i < adGroup; i++) {
+                %>
+                <div class="swiper-slide clearfix">
+                    <%
+                        // let currGroup = topAdData.slice(i, (i + 1) * adadLen - 1)
+                        adLen = topAdData.length < (i + 1) * adLen ? topAdData.length - i * adLen : adLen
+                    for (let j = 0; j < adLen; j++) {
+                        let item = topAdData[i * adLen + j]
+                    %>
+                    <a href="<%= !item.url ? '' : item.url %>" target="_blank" class="slide-item clearfix" rel="nofollow">
+                        <div class="ad-info clearfix">
+                            <img src="<%= item.img_url %>" title="<%= item.title %>" alt="<%= item.title %>">
+                            <h5><%= item.title %></h5>
+                        </div>
+                        <p class="desc"><%= item.description %></p>
+                    </a>
+                    <%
+                    }
+                    %>
+                </div>
+                <%
+                }
+                %>
+            </div>
+        </div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev">
+            <i class="iconfont iconfont-left"></i>
+        </div>
+        <div class="swiper-button-next">
+            <i class="iconfont iconfont-right"></i>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>

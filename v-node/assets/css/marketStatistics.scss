@@ -1,0 +1,399 @@
+/**
+ * Author：yangbo
+ * Time：2018/8/29 15:39
+ * Description：marketStatistics.scss
+ */
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./index/topMarket";
+@import "./marketStatistics/marketHeat";
+@import "./marketStatistics/marketDateList";
+
+.main {
+    width: 100%;
+    background-color: #f5f7fa;
+    padding: 15px 0 40px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.pos {
+    position: relative;
+}
+
+.marketQuot-query,
+.marketDist-query,
+.marketRank-query,
+.marketRation-query,
+.marketAccer-query,
+.marketNewCoin-query,
+.marketVolume-query,
+.marketVolRatio-query {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('../img/market/answer-query.png') left top no-repeat;
+    position: absolute;
+    z-index: 9;
+
+    &:hover {
+        background-position: left bottom;
+
+        .answer-text {
+            display: block;
+        }
+    }
+
+    .answer-text {
+        border: 1px solid #eee;
+        padding: 16px 20px;
+        width: 270px;
+        background-color: #fff;
+        color: #7e7e7e;
+        font-size: 13px;
+        letter-spacing: 1px;
+        line-height: 20px;
+        border-radius: 6px;
+        position: absolute;
+        top: 30px;
+        left: -155px;
+        display: none;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 155px;
+            width: 12px;
+            height: 12px;
+            background: url("../img/market/answer-topArr.png") no-repeat;
+        }
+    }
+}
+
+.marketQuot-query {
+    top: 22px;
+    left: 180px;
+}
+
+.marketDist-query {
+    top: 22px;
+    left: 585px;
+}
+
+.marketRank-query {
+    top: 22px;
+    left: 190px;
+}
+
+.marketRation-query {
+    top: 21px;
+    left: 710px;
+
+    .answer-text {
+        left: -80px;
+
+        &:before {
+            left: 80px;
+        }
+    }
+}
+
+.marketAccer-query {
+    top: 22px;
+    left: 158px;
+
+    .answer-text {
+        left: -80px;
+
+        &:before {
+            left: 80px;
+        }
+    }
+}
+
+.marketNewCoin-query {
+    top: 22px;
+    left: 710px;
+
+    .answer-text {
+        left: -80px;
+
+        &:before {
+            left: 80px;
+        }
+    }
+}
+
+.marketVolume-query {
+    top: 22px;
+    left: 133px;
+
+    .answer-text {
+        left: -110px;
+
+        &:before {
+            left: 110px;
+        }
+    }
+}
+
+.marketVolRatio-query {
+    top: 22px;
+    left: 770px;
+
+    .answer-text {
+        left: -140px;
+
+        &:before {
+            left: 140px;
+        }
+    }
+}
+
+.part-one {
+    margin: 13px 0 20px;
+}
+
+.marketQuot,
+.marketDist {
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+
+.marketQuot {
+    float: left;
+    width: 348px;
+    height: 342px;
+}
+
+.marketDist {
+    float: right;
+    width: 828px;
+    height: 342px;
+}
+
+.marketRank {
+    border: 1px solid #eee;
+    background-color: #fff;
+    margin-top: 20px;
+    height: 520px;
+}
+
+.part-two {
+    padding: 13px 0 20px;
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .part-two-up {
+        margin-bottom: 21px;
+
+        .marketTreeMap,
+        .marketRation {
+            background-color: #fff;
+        }
+
+        .marketTreeMap {
+            float: left;
+            width: 590px;
+            height: 334px;
+        }
+
+        .marketRation {
+            float: right;
+            padding: 15px 20px;
+            width: 548px;
+            height: 302px;
+            border: 1px solid #eee;
+        }
+    }
+
+    .part-two-down {
+        .marketAccer,
+        .marketNewBox {
+            background-color: #fff;
+            width: 588px;
+            height: 494px;
+            border: 1px solid #eee;
+        }
+
+        .marketAccer {
+            float: left;
+        }
+
+        .marketNewBox {
+            float: right;
+            position: relative;
+
+            .marketNewCoin {
+                width: 100%;
+                height: 100%;
+            }
+
+            .new-coin-error {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url('../img/market/sevent-coin-error.png') center no-repeat #fff;
+                padding: 20px 26px;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                font-weight: bold;
+                z-index: 2;
+                color: #333;
+                display: none;
+            }
+        }
+    }
+}
+
+.part-three {
+    padding: 13px 0 20px;
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+}
+
+.part-four {
+    padding: 13px 0 20px;
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .marketVolRatio,
+    .marketVolume {
+        background-color: #fff;
+        border: 1px solid #eee;
+    }
+
+    .marketVolRatio {
+        float: right;
+        padding: 15px 20px;
+        width: 548px;
+        height: 350px;
+
+        h3 {
+            line-height: 26px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 13px;
+            color: #333;
+        }
+
+        .top-ten {
+            li {
+                margin-bottom: 15px;
+                cursor: default;
+
+                &.act {
+                    margin-bottom: 0;
+
+                    .market-vol-info {
+                        height: 50px;
+                    }
+                }
+            }
+
+            .market-progress,
+            .market-name,
+            .market-rank {
+                float: left;
+                color: #999;
+                font-size: 12px;
+                line-height: 100%;
+            }
+
+            .market-progress {
+                width: 432px;
+                height: auto;
+            }
+
+            .market-name {
+                width: 74px;
+                margin-left: 17px;
+            }
+
+            .market-rank {
+                width: 12px;
+                transform: rotate(-90deg);
+            }
+
+            .market-vol {
+                font-size: 0;
+                height: 12px;
+
+                .vol0,
+                .vol1,
+                .vol2 {
+                    display: inline-block;
+                    width: auto;
+                    height: 12px;
+                }
+
+                .vol0 {
+                    background-color: #94c9ff;
+                }
+
+                .vol1 {
+                    background-color: #8796fd;
+                }
+
+                .vol2 {
+                    background-color: #ff9580;
+                }
+            }
+
+            .market-vol-info {
+                font-size: 0;
+                transition: all 0.3s linear;
+                overflow: hidden;
+                height: 0;
+
+                .mark0,
+                .mark1,
+                .mark2 {
+                    font-size: 14px;
+                    display: inline-block;
+                    width: auto;
+
+                    span {
+                        display: block;
+                        text-align: center;
+                        line-height: 140%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .mark-name {
+                        color: #222;
+                        font-weight: bold;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .marketVolume {
+        float: left;
+        width: 588px;
+        height: 380px;
+    }
+}

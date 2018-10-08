@@ -1,0 +1,223 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：header roll msg
+ */
+
+.area-left {
+    width: 800px;
+    height: 450px;
+
+    .area-carousel {
+        width: 800px;
+        height: 335px;
+
+        .primary-carousel {
+            width: 532px;
+            height: 335px;
+            float: left;
+
+            .swiper-pagination {
+                top: 331px;
+            }
+
+            .swiper-container-horizontal {
+                .swiper-pagination-progress {
+                    background: #0c7ff2;
+                }
+            }
+
+            .per-bg,
+            .next-bg {
+                position: absolute;
+                left: 20px;
+                top: 135px;
+                z-index: 5;
+                width: 50px;
+                height: 50px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 50px;
+                text-align: center;
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.5);
+                    transition: all 0.5s ease 0s;
+                }
+            }
+
+            .next-bg {
+                left: 460px;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                background: none;
+
+                .iconfont {
+                    position: relative;
+                    color: #fff;
+                    top: 10px;
+                    font-size: 20px;
+                }
+            }
+
+            .comment-news-div {
+                width: 532px;
+                height: 335px;
+                margin: 0 auto;
+                transition: all 0.5s ease 0s;
+
+                .swiper-slide {
+                    width: 532px;
+                    height: 335px;
+
+                    &.comment-news {
+                        position: relative;
+                        background: #fff;
+                        float: left;
+
+                        a {
+                            display: block;
+                            width: 532px;
+                            height: 335px;
+                        }
+
+                        .ad-title {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            width: 40px;
+                            height: 20px;
+
+                            img {
+                                width: 40px;
+                                height: 20px;
+                            }
+                        }
+
+                        .img-div {
+                            width: 532px;
+                            height: 335px;
+                            overflow: hidden;
+
+                            img {
+                                transition: all 0.2s;
+                                width: 532px;
+                                height: 335px;
+                            }
+                        }
+
+                        &:hover {
+                            img {
+                                transform: scale(1.05);
+                            }
+                        }
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        .mode {
+                            display: inline-block;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 30%;
+                            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+                        }
+
+                        .title {
+                            margin: 10px;
+                            position: absolute;
+                            bottom: 0;
+                            line-height: 27px;
+                            font-size: 20px;
+                            color: #fff;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+
+                        .time {
+                            margin: 0;
+                            position: absolute;
+                            font-size: 14px;
+                            color: #bdbdbd;
+                            right: 14px;
+                            bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .recommend-cont {
+            width: 250px;
+            height: 335px;
+            float: right;
+
+            a {
+                position: relative;
+                display: block;
+                width: 250px;
+                height: 160px;
+                overflow: hidden;
+
+                &:first-child {
+                    margin-bottom: 15px;
+                }
+
+                img {
+                    width: 250px;
+                    height: 160px;
+                    transition: all 0.2s;
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 0;
+                    color: #fff;
+                    padding: 15px 20px 5px;
+                    width: 210px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+                }
+
+                .ad-title {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 40px;
+                    height: 20px;
+
+                    img {
+                        width: 40px;
+                        height: 20px;
+                    }
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
+
+    .hx-shiweng {
+        width: 800px;
+        height: 100px;
+        margin-top: 15px;
+        background: #d5dbe4;
+
+        img {
+            width: 800px;
+            height: 100px;
+        }
+    }
+}

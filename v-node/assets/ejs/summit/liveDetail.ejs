@@ -1,0 +1,90 @@
+<div class="summit-warp">
+    <div class="summit-page1">
+        <div class="page-contain">
+            <div class="live-contain">
+                <video controls src="https://hx24-media.huoxing24.com/meeting/2018-08-29-00-02-20_2018-08-29-01-02-20.mp4"></video>
+                <!--<div class="prism-player" id="player-con"></div>-->
+            </div>
+        </div>
+    </div>
+    <!--峰会直播-->
+    <div class="summit-page2" data-id="<%= data.liveId %>">
+        <div class="page-contain">
+            <div class="page2-warp">
+                <img class="page-title" src="../../img/summitLiveDetail/pc-live-title.png" alt="峰会直播">
+                <div class="page2-main">
+                    <div class="tab clearfix">
+                        <a class="tab-nav active" data-type="live" href="javascript:void(0)">直播</a>
+                        <a class="tab-nav" data-type="reply" href="javascript:void(0)">评论</a>
+                    </div>
+                    <div class="tab-contain">
+                        <div class="live-box-main">
+                            <div class="live-state state0"></div>
+                            <div class="live-list">
+                                <div class="live-content" id="livListBox">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reply-main-box">
+                            <div class="live-left-reply">
+                                <div id="replyBox"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--现场图集-->
+    <div class="summit-page3" style="display: <%= (!data.smallImg || !data.smallImg.length) && (!data.largeImg || !data.largeImg.length) ? 'none' : 'block'%>">
+        <div class="page-contain">
+            <img class="page-title" src="../../img/summitLiveDetail/pc-alts-title.png" alt="现场图集">
+            <div class="alts-content clearfix">
+                <div class="left">
+                    <!--轮播图-->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <%
+                            data.largeImg.map((item) =>{%>
+                            <div class="swiper-slide">
+                                <img src="<%= item.pcBigImg %>" alt="<%= item.title %>">
+                            </div>
+                            <%})
+                            %>
+                        </div>
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button-prev"><i class="iconfont iconfont-left"></i></div>
+                        <div class="swiper-button-next"><i class="iconfont iconfont-right"></i></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <%
+                    let smallImg = data.smallImg
+                    if (smallImg.length > 0) {
+                        if (smallImg.length > 4) {
+                            smallImg = smallImg.slice(0, 4)
+                        }
+                        let len = 2
+                    for (let i = 0; i < Math.ceil(smallImg.length / len); i++) {
+                    %>
+                    <div class="img-row clearfix">
+                        <%
+                        for (let j = 0; j < len; j++) {
+                            let item = smallImg[i*2 + j]
+                        if (item) {%>
+                        <img src="<%= item.pcSmallImg %>" alt="<%= item.title %>" />
+                        <%}
+                        %>
+                        <%
+                        }
+                        %>
+                    </div>
+                    <%
+                    }
+                    }
+                    %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

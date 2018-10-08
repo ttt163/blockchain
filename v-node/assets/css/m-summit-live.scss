@@ -1,0 +1,116 @@
+/**
+ * Author：tantingting
+ * Time：2018/8/13
+ * Description：Description
+ */
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+
+.live-warp {
+    background: url("../img/m-img/m-summit-live-bg.jpg") #210661 no-repeat top center;
+    background-size: contain;
+    width: rem(640);
+    height: rem(1138);
+
+    .live-contain {
+        width: rem(602);
+        height: rem(370);
+        margin: 0 auto;
+        padding-top: rem(323);
+    }
+}
+
+.page-contain {
+    width: rem(580);
+    margin: 0 auto;
+}
+
+// 底部
+footer {
+    padding-top: rem(42);
+    padding-bottom: rem(50);
+    background-color: #210661;
+
+    .top {
+        border-bottom: 1px solid #2a1066;
+        padding-bottom: rem(18);
+        opacity: 0.8;
+
+        h4 {
+            font-size: rem(22);
+            color: #fff;
+            margin-bottom: rem(28);
+        }
+
+        .contact-box {
+            font-size: rem(20);
+            color: #929bbd;
+
+            p {
+                margin-bottom: rem(24);
+            }
+
+            .right {
+                float: right;
+            }
+
+            .left {
+                float: left;
+                margin-right: rem(48);
+            }
+        }
+    }
+
+    .bottom {
+        margin-top: rem(20);
+        opacity: 0.8;
+
+        .left {
+            float: left;
+            font-size: rem(16);
+            color: #929bbd;
+        }
+
+        .right {
+            float: right;
+            font-size: 0;
+
+            a {
+                display: inline-block;
+                vertical-align: middle;
+
+                img {
+                    &.telegram {
+                        width: rem(31);
+                        height: rem(25);
+                    }
+
+                    &.weibo {
+                        width: rem(35);
+                        height: rem(27);
+                    }
+                }
+            }
+
+            .v-line {
+                display: inline-block;
+                vertical-align: middle;
+                height: rem(16);
+                width: 1px;
+                background-color: #31186c;
+                margin: 0 rem(18);
+            }
+        }
+    }
+}
+
+a {
+    color: #374fa9;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}

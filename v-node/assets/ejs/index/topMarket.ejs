@@ -1,0 +1,61 @@
+<div class="topMarket">
+    <div class="topMarket-cont">
+        <div class="market-active"></div>
+        <div class="swiper-container market">
+            <div class="swiper-wrapper" id="marketWrapper">
+                <%
+                let marketNew = []
+                let marketDataArr = data.marketData instanceof Array ? data.marketData : []
+                for (let i = 0; i < marketDataArr.length; i += 7) {
+                    marketNew.push(marketDataArr.slice(i, i + 7))
+                }
+                marketNew.map((ele, index) => {%>
+                <div class="swiper-slide">
+                    <%
+                    ele.map((item, i) => {%>
+                    <div class="market-list" data-id="<%=item.coin.coin_id%>">
+                        <div class="icon-cont">
+                            <p class="icon-text"><img src="<%=item.coin.icon%>" alt=""><span><%=item.coin.symbol%></span></p>
+                            <h5><%=Math.round((item.coin.price_usd * data.getUSD) * 100) / 100%></h5>
+                        </div>
+                        <div class="exponent-big"><p class="exponent <%=parseInt(item.coin.percent_change_24h) > 0 ? 'rise' : 'fall'%>"><%=parseInt(item.coin.percent_change_24h) > 0 ? '+' + Math.round(item.coin.percent_change_24h * 100) / 100 : Math.round(item.coin.percent_change_24h * 100) / 100%>%</p><span class="<%=parseInt(item.coin.percent_change_24h) > 0 ? 'rise' : 'fall'%>"></span></div>
+                        <div class="exponent-curve" id="<%=item.coin.coin_id%>"></div>
+                    </div>
+                    <%
+                    })
+                    %>
+                </div>
+                <%
+                })
+                %>
+            </div>
+        </div>
+        <div class="swiper-button-prev market-prev marketBtn"></div>
+        <div class="swiper-button-next market-next marketBtn"></div>
+        <div class="swiper-pagination market-page"></div>
+    </div>
+    <div class="bottom-Market">
+        <div class="bottomMarket-cont">
+            <div class="closeBtn"></div>
+            <div class="market-left">
+                <div class="currency">
+                    <div class="icon clearfix"><img src="" alt=""><span></span></div>
+                    <div class="price clearfix"><h5></h5><div class="increase"><span class=""></span></div></div>
+                </div>
+                <div class="exchange" id="exchange">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td width="33.3%">交易所</td>
+                                <td width="33.3%">交易对</td>
+                                <td width="33.3%">法币价格</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="market-right" id="marketLine"></div>
+        </div>
+    </div>
+</div>

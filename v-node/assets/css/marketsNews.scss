@@ -1,0 +1,21 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-04-08 15:45
+ * Description：index
+ */
+
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./markets/messageBanner";
+@import "./markets/infoHeader";
+@import "./markets/projectNews";
+
+.project-classify {
+    border-radius: 0 0 5px 5px;
+    margin: 0 auto;
+    background: #fff;
+    width: 1200px;
+}
+

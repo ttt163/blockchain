@@ -1,0 +1,97 @@
+<!-- 公共头部 -->
+@@include("public/m-header.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/m-activity.css"]
+})
+<%
+const formatDate = (date, str) => {
+    // let _str = !str ? '-' : str
+//    const zero = (m) => {
+//        return m < 10 ? '0' + m : m
+//    }
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return m + '月' + d + '日'
+    } else {
+        return ''
+    }
+}
+var getRecommendImgLength = data.resData.getRecommendImg.inforList.length
+%>
+@@include('./modules/m-topNav.ejs')
+<div class="m-activity-box">
+    <div class="m-activity-banner" id="activityBanner" data-num="<%=getRecommendImgLength%>">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <%
+                var bannerImg = !data.resData.getRecommendImg.inforList ? [] : data.resData.getRecommendImg.inforList
+                bannerImg.map((item, index) => {
+                    var coverPic = JSON.parse(item.coverPic)
+                %>
+                <div class="swiper-slide"><a href="/huodongDetail/<%= item.id %>" title="<%= item.title %>"><img
+                                src="<%= coverPic.pc %>" alt="<%= item.title %>"></a></div>
+                <% })
+                %>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="site-scope">
+        <div class="site-box">
+            <div class="site-con">
+                <%
+                const getNav = (place) => {
+                    if (place === 'overseas') {
+                        return '海外'
+                    } else if (place === 'others') {
+                        return '其他'
+                    } else {
+                        return place
+                    }
+                }
+                data.resData.getSite.map((item, index) => {%>
+                <span class="<%= index === 0 ? 'active' : '' %>" data-type="<%=index === 0 ? item.rank : item.place%>"><%= getNav(item.place) %></span>
+                <% })
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="scope-box">
+        <span class="active" data-id="1">全部</span>
+        <span data-id="2">本周</span>
+        <span data-id="3">本月</span>
+    </div>
+    <div class="activity-list">
+        <%
+        data.resData.getAll.inforList.map((item, index) => {console.log(item)
+            var coverPic = JSON.parse(item.coverPic)
+        %>
+        <div class="list">
+            <a href="/huodongDetail/<%=item.id%>" title="<%=item.title%>">
+                <img src="<%=coverPic.wap_small%>" alt="">
+                <div class="list-right">
+                    <h5 class="clearfix"><%=item.title%></h5>
+                    <span class="state <%=item.ingOrEnd === 1 ? '' : 'end'%>"><%=item.ingOrEnd === 1 ? '报名中' : '已结束'%></span>
+                    <p class="list-site clearfix"><span><img src="../img/activity/site.png" alt=""></span><%=item.place%></p>
+                    <p class="list-time"><span><img src="../img/activity/time.png" alt=""></span><%=parseInt(item.endTime) - parseInt(item.startTime) < 86400000 ? formatDate(item.startTime) : (formatDate(item.startTime) + '-' + formatDate(item.endTime))%></p>
+                </div>
+            </a>
+        </div>
+        <%
+        })
+        %>
+    </div>
+    <div class="activity-more" style="display: <%=parseInt(data.resData.getAll.pageCount) > 1 ? 'block' : 'none'%>" data-page="<%=data.resData.getAll.pageCount%>">加载更多</div>
+</div>
+<!-- 公共底部 -->
+@@include("public/m-footer-prue.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.js"],
+"private": ["../js/m-activity.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})
+

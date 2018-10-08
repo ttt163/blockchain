@@ -1,0 +1,15 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": ["//g.alicdn.com/de/prismplayer/2.7.1/skins/default/aliplayer-min.css"],
+"private": ["../css/summit-live.css"],
+"title": "火星财经-区块链先锋门户"
+})
+
+<!-- 内容 -->
+@@include('./summit/live.ejs')
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": ["//g.alicdn.com/de/prismplayer/2.7.1/aliplayer-min.js"],
+"private": ["../js/common.js", "../js/summit-live.js"]
+})

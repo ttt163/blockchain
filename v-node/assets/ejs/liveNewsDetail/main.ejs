@@ -1,0 +1,81 @@
+<%
+    const add0 = (num) => {
+        return num >= 10 ? num : '0' + num
+    }
+    let currDate = new Date(data.currentTime)
+    let weekJudge = new Date(data.createdTime)
+    let creatDate = new Date(data.createdTime)
+    let weeksObj = {
+        '1': '星期一',
+        '2': '星期二',
+        '3': '星期三',
+        '4': '星期四',
+        '5': '星期五',
+        '6': '星期六',
+        '0': '星期日',
+    }
+
+ %>
+<div class="flash-news-content clearfix">
+    <div class="flash-news-list">
+        <div class="flash-news-date-box clearfix">
+            <div class="left">
+                <h2><%= add0(creatDate.getDate()) %></h2>
+                <p><%= add0(creatDate.getMonth() + 1) %>月</p>
+            </div>
+            <div class="right">
+                <div>
+                    <%
+                    let currDate24Time = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate(), 23, 59).getTime()
+                    let deff = (currDate24Time - data.createdTime) / 1000 / 24 / 60 / 60
+                    let createdDate = new Date(data.createdTime)
+                    if (deff <= 1) {
+                    %>
+                    <span>今天</span>
+                    <%
+                    } else if (deff <= 2) {
+                    %>
+                    <span>昨天</span>
+                    <%
+                    } else if (deff <= 3) {
+                    %>
+                    <span>前天</span>
+                    <%
+                    } else {
+                    }
+                     %>
+                    <span><%= weeksObj[weekJudge.getDay()] %></span>
+                </div>
+                <h2><%= `${add0(createdDate.getHours())}:${add0(createdDate.getMinutes())}` %></h2>
+            </div>
+        </div>
+        <div class="live-news-contain">
+            <h1><%= data.title %></h1>
+            <h2><%= data.content %></h2>
+            <%
+            if (!data.images) {}else {%>
+            <img alt="<%= data.title %>" src="<%= data.images %>"/>
+            <%}
+             %>
+            <div class="judge-profit">
+                <p data-status="1" data-id="<%= data.id %>"
+                   class="good-profit <%= !data.type || parseInt(data.type) !== 1 ? '' : 'active' %>">
+                    <i class="iconfont iconfont-trend-up"></i>
+                    <span>利好</span>
+                    <span class="num"> <%= !data.upCounts ? 0 : data.upCounts %> </span>
+                </p>
+                <p  data-status="0" data-id="<%= data.id %>" class="bad-profit <%= parseInt(data.type) === 0 ? 'active' : '' %>">
+                    <i class="iconfont iconfont-trend-up"></i>
+                    <span>利空</span>
+                    <span class="num"> <%= !data.downCounts ? 0 : data.downCounts %> </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="hot-news-wrap">
+        <div class="hot-news-box">
+            <h3>涨幅榜</h3>
+            <div class="market"></div>
+        </div>
+    </div>
+</div>

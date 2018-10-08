@@ -1,0 +1,162 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2017-08-29 19:30
+ * Description：index
+ */
+@import "../public/rem";
+
+@font-face {
+    font-family: 'iconfont';  /* project id 574327 */
+    src: url('//at.alicdn.com/t/font_574327_gptqeywvuf9cz0k9.eot');
+    src: url('//at.alicdn.com/t/font_574327_gptqeywvuf9cz0k9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_574327_gptqeywvuf9cz0k9.woff') format('woff'), url('//at.alicdn.com/t/font_574327_gptqeywvuf9cz0k9.ttf') format('truetype'), url('//at.alicdn.com/t/font_574327_gptqeywvuf9cz0k9.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: 'iconfont', serif !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-circle:before {
+    content: '\e603';
+}
+
+.iconfont-open:before {
+    content: '\e60d';
+}
+
+a {
+    font-size: rem(27);
+    color: #222;
+}
+
+.news-fash {
+    width: 100%;
+    height: auto;
+    color: #212121;
+    padding-top: rem(65);
+
+    .new-fash-list {
+        padding: rem(20) 0 rem(30) rem(25);
+        margin-top: rem(10);
+        background: #fff;
+        border-left: rem(2) dashed #eee;
+        position: relative;
+        box-sizing: border-box;
+
+        .new-mark {
+            position: absolute;
+            top: rem(24);
+            left: rem(-17);
+            color: #53a5f5;
+
+            &:before {
+                font-size: rem(30);
+            }
+        }
+
+        .time-flash {
+            width: 100%;
+            height: rem(60);
+            line-height: rem(42);
+            color: #c9c9c9;
+
+            img {
+                width: rem(24);
+                height: rem(24);
+                margin-right: rem(5);
+                vertical-align: middle;
+                margin-bottom: rem(3);
+            }
+        }
+
+        .text-flash {
+            position: relative;
+            width: 100%;
+
+            .text-box {
+                font-size: rem(27);
+                color: #212121;
+                line-height: rem(38);
+                margin: 0;
+                word-wrap: break-word;
+                font-weight: 700;
+
+                .text-title {
+                    display: block;
+                    font-size: rem(28);
+                    margin-bottom: rem(20);
+                }
+
+                .text-msg {
+                    font-size: rem(26);
+                    line-height: 1.6;
+
+                    &.maxH {
+                        max-height: rem(26*1.7*2);
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+
+                .open-msg {
+                    color: #666;
+                    font-size: rem(21);
+
+                    i:before {
+                        font-size: rem(16);
+                    }
+                }
+
+                .original {
+                    font-size: rem(25);
+                    color: #1e1284;
+                    display: inline-block;
+                }
+
+                .text-img {
+                    margin-top: rem(10);
+
+                    .item-img {
+                        display: block;
+                        width: rem(208);
+                        height: rem(135);
+                        background-color: #eee;
+                    }
+
+                    .img-remark {
+                        color: #888;
+                        font-size: rem(21);
+                    }
+                }
+            }
+
+            .blue {
+                color: #0a7ff2;
+            }
+
+            .share {
+                position: absolute;
+                right: 0;
+                top: rem(-56);
+                width: rem(80);
+                height: rem(56);
+                line-height: rem(56);
+                background: url("../../img/m-img/share.png") no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+
+    .lives-box {
+        box-sizing: border-box;
+        padding: 0 rem(45);
+        margin-bottom: rem(10);
+    }
+}

@@ -1,0 +1,25 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-04-08 15:45
+ * Description：index
+ */
+
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./public/Pagination";
+@import "./markets/bazaaryMarket";
+@import "./markets/messageBanner";
+
+.exchange-list-wrap {
+    margin: 40px auto 0;
+    padding: 20px 20px 0;
+    width: 1160px;
+
+    .bazaary-market,
+    .market-tab-box {
+        height: auto;
+    }
+}
+

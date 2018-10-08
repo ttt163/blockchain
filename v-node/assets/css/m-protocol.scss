@@ -1,0 +1,58 @@
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "../fonts/iconfont.scss";
+@import "./public/rem";
+//@import "./public/m-public";
+
+body {
+    background-color: #f5f5f5;
+}
+
+html {
+    &.isroll {
+        overflow-y: hidden;
+    }
+}
+
+.m-protocol {
+    width: rem(640);
+    //margin-top: rem(85);
+    overflow: hidden;
+    background: #fff;
+    padding-bottom: rem(96);
+
+    .section,
+    .welcome {
+        width: rem(580);
+        margin: 0 auto;
+        font-size: rem(26);
+        font-family: 'STHeiti Light', sans-serif;
+    }
+
+    .welcome {
+        text-align: center;
+    }
+
+    .section,
+    .title {
+        font-weight: bold;
+    }
+
+    .title {
+        margin: rem(40) 0;
+        text-indent: 2rem;
+    }
+
+    .content {
+        text-indent: 2rem;
+        line-height: rem(52);
+        text-align: justify;
+
+        &.kaiti {
+            margin: rem(20) 0;
+            font-family: 'Kaiti', sans-serif;
+        }
+    }
+}

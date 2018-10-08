@@ -1,0 +1,65 @@
+<%
+const add0 = (num) => {
+    return num >= 10 ? num : '0' + num
+}
+%>
+@@include('../modules/m-topNav.ejs')
+
+<div class="swiper-container wrap-box" id="hxwrap">
+    <div class="swiper-wrapper overall-box" id="overAllBox">
+        <!--新闻-->
+        <div id="currNewsBox" class="swiper-slide out-box white-bg" data-id="<%= data.searchId %>"
+             data-page="<%= data.currentPage %>" data-count="<%= data.pageCount %>">
+            <div class="news-fash page-con-wrap" id="pageConWrapLive">
+                <div class="lives-box">
+                    <%
+                    data.inforList.map((item) => {
+                        let timeTemp = new Date(item.createdTime)
+                        let reg = /【([^【】]+)】([^【】]*)/
+                        let cont = !item.title ? (reg.exec(item.content) ? reg.exec(item.content)[1] : '快讯') : `${item.title}`
+                        let msg = reg.exec(item.content) ? reg.exec(item.content)[2] : item.content
+                    %>
+                    <div class="new-fash-list" data-date="<%= item.createdTime %>">
+                        <i class="iconfont iconfont-circle new-mark"></i>
+                        <div class="time-flash">
+                            <%= `${add0(timeTemp.getHours())}:${add0(timeTemp.getMinutes())}` %>
+                        </div>
+                        <div class="text-flash clearfix">
+                            <div data-id="<%= item.id %>"
+                                 class="text-box">
+                                <a class="text-title <%= parseInt(item.tag) === 2 ? 'blue' : '' %>"
+                                   href="<%= domain %>/liveNewsDetail/<%= item.id %>"
+                                   title="<%= cont %>"><%= cont %></a>
+                                <p class="text-msg <%= item.openMsg ? 'maxH' : '' %>"><%= msg %>
+                                    <% if(item.url){ %>
+                                    <a rel="nofollow" data-url="<%= item.url %>"
+                                       href="<%= item.url %>"
+                                       class="original"
+                                       title="<%= cont %>">「查看原文」</a>
+                                    <% } %>
+                                </p>
+                                <% if(item.openMsg){ %>
+                                <p class="open-msg">展开 <i class="iconfont iconfont-open"></i></p>
+                                <% } %>
+                                <% if(item.images){ %>
+                                <div class="text-img">
+                                    <img class="item-img" src="<%= item.images %>" alt="<%= item.imagesRemark %>">
+                                    <p class="img-remark"><%= item.imagesRemark ? '( ' + item.imagesRemark + ' )' : '' %></p>
+                                </div>
+                                <% } %>
+                            </div>
+                            <div class="share" data-time="<%= item.createdTime %>"></div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <% })
+                    %>
+                </div>
+                <div class="flash-more-btn">
+                    <div class="btn-more">加载更多</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('../modules/m-share.ejs')

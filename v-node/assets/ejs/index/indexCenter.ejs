@@ -1,0 +1,47 @@
+<!-- 热门专题 -->
+<div class="subject-box clearfix">
+    <div class="index-news-center">
+        <div class="subject-h5 clearfix">
+            <h3>热门专题</h3>
+            <a href="/hotList" class="more" target="_blank"></a>
+        </div>
+        <div class="subject-tab clearfix">
+            <%
+            data.adAndColumn.map((d) => {%>
+            <div class="subject-box clearfix">
+                <div class="subject-first">
+                    <%
+                        let aUrl = !d.topic.typeLink ? `${domain}/hot/${encodeURIComponent(!d.topic.tags ? '区块链' : d.topic.tags)}/${d.topic.id}` : d.topic.typeLink
+                    %>
+                    <a title="<%= d.topic.topicName %>" target="_blank"  href="<%= `${aUrl}` %>">
+                        <img data-src="<%= d.topic.newSmallPcImgSrc %>" src="../../img/default-img.png" alt="<%= d.topic.topicName %>">
+                        <h5><%= d.topic.topicName %></h5>
+                    </a>
+                </div>
+                <div class="subject-ul clearfix">
+                    <%
+                        let iteList = d.contentList.slice(0, 1)
+                    iteList.map((cItem) => {
+                        let itemUrl = cItem.url
+                        if (itemUrl.indexOf('/newsdetail?id=') !== -1) {
+                            let urlArr = itemUrl.split('?id=')
+                            itemUrl = `${urlArr[0]}/${urlArr[1]}.html`
+                        }
+                    %>
+                    <li class="clearfix">
+                        <span></span>
+                        <a title="<%= cItem.title %>" href="<%= itemUrl %>" target="_blank">
+                            <h3><%= cItem.title %></h3>
+                        </a>
+                    </li>
+                    <%
+                    })
+                    %>
+                </div>
+            </div>
+            <%
+            })
+            %>
+        </div>
+    </div>
+</div>

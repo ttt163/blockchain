@@ -1,0 +1,74 @@
+/**
+ * Author：tantingting
+ * Time：2018/8/2
+ * Description：Description
+ */
+
+.news-list-more {
+    width: 100%;
+    min-height: rem(100);
+    position: relative;
+    margin-bottom: rem(20);
+    padding-bottom: rem(20);
+    border-bottom: 1px #eee solid;
+
+    &:last-child {
+        border: none;
+    }
+
+    .title {
+        width: rem(425);
+        overflow: hidden;
+        line-height: rem(42);
+        font-size: rem(28);
+        color: #212121;
+        padding-bottom: rem(25);
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        height: rem(100);
+    }
+
+    .list-text {
+        position: relative;
+        width: rem(425);
+        height: rem(40);
+        line-height: rem(40);
+
+        .bottom-left {
+            float: left;
+            color: #bdbdbd;
+            font-size: rem(20);
+
+            & > div {
+                float: left;
+            }
+
+            .time {
+                margin-left: rem(15);
+            }
+        }
+
+        .read-number {
+            color: #bdbdbd;
+            font-size: rem(20);
+            padding-left: rem(45);
+            background: url("../img/m-img/read-number.svg") no-repeat left;
+            background-size: auto 140%;
+            float: right;
+        }
+    }
+
+    .cover-img-sma {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: rem(145);
+
+        img {
+            width: rem(145);
+            height: rem(110);
+        }
+    }
+}

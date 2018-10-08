@@ -1,0 +1,223 @@
+<!-- 左边新闻 -->
+<%
+const formatDate = (date, str) => {
+    // let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return zero(m) + '-' + zero(d)
+    } else {
+        return ''
+    }
+}
+const getTimeContent = (publishTime, requestTime) => {
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime)
+    }
+    return content
+}
+//const newsTitleArr = [
+//    {label: '头条', value: '0'},
+//    {label: '行情', value: '14'},
+//    {label: '研报', value: '15'},
+//    {label: '项目', value: '3'},
+//    {label: '人物', value: '4'},
+//    {label: '宏观', value: '17'},
+//    {label: '王峰十问', value: '9'},
+//    {label: '英文版', value: '19'}
+//]
+%>
+<div class="index-news-left">
+    <ul id="newsTabs">
+        <%
+        var recommendTitle = {
+            id: 0,
+            channelId: 0,
+            channelName: '头条',
+            rank: 0,
+            updateTime: '',
+            createTime: ''
+        }
+        data.newNavData.unshift(recommendTitle)
+        // 新增火星专栏
+        data.newNavData.push({
+            channelId: 333,
+            channelName: '火星专栏'
+        })
+        data.newNavData.map((item, index) => {
+            // 不显示channelId = 1的分类
+            if (parseInt(item.channelId) !== 1) {
+        %>
+        <li data-id="<%= item.channelId %>" style="display: <%= parseInt(item.channelId) === 19 ? 'none' : 'block' %>"
+            data-loading="<%= parseInt(item.channelId) === 0 ? 'true' : 'false' %>"
+            class="<%= parseInt(item.channelId) === 0 ? 'active' : '' %>"><%= item.channelName %></li>
+        <%
+            }
+        })
+        %>
+    </ul>
+    <% data.newNavData.map((d, i) => {
+        let obj = null
+    if (d.channelId === 0) {
+    %>
+    <div id="newsBlock<%= d.channelId %>" class="block-style" style="display: <%= i === 0 ? 'block' : 'none' %>">
+        <div class="news-list-content">
+            <%
+            data.recommendData.inforList.map((item, index) => {
+                let currNavIndex = data.newNavData.findIndex((navItem) => {
+                    return navItem.channelId === item.channelId
+                })
+            %>
+            <div class="index-news-list">
+                <a style="display: block" title="<%= item.title %>" target="_blank"
+                   href="<%= domain %>/newsdetail/<%= `${item.id}.html` %>">
+                    <div class="list-left">
+                        <span class="channel-text"><%= data.newNavData[currNavIndex].channelName %></span>
+                        <img alt="<%= item.title %>" src="../../img/default-img.png"
+                             data-src="<%= (!item.coverPic || !JSON.parse(item.coverPic).pc ? '' : JSON.parse(item.coverPic).pc) %>"/>
+                    </div>
+                    <div class="list-right" style="width: 560px;">
+                        <h1 class="headline"><span class="top-order" style="display: <%= !parseInt(item.topOrder) ? 'none' : 'inline' %>">置顶</span><%= item.title %></h1>
+                        <h3 class="details"><%= item.synopsis %></h3>
+                    </div>
+                </a>
+                <div class="list-bottom index-mian clearfix">
+                    <p class="name"><%= item.cateId === 1 ? item.nickName : item.author %></p>
+                    <p class="lock-time"><%= !item.score ? getTimeContent(item.publishTime, item.updateTime) : '' %></p>
+                    <p class="read-num main-read-num">
+                        <span class="count-eye">关键字:</span>
+                        <%
+                            let arr = !item.tags ? [] : item.tags.split(',')
+                        arr.map((item, index) => {
+                        if (index === 0) { %>
+                        <a title="<%= item %>" target="_blank"
+                           href="<%= domain %>/hot/<%= item %>"><%= item %></a>
+                        <% } else if (index > 0 && index <= 2) { %>
+                        , <a title="<%= item %>" target="_blank"
+                             href="<%= domain %>/hot/<%= item %>"><%= item %></a>
+                        <% }})
+                        %>
+                    </p>
+                </div>
+                <div class="shadow"></div>
+            </div>
+            <%
+            if (parseInt(d.channelId) === 0) {
+            data.adData[8].map((adItem, adIndex) => {
+            if ((index + 1) === (adItem.showPosition)) { %>
+            <div class="ad-list">
+                <a target="_blank" href="<%= adItem.url %>" title="<%= adItem.title %>">
+                    <h6><%= adItem.title %></h6>
+                    <p>
+                        <img src="<%= adItem.img_url %>" alt="">
+                        <span style="display: <%= parseInt(adItem.useType) === 2 ? 'none' : '' %>">
+                            <img src="../../img/indexNew/ad-title.png" alt="">
+                        </span>
+                    </p>
+                </a>
+            </div>
+            <% } }) %>
+            <% } %>
+            <% }) %>
+        </div>
+        <div class="clearfix"></div>
+        <div data-id="<%= d.channelId %>" id="loadMore<%=d.channelId%>" data-time="<%= data.recommendData.currentTime %>"
+             data-currpage="<%= data.recommendData.currentPage %>" data-pagecount="<%= data.recommendData.pageCount %>"
+             data-size="<%= data.recommendData.pageSize %>"
+             data-refreshtime="<%= data.recommendData.inforList.pop().publishTime %>" class="check-more-load clearfix"
+             style="display: block;">
+            查看更多
+        </div>
+    </div>
+    <% } else {
+        let marksNews = !data.marksNews ? null : data.marksNews
+       let newsData = data.newsData
+        newsData = {
+                ...newsData,
+            '333': marksNews
+        }
+        obj = newsData[d.channelId] %>
+    <% if (obj.inforList.length !== 0) { %>
+    <div id="newsBlock<%= d.channelId %>" class="block-style" style="display: none">
+        <div class="news-list-content">
+            <% obj.inforList.map((item, index) => { %>
+            <div class="index-news-list">
+                <a title="<%= item.title %>" target="_blank" href="<%= domain %>/newsdetail/<%= `${item.id}.html` %>">
+                    <div class="list-left">
+                        <img alt="<%= item.title %>" src="../../img/default-img.png"
+                             data-src="<%= (!item.coverPic || !JSON.parse(item.coverPic).pc ? '' : JSON.parse(item.coverPic).pc) %>">
+                    </div>
+                    <div class="list-right" style="width: 560px;">
+                        <h1 class="headline"><%= item.title %></h1>
+                        <h3 class="details"><%= item.synopsis %></h3>
+                    </div>
+                </a>
+                <div class="list-bottom index-mian clearfix">
+                    <p class="name"><%= item.cateId === 1 ? item.nickName : item.author %></p>
+                    <p class="lock-time"><%= getTimeContent(item.publishTime, item.updateTime) %></p>
+                    <p class="read-num main-read-num">
+                        <span class="count-eye">关键字:</span>
+                        <%
+                            let arr = !item.tags ? [] : item.tags.split(',')
+                        arr.map((item, index) => {
+                        if (index === 0) { %>
+                        <a title="<%= item %>" target="_blank"
+                           href="<%= domain %>/hot/<%= item %>"><%= item %></a>
+                        <% } else if (index > 0 && index <= 2) { %>
+                        , <a title="<%= item %>" target="_blank"
+                             href="<%= domain %>/hot/<%= item %>"><%= item %></a>
+                        <% }})
+                        %>
+                    </p>
+                </div>
+                <div class="shadow"></div>
+            </div>
+            <%
+            if (parseInt(d.channelId) === 0) {
+            data.adData[8].map((adItem, adIndex) => {
+            if ((index + 1) === (adItem.showPosition)) {
+            %>
+            <div class="ad-list">
+                <a target="_blank" href="<%= adItem.url %>" title="<%= adItem.title %>">
+                    <h6><%= adItem.title %></h6>
+                    <p>
+                        <img src="<%= adItem.img_url %>" alt="">
+                        <span style="<%= parseInt(adItem.useType) !== 1 ? 'none' : '' %>">
+                                <img src="../../img/indexNew/ad-title.png" alt="">
+                            </span>
+                    </p>
+                </a>
+            </div>
+            <% } }) %>
+            <% }}) %>
+        </div>
+        <div class="clearfix"></div>
+        <div data-id="<%= d.channelId %>" id="loadMore<%=d.channelId%>" data-time="<%= obj.inforList[obj.inforList.length - 1].publishTime %>"
+             data-currpage="<%= obj.currentPage %>" data-pagecount="<%= obj.pageCount %>"
+             data-size="<%= obj.pageSize %>" class="check-more-load clearfix" style="display: block;">查看更多
+        </div>
+    </div>
+    <% } else { %>
+    <div id="newsBlock<%= d.channelId %>" class="block-style not-cont"><p>暂无内容</p></div>
+    <% } %>
+    <% } %>
+    <% }) %>
+    <textarea id="jsonData" style="display: none">
+        <%= JSON.stringify({
+            newNavData: data.newNavData
+        }) %>
+    </textarea>
+</div>

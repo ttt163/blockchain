@@ -1,0 +1,16 @@
+<!--我的产品-->
+<div class="products-box clearfix">
+    <div class="my-products">
+        <div class="products-title">我的产品</div>
+        <%data.activityData[8].map((item, index) => {%>
+        <a href="<%=item.typeLink%>" target="_blank" title="<%=item.title%>" class="products-list clearfix">
+            <div class="products-icon"><img src="<%=item.pcImgSrc%>" title="<%=item.title%>" alt=""></div>
+            <div class="products-text" title="<%=item.title%>">
+                <h5><%=item.title%></h5>
+                <p><%=item.description%></p>
+            </div>
+        </a>
+        <%
+        })%>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<%
+const formatDate = (date, str) => {
+    let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return y + _str + zero(m) + _str + zero(d)
+    } else {
+        return ''
+    }
+}
+const getTimeContent = (publishTime, requestTime) => {
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime)
+    }
+    return content
+}
+%>
+@@include('../modules/m-topNav.ejs')
+<div class="swiper-container wrap-box" id="hxwrap">
+    <div class="swiper-wrapper overall-box" id="overAllBox">
+        <!--新闻-->
+        <div id="currNewsBox"  class="swiper-slide out-box white-bg" data-id="<%= data.searchId %>" data-page="<%= data.currentPage %>" data-count="<%= data.pageCount%>">
+            <div class="news-list page-con-wrap">
+                <div class="list-box">
+                    @@include('../modules/m-newsList.ejs')
+                </div>
+                <div class="btn-more" data-type="<%= data.searchId %>" data-time="<%= !data.inforList || !data.inforList.length ? 0 : data.inforList[data.inforList.length -1].publishTime %>" data-count="<%= data.pageCount %>" data-page="1" data-size="<%= data.pageSize %>">加载更多</div>
+            </div>
+        </div>
+    </div>
+</div>

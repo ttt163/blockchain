@@ -1,0 +1,38 @@
+<%
+const tabType = [
+    {type: 0, label: '按更新时间'},
+    {type: 1, label: '按创建时间'}
+]
+%>
+<div class="news-hot-label">
+    <!-- 专题轮播 -->
+    <div class="hot-top" style="display: none">
+        <div class="hot-top-swiper">
+            @@include('./hot-swiper.ejs')
+        </div>
+    </div>
+    <div class="news-con clearfix">
+        <div class="news-con-top clearfix">
+            <div id="tabs" class="tabs clearfix">
+                <%
+                tabType.map((item) => {%>
+                <a class="<%= parseInt(item.type) === parseInt(data.orderType) ? 'active': '' %>" data-type="<%= item.type %>" href="javascript:void(0)"><%= item.label %></a>
+                <%})
+                 %>
+            </div>
+            <p>已创建<span><%= data.recordCount %></span>个专题</p>
+        </div>
+        <div class="news-con-warp w1200 col-3">
+            @@include('./hot-news-list.ejs')
+        </div>
+
+        <div class="pagination <%= data.pageCount > 1 ? 'show' : '' %>">
+            <ul class="f-pagination clearfix" id="pagination" data-size="<%= data.pageSize %>" data-total="<%= data.recordCount %>">
+            </ul>
+        </div>
+        <!--<div class="pagination <%= data.pageCount > 1 ? 'show' : '' %>">
+            <ul class="f-pagination clearfix" id="pagination" data-size="<%= !data.pageSize ? 12 : data.pageSize %>" data-total="<%= !data.recordCount ? 0 : data.recordCount %>">
+            </ul>
+        </div>-->
+    </div>
+</div>

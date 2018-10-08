@@ -1,0 +1,30 @@
+/**
+ * Author：tantingting
+ * Time：2018/4/27
+ * Description：Description
+ */
+@import "./public/normalize";
+@import "./public/m-public";
+@import "./public/m-header";
+@import "./public/m-footer";
+@import "./public/rem";
+@import "./modules/m-topNav";
+@import "./modules/m-newsList";
+
+.white-bg {
+    margin-top: rem(10);
+    background: #fff;
+}
+
+.news-list {
+    width: rem(590);
+    padding: rem(20) rem(25) 0;
+    background: #fff;
+    height: auto;
+    margin: 0 auto;
+
+    a {
+        color: #212121;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,149 @@
+@@include("public/m-header.ejs", {
+"plugin": [],
+"private": ["../css/m-publicity.css"]
+})
+<div class="mainBox">
+    <img src="../img/publicity/top.png" class="top-pic" alt="">
+    <% let pathNameUrl = '/mtcsign'%>
+    <%
+        if (originalUrl === '/mtc') {
+            pathNameUrl = '/mtcsign'
+        } else if (originalUrl === '/mtc2') {
+            pathNameUrl = '/mtcsign2'
+        } else if (originalUrl === '/mtc3') {
+            pathNameUrl = '/mtcsign3'
+        } else if (originalUrl === '/mtc4') {
+            pathNameUrl = '/mtcsign4'
+        } else if (originalUrl === '/mtc5') {
+            pathNameUrl = '/mtcsign5'
+        }
+    %>
+    <a href="<%= domain %><%= pathNameUrl %>" class="btn-link"></a>
+    <div class="section">
+        <h2>
+            <span></span>
+            如何赋能区块链时代的破局者？
+        </h2>
+        <div class="content">
+            <h3><span>培养</span>区块链思维</h3>
+            <p>全方位解析区块链技术本质，透析行业发展趋势、 全球政策走向，培养区块链产业思维。</p>
+            <h3><span>实践</span>区块链应用</h3>
+            <p>区块链经典案例专家解析，解决古典企业token化改造难点，促进区块链技术落地与商业应用。</p>
+            <h3><span>连接</span>全球区块链产业资源</h3>
+            <p>集合全球顶尖区块链任务和产业资源，推动区块链产业合作和共赢，赋能优质的区块链项目稳步升级。</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>
+            <span></span>
+            最专业的课程体系
+        </h2>
+        <div class="content">
+            <img src="../img/publicity/shield.png" class="system" alt="">
+            <img src="../img/publicity/course.png" class="course" alt="">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>
+            <span></span>
+            不可错过的五大理由
+        </h2>
+        <div class="content">
+            <h3><span>顶级</span>导师团：</h3>
+            <p>30位顶级导师全程深度合作辅助，零距离对话行业大佬</p>
+            <h3><span>顶级</span>校友社群：</h3>
+            <p>严格的校友筛选机制，确保校园圈层高含金量</p>
+            <h3><span>丰富</span>的课外活动：</h3>
+            <p>邀请业内打卡分享行业内幕、连线硅谷精英。更有行业领袖实战演练等丰富的课外活动</p>
+            <h3><span>优先</span>获取孵化支持</h3>
+            <p>“共识实验室”将为优质的毕业项目提供资金与资源等全面支持和深度孵化</p>
+            <h3><span>终身</span>学习资格：</h3>
+            <p>一次入营终身免费，首期学员在毕业后将获得一枚特制荣誉勋章，凭此勋章独享终身免费学习同类课程的资格</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>
+            <span></span>
+            顶级导师团
+        </h2>
+        <div class="content">
+            <img src="../img/publicity/tutor.png" class="tutor" alt="">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>
+            <span></span>
+            招生对象
+        </h2>
+        <div class="content">
+            <img src="../img/publicity/partner.png" class="partner" alt="">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>
+            <span></span>
+            申请流程
+        </h2>
+        <div class="content">
+            <img src="../img/publicity/flow.png" class="flow" alt="">
+            <img src="../img/publicity/info.png" class="info" alt="">
+        </div>
+    </div>
+
+    <div class="apply-info">
+        <%
+            let ewmImg = '../img/publicity/mtc.png'
+            if (originalUrl === '/mtc') {
+                ewmImg = '../img/publicity/mtc.png'
+            } else if (originalUrl === '/mtc2') {
+                ewmImg = '../img/publicity/mtc2.png'
+            } else if (originalUrl === '/mtc3') {
+                ewmImg = '../img/publicity/mtc3.png'
+            } else if (originalUrl === '/mtc4') {
+                ewmImg = '../img/publicity/mtc4.png'
+            } else if (originalUrl === '/mtc5') {
+                ewmImg = '../img/publicity/mtc5.png'
+            }
+        %>
+        <img src="<%= ewmImg %>" class="ewm" alt="">
+        <div class="info-text">
+            <p>即刻扫码或拨打‭电话<br><span>183 1113 8371</span><br>‬获取更多报名详情</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>
+            <span></span>
+            关于我们
+        </h2>
+        <div class="content">
+            <p class="title textC">火星财经</p>
+            <p class="explain textC">
+                一家专注区块链信息服务的综合媒体门户平台，以“内容+社群”的双轮驱动模式为基础。2018年3月6日上线仅仅26天便完1.5亿A轮融资，投资机构包括IDG资本、泛城资本、OK集团、明势资本、蛮子基金、德同资本等。6月8号完成由策源资本领投，火币全球生态基金机构跟投的3.3亿A+轮融资。</p>
+            <p class="title textC">王峰十问</p>
+            <p class="explain textC">
+                以“对话思想先锋，直面风口浪尖”为特色，陆续对话了知名天使投资人薛蛮子、量子链创始人帅初、快的打车创始人陈伟星、湖畔大学教育长曾鸣、中国比特币首富李笑来、金沙江创投董事总经理朱啸虎、美图秀秀董事长蔡文胜、锤子科技罗永浩、奇虎360董事长周鸿祎等多位意见领袖与行业翘楚。</p>
+            <p class="title textC">共识实验室</p>
+            <p class="explain textC">
+                由火星财经发起人王峰发起，联合区块链业界共同参与组建“火星生态”基金，覆盖区块链行业的投资孵化，聚焦区块链核心技术，通证经济体系，同时关注国外的知名区块链企业和重点项目</p>
+        </div>
+    </div>
+
+    <div class="link">
+        <img src="../img/publicity/huoxing.png" alt="">
+        <img src="../img/publicity/lab.png" alt="">
+    </div>
+</div>
+
+@@include('public/m-footer-prue.ejs', {
+"plugin": [],
+"private": [],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

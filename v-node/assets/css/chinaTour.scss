@@ -1,0 +1,367 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-04-08 15:45
+ * Description：index
+ */
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+@import "./m-index/blockchain";
+
+html,
+body {
+    background: url("../img/chinaTour/chinaThour-bg-pc.jpg") center top no-repeat;
+}
+
+#pageLoading {
+    background: #000;
+}
+
+.apply-main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+textarea::-webkit-scrollbar {
+    width: 4px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #69b7ff;
+}
+
+.apply-box {
+    height: auto;
+
+    .slogan {
+        position: relative;
+        width: 823px;
+        height: 159px;
+        margin-top: 190px;
+
+        .city {
+            position: absolute;
+            right: -204px;
+            top: -30px;
+            width: 178px;
+            height: 160px;
+            color: #fff;
+            font-size: 36px;
+            background: url("../img/chinaTour/city-bg.png") no-repeat;
+
+            p {
+                width: 133px;
+                text-align: center;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .apply-from {
+        height: auto;
+        margin-top: 160px;
+
+        .base-info {
+            padding: 4px 0 30px 40px;
+            background: rgba(30, 18, 132, 0.66);
+            border-radius: 8px;
+            border: 1px solid #35279a;
+            margin-bottom: 45px;
+        }
+
+        ul {
+            width: 100%;
+
+            li {
+                float: left;
+                width: 50%;
+                height: auto;
+                margin-top: 30px;
+
+                p {
+                    position: relative;
+                    float: left;
+                    white-space: nowrap;
+
+                    &.grow {
+                        width: 80px;
+                    }
+
+                    span {
+                        position: absolute;
+                        top: 5px;
+                        font-size: 15px;
+                        color: #69b7ff;
+                        font-family: 'Lucida Sans Unicode Verdana Arial';
+                    }
+
+                    font {
+                        position: absolute;
+                        top: 28px;
+                        font-size: 18px;
+                        color: #fff;
+                    }
+                }
+
+                .text-box {
+                    width: 365px;
+                    float: left;
+                    margin-left: 70px;
+                    border-bottom: 1px #8a84a0 solid;
+                    padding-top: 20px;
+
+                    &.grow {
+                        width: 335px;
+                        margin-left: 100px;
+                    }
+
+                    input {
+                        box-sizing: border-box;
+                        width: 100%;
+                        border: none;
+                        background: none;
+                        outline: none;
+                        height: 30px;
+                        font-size: 16px;
+                        color: #cee6ff;
+                    }
+                }
+
+                &.spLi {
+                    width: 100%;
+
+                    .text-box {
+                        width: 815px;
+                    }
+                }
+            }
+        }
+
+        .identity,
+        .source {
+            position: relative;
+            height: 30px;
+            margin-left: 100px;
+            margin-top: 24px;
+
+            .item {
+                position: relative;
+                display: inline-block;
+                float: left;
+                font-size: 18px;
+                color: #fff;
+                height: 30px;
+                margin-right: 30px;
+
+                p {
+                    margin-left: 33px;
+                    line-height: 30px;
+                }
+
+                input[type="radio"] {
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    opacity: 0;
+                    margin-right: 33px;
+                    line-height: 20px;
+                    margin-top: 3px;
+                }
+
+                label {
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 8px;
+                    border: 1px solid #3e65a5;
+                    background: #1e1284;
+                    cursor: pointer;
+                }
+
+                //input:checked + label {
+                //    border: 1px solid #3e65a5;
+                //}
+
+                input:checked + label::after {
+                    position: absolute;
+                    content: "";
+                    width: 8px;
+                    height: 19px;
+                    top: -5px;
+                    left: 10px;
+                    border: 3px solid #5ec8ff;
+                    border-top: none;
+                    border-left: none;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        .apply-btn {
+            width: 480px;
+            height: 80px;
+            background: url("../img/apply/btn-default.png") no-repeat;
+            background-size: 100%;
+            text-align: center;
+            line-height: 80px;
+            color: #fff;
+            font-size: 27px;
+            margin: 100px auto 160px;
+            cursor: pointer;
+
+            &:hover {
+                background: url("../img/apply/btn-hover.png") no-repeat;
+            }
+        }
+    }
+
+    .activity {
+        width: 100%;
+        margin-top: 50px;
+
+        .activity-time,
+        .activity-site {
+            width: 435px;
+            height: auto;
+            float: left;
+
+            p {
+                height: 40px;
+                padding-left: 40px;
+                color: #fff;
+                font-size: 24px;
+                line-height: 40px;
+                margin-bottom: 10px;
+            }
+
+            span {
+                display: inline-block;
+                font-size: 20px;
+                color: #69b7ff;
+                line-height: 30px;
+            }
+        }
+
+        .activity-time {
+            p {
+                background: url("../img/chinaTour/time.png") no-repeat left;
+            }
+        }
+
+        .activity-site {
+            margin-left: 100px;
+
+            p {
+                background: url("../img/chinaTour/site.png") no-repeat left;
+            }
+        }
+    }
+}
+
+.succeed-mtc {
+    position: fixed;
+    width: 360px;
+    height: 360px;
+    left: 50%;
+    top: 20%;
+    background: #fff;
+    margin-left: -180px;
+    z-index: 50;
+    border-radius: 15px;
+    display: none;
+
+    img {
+        &.su-img {
+            position: absolute;
+            width: 122px;
+            height: 112px;
+            top: 120px;
+            left: 120px;
+        }
+
+        &.su-close {
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            bottom: -75px;
+            left: 159px;
+            cursor: pointer;
+        }
+    }
+}
+
+.shade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 45;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.videoplay-wrap {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -300px;
+    z-index: 9;
+
+    .videoplay-close {
+        position: absolute;
+        right: 0;
+        top: rem(-50);
+    }
+
+    video {
+        width: 600px;
+    }
+}
+
+.videoplay-mask {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hint-p {
+    position: fixed;
+    width: rem(300);
+    top: 35%;
+    left: 50%;
+    margin-left: rem(-180);
+    text-align: center;
+    z-index: 2;
+    font-size: rem(26);
+    color: #fff;
+    height: rem(60);
+    line-height: rem(60);
+    padding: 0 rem(30);
+    border-radius: rem(5);
+    background: rgba(0, 0, 0, 0.8);
+}

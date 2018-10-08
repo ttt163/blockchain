@@ -1,0 +1,15 @@
+ <!-- 专题轮播 -->
+ <div id="hotSwiper" class="hot-swiper swiper-container swiper-container-horizontal">
+     <div class="swiper-wrapper">
+         <%
+         recommend.map((item) => {%>
+         <a class="swiper-slide" target="_blank" href="<%= `${domain}/hot/${item.tags}/${item.id}` %>">
+             <img src="<%= item.pcImgSrc %>" />
+             <h3><%= item.topicName %></h3>
+         </a>
+         <%})
+          %>
+     </div>
+     <div class="swiper-pagination"></div>
+ </div>
+

@@ -1,0 +1,111 @@
+@@include("public/m-header.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/m-apply.css"]
+})
+<div class="clearfix">
+    <div class="apply-box">
+        <div class="slogan"><img src="../img/m-apply/slogan.png" alt="火星训练营邀请你报名"></div>
+        <div class="apply-from">
+            <ul>
+                <li><p><span>Name</span><font>姓名</font></p><div class="text-box"><input type="text" id="name"></div></li>
+                <li><p><span>Age</span><font>年龄</font></p><div class="text-box"><input type="text" id="age"></div></li>
+                <li><p><span>Phone</span><font>手机</font></p><div class="text-box"><input type="text" id="Phone"></div></li>
+                <li><p><span>WeChat</span><font>微信</font></p><div class="text-box"><input type="text" id="WeChat"></div></li>
+                <li><p><span>E_mail</span><font>邮箱</font></p><div class="text-box"><input type="text" id="EMail"></div></li>
+                <li><p class="grow"><span>City</span><font>所在城市</font></p><div class="text-box grow"><input type="text" id="City"></div></li>
+                <li><p class="grow"><span>Firm</span><font>公司名称</font></p><div class="text-box grow"><input type="text" id="Firm"></div></li>
+                <li><p class="grow"><span>Position</span><font>身份属性</font></p></li>
+            </ul>
+            <div class="identity">
+                <div class="item">
+                    <input name="intro104" id="radio1" value="1" type="radio">
+                    <label for="radio1"></label><p>创始人</p>
+                </div>
+                <div class="item">
+                    <input name="intro104" id="radio2" value="2" type="radio">
+                    <label for="radio2"></label><p>投资人</p>
+                </div>
+                <div class="item">
+                    <input name="intro104" id="radio3" value="3" type="radio">
+                    <label for="radio3"></label><p>合伙人</p>
+                </div>
+                <div class="item">
+                    <input name="intro104" id="radio4" value="4" type="radio">
+                    <label for="radio4"></label><p>高管</p>
+                </div>
+                <div class="item">
+                    <input name="intro104" id="radio5" value="5" type="radio">
+                    <label for="radio5"></label><p>其他职员</p>
+                </div>
+            </div>
+            <div class="synopsis clearfix">
+                <div class="synopsis-title">
+                    <span>About Us</span>
+                    <font>公司业务及运营状况简介</font>
+                </div>
+                <div class="synopsis-cont">
+                    <textarea id="synopsis" placeholder="不限字数"></textarea>
+                </div>
+            </div>
+            <div class="why">
+                <div class="synopsis-title">
+                    <span>What’s the purpose of your attending Mars Training Camp?</span>
+                    <font class="why-text">为什么来参加火星特训营？</font>
+                </div>
+                <div class="synopsis-cont">
+                    <textarea id="university" placeholder="目的、想要提升的地方"></textarea>
+                </div>
+            </div>
+            <div class="cultivate">
+                <div class="synopsis-title">
+                    <span>What else lessons have you attended</span>
+                    <font>还曾参加过哪些名校培训</font>
+                </div>
+                <div class="synopsis-cont">
+                    <textarea id="cultivate" placeholder="例如，长江、中欧、湖畔、沃顿等"></textarea>
+                </div>
+            </div>
+            <div class="cultivate">
+                <div class="synopsis-title">
+                    <span>Where you get the register information？</span>
+                    <font>您是从哪里获知的报名信息？（获知渠道）</font>
+                </div>
+                <div class="synopsis-cont source">
+                    <textarea id="source" placeholder="获知渠道"></textarea>
+                </div>
+            </div>
+            <div class="video">
+                <div class="synopsis-title">
+                    <span>Video recommendation</span>
+                    <font>视频自荐</font>
+                </div>
+                <div class="video-cont">
+                    <div class="video-list"></div>
+                    <div class="video-add">
+                        <label><span id="progress"></span></label>
+                        <input id="myFile" type="file" accept="video/*">
+                        <img src="../img/m-apply/add.png" alt="添加视频">
+                    </div>
+                </div>
+            </div>
+            <div class="apply-btn" id="applyBtn">提交</div>
+        </div>
+    </div>
+    <div class="videoplay-wrap" id="videoplayWrap">
+        <a title="关闭" class="videoplay-close" id="videoplayClose"><img alt="关闭" src="../img/m-apply/videoplay-close.png" /></a>
+        <video src="" controls="controls" autoplay="autoplay">您的浏览器不支持该视频</video>
+    </div>
+    <div class="videoplay-mask" id="videoplayMask"></div>
+    <div class="succeed-mtc">
+        <div class="succeed-slogan"><img src="../img/m-apply/succeed-title-mtc.png" alt=""></div>
+        <div class="succeed-text"><img src="../img/m-apply/succeed-text.png" alt=""></div>
+        <div class="succeed-bottom"><img src="../img/m-apply/succeed-b-mtc.png" alt=""></div>
+    </div>
+</div>
+@@include("public/m-footer-prue.ejs", {
+"plugin": [],
+"private": ["../js/m-apply.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

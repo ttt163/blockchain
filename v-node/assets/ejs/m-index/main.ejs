@@ -1,0 +1,56 @@
+<%
+const formatDate = (date, str) => {
+    // let _str = !str ? '-' : str
+    const zero = (m) => {
+        return m < 10 ? '0' + m : m
+    }
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return zero(m) + '-' + zero(d)
+    } else {
+        return ''
+    }
+}
+const getTimeContent = (publishTime, requestTime) => {
+    let limit = parseInt((requestTime - publishTime)) / 1000
+    let content = ''
+    if (limit < 60) {
+        content = '刚刚'
+    } else if (limit >= 60 && limit < 3600) {
+        content = Math.floor(limit / 60) + '分钟前'
+    } else if (limit >= 3600 && limit < 86400) {
+        content = Math.floor(limit / 3600) + '小时前'
+    } else {
+        content = formatDate(publishTime)
+    }
+    return content
+}
+ %>
+@@include('../modules/m-topNav.ejs')
+
+<div class="swiper-container wrap-box" id="hxwrap" data-type="index">
+    <div class="swiper-wrapper overall-box" id="overAllBox">
+        <div class="swiper-slide out-box white-bg">
+            <div class="page-con-wrap" id="pageConWrap0">
+                <div class="swiper-container banner" id="newsWrap">
+                    <div class="swiper-wrapper newsWrap"></div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination paginationBanner"></div>
+                </div>
+                <!--广告/专题-->
+                <div class="index-ad"></div>
+
+                <div class="news-box">
+                    <h6><span></span>今日新闻</h6>
+                    <div class="list-box" id="listBox0" data-page="<%= data.currentPage %>">
+                        @@include('../modules/m-newsList.ejs')
+                    </div>
+                    <div class="btn-more" id="btnMore0" data-type="0" data-time="<%= !data.inforList || !data.inforList.length ? 0 : data.inforList[data.inforList.length -1].publishTime %>" data-count="<%= data.pageCount %>" data-page="1" data-size="<%= data.pageSize %>">加载更多</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

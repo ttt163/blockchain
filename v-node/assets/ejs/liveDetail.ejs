@@ -1,0 +1,14 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": [],
+"private": ["../css/liveDetail.css"]
+})
+
+<!-- 内容 -->
+@@include('liveDetail/main.ejs')
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/social-share.min.js"],
+"private": ["../js/common.js", "../js/liveDetail.js"]
+})

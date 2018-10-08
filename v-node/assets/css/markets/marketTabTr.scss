@@ -1,0 +1,57 @@
+/**
+ * Author：tantingting
+ * Time：2018/5/4
+ * Description：Description
+ */
+
+tr.market-table-tr {
+    width: 100%;
+
+    &:nth-child(2n) {
+        background: #f5f5f5;
+    }
+
+    &:hover {
+        background: #fafafa;
+    }
+
+    td {
+        width: 103px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #212121;
+        font-size: 14px;
+
+        &:first-child {
+            width: 60px;
+        }
+
+        &:nth-child(2) {
+            width: 150px;
+        }
+
+        &.blue {
+            color: #1482f0;
+
+            img {
+                width: 21px;
+                height: 21px;
+                margin-right: 3px;
+                vertical-align: middle;
+            }
+        }
+
+        .blue-border {
+            display: block;
+            width: 90px;
+            height: 30px;
+            margin: 2px 0 0 10px;
+            line-height: 30px;
+            color: #1482f0;
+            border: 1px #1482f0 solid;
+            background: #fff;
+            cursor: pointer;
+        }
+    }
+}

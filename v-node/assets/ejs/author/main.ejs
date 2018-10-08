@@ -1,0 +1,27 @@
+<div class="author-warp">
+    <div class="author-top clearfix">
+        <div id="filterTap" class="clearfix">
+            <a title="最热" data-type="4" href="javascript:void(0)" class="active">最热</a>
+            <a title="最新" data-type="6" href="javascript:void(0)">最新</a>
+            <a title="推荐" data-type="5" href="javascript:void(0)">推荐</a>
+        </div>
+        <p>已有<span id="allCount"><%= data.recordCount %></span>位专栏作家入驻火星财经</p>
+    </div>
+    <div class="author-list-box clearfix">
+        <%
+        data.inforList.map((item) => {%>
+        <div class="author-list-item">
+            <a title="<%= item.nickName %>" class="author-icon" href="<%= domain %>/newsauthor/<%= item.passportId %>"><img alt="<%= item.nickName %>" src="<%= item.iconUrl %>" /></a>
+            <a title="<%= item.nickName %>" class="author-name" href="<%= domain %>/newsauthor/<%= item.passportId %>"><%= item.nickName %></a>
+            <p class="author-desc"><%= !item.introduce ? '' : item.introduce %></p>
+            <p class="author-count">粉丝：<span class="followCount"><%= !item.followCount ? 0 : item.followCount %></span>&nbsp;&nbsp;|&nbsp;&nbsp;文章：<%= !item.newsCount ? 0 : item.newsCount %></p>
+            <a data-userid="<%= item.passportId %>" data-state="<%= item.ifCollect %>" class="btn" href="javascript:void(0)"><%= parseInt(item.ifCollect) === 1 ? '已关注' : '关注' %></a>
+        </div>
+        <%})
+         %>
+    </div>
+    <div class="pagination <%= data.pageCount > 1 ? 'show' : '' %>">
+        <ul class="f-pagination clearfix" id="pagination" data-size="<%= !data.pageSize ? 12 : data.pageSize %>" data-total="<%= !data.recordCount ? 0 : data.recordCount %>">
+        </ul>
+    </div>
+</div>

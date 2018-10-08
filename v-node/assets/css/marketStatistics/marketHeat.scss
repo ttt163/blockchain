@@ -1,0 +1,82 @@
+/**
+ * Author：yangbo
+ * Time：2018/8/30 17:25
+ * Description：marketHeat.scss
+ */
+
+.marketHeat {
+    background-color: #f5f7fa;
+    position: relative;
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .market-rate-switch {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .rate-switch-control {
+            li {
+                float: left;
+                text-align: right;
+                line-height: 24px;
+                width: 72px;
+                font-size: 14px;
+
+                .switch-item {
+                    display: inline-block;
+                    vertical-align: -4px;
+                    margin-right: 5px;
+                    width: 17px;
+                    height: 16px;
+                    background: url('../../img/market/switch-itm-btn.png') left top no-repeat;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                }
+
+                &.act-rate {
+                    color: #0c7ff2;
+
+                    .switch-item {
+                        background: url('../../img/market/switch-itm-btn.png') left bottom no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    .market-list {
+        background-color: #fff;
+        border: 1px solid #eee;
+        margin-top: 24px;
+        padding: 12px 60px;
+
+        li {
+            float: left;
+            width: 20%;
+            text-align: center;
+
+            p {
+                line-height: 31px;
+            }
+
+            .item-data {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .item-title {
+                color: #999;
+                font-size: 15px;
+            }
+        }
+    }
+}

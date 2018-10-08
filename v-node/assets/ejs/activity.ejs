@@ -1,0 +1,119 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.min.css"],
+"private": ["../css/activity.css"]
+})
+<%
+const formatDate = (date, str) => {
+//    let _str = !str ? '-' : str
+//    const zero = (m) => {
+//        return m < 10 ? '0' + m : m
+//    }
+    let time = new Date(date)
+    // let y = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return m + '月' + d + '日'
+    } else {
+        return ''
+    }
+}
+let getRecommendImgLength = data.getRecommendImg.inforList.length
+const getNav = (place) => {
+    if (place === 'overseas') {
+        return '海外'
+    } else if (place === 'others') {
+        return '其他'
+    } else {
+        return place
+    }
+}
+%>
+<div class="activity-home">
+    <div class="home-top">
+        <div class="banner" data-num="<%= getRecommendImgLength %>">
+            <div class="swiper-container activity-banner">
+                <div class="swiper-wrapper">
+                    <% data.getRecommendImg.inforList.map((item, index) => {
+                        var coverPic = JSON.parse(item.coverPic)
+                    %>
+                    <div class="swiper-slide"><a href="/huodongDetail/<%= item.id %>" title="<%= item.title %>"
+                                                 target="_blank"><img src="<%= coverPic.pc_recommend %>"
+                                                                      alt="<%= item.title %>"><span></span></a></div>
+                    <% }) %>
+                </div>
+                <div class="swiper-pagination activity-p"
+                     style="display: <%= getRecommendImgLength === 1 ? 'none' : 'block' %>"></div>
+                <div class="swiper-button-next activity-n-x"
+                     style="display: <%= getRecommendImgLength === 1 ? 'none' : 'block' %>"></div>
+                <div class="swiper-button-prev activity-p-x"
+                     style="display: <%= getRecommendImgLength === 1 ? 'none' : 'block' %>"></div>
+            </div>
+        </div>
+    </div>
+    <div class="home-bottom clearfix">
+        <div class="bottom-wrap clearfix">
+            <ul class="activity-nav" id="activityNav">
+                <% data.getSite.map((item, index) => { %>
+                <li class="<%= index === 0 ? 'active' : '' %>"
+                    data-type="<%= index === 0 ? item.rank : item.place %>"><%= getNav(item.place) %>
+                    <span><%= index === 0 ? '' : '(' + item.placeCount + ')' %></span></li>
+                <% }) %>
+            </ul>
+            <div class="activity-data">
+                <span>时间</span>
+                <p class="active" id="timeAll" data-id="1">全部</p>
+                <p id="timeWeek" data-id="2">本周</p>
+                <p id="timeMonth" data-id="3">本月</p>
+                <div class="contact">联系我们:
+                    <div class="yx"><img src="../img/activity/yx.png" alt="">
+                        <div class="yx-cont">邮箱：
+                            <font id="fMailbox">lixiaoqin@huoxing24.com</font><i></i>
+                            <div class="copy" id="activityCopy">复制</div>
+                        </div>
+                    </div>
+                    <div class="wx"><img src="../img/activity/wx.png" alt="">
+                        <div class="wx-cont"><img src="../img/activity/a-wx.png"
+                                                  alt=""><span>微信：xq18419702435</span><i></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="activity-list clearfix" id="activityListBox">
+                <% data.getAll.inforList.map((item, index) => {
+                    var coverPic = JSON.parse(item.coverPic)
+                %>
+                <a href="/huodongDetail/<%= item.id %>" class="list-box" title="<%= item.title %>" target="_blank">
+                    <div class="activity-state <%= data.getAll.currentTime > item.endTime ? 'over' : '' %>"><%= data.getAll.currentTime > item.endTime ? '已结束' : '报名中' %></div>
+                    <img src="<%= coverPic.pc %>" alt="<%= item.title %>" title="<%= item.title %>">
+                    <p title="<%= item.title %>"><%= item.title %></p>
+                    <div class="list-b">
+                        <p class="p-site"><img src="../img/activity/site.png" alt=""><span><%= item.place %></span></p>
+                        <p class="p-time"><img src="../img/activity/time.png"
+                                               alt=""><span><%= parseInt(item.endTime) - parseInt(item.startTime) < 86400000 ? formatDate(item.startTime) : (formatDate(item.startTime) + '-' + formatDate(item.endTime)) %></span>
+                        </p>
+                    </div>
+                </a>
+                <% }) %>
+            </div>
+            <div class="activity-page" style="height: <%= data.getAll.pageCount > 1 ? '40px' : '0' %>">
+                <p class="activity-prev"><img src="../img/activity/page-left.png" alt=""></p>
+                <div class="page-num">
+                    <%
+                    for (var i = 1; i <= data.getAll.pageCount; i++) { %>
+                    <span data-page="<%= i %>" class="<%= i === 1 ? 'active' : '' %>"><%= i %></span>
+                    <% } %>
+                </div>
+                <p class="activity-next"><img src="../img/activity/page-right.png" alt=""></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": ["http://static.huoxing24.com/assets/swiper.jquery.min.js"],
+"private": ["../js/common.js", "../js/activity.js"]
+})
+

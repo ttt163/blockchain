@@ -1,0 +1,89 @@
+@@include("public/header-prue.ejs", {
+"plugin": ["http://static.huoxing24.com/assets/swiperv4/swiper.min.css"],
+"private": ["../css/chinaTour.css"]
+})
+<div class="apply-main clearfix">
+    <div class="apply-box">
+        <div class="slogan">
+            <img src="../img/chinaTour/pc-slogan.png" alt="火星财经｜中国行">
+            <div class="city" id="city" data-id="<%= urlId %>"><p></p></div>
+        </div>
+        <div class="apply-from">
+            <div class="base-info">
+                <ul class="clearfix">
+                    <li><p><span>Name</span><font>姓名</font></p><div class="text-box"><input type="text" id="name"></div></li>
+                    <li><p class="grow"><span>Firm</span><font>公司</font></p><div class="text-box"><input type="text" id="Firm"></div></li>
+                    <li><p><span>Phone NO</span><font>电话</font></p><div class="text-box"><input type="text" id="Phone"></div></li>
+                    <li><p><span>E_mail</span><font>邮箱</font></p><div class="text-box"><input type="text" id="EMail"></div></li>
+                    <li class="spLi">
+                        <p class="grow"><span>Channel</span><font>了解的渠道</font></p>
+                        <div class="source">
+                            <div class="item">
+                                <input name="intro104" id="radio1" value="4" type="radio">
+                                <label for="radio1"></label><p>微信</p>
+                            </div>
+                            <div class="item">
+                                <input name="intro104" id="radio2" value="1" type="radio">
+                                <label for="radio2"></label><p>朋友推荐</p>
+                            </div>
+                            <div class="item">
+                                <input name="intro104" id="radio3" value="2" type="radio">
+                                <label for="radio3"></label><p>火星社群</p>
+                            </div>
+                            <div class="item">
+                                <input name="intro104" id="radio4" value="5" type="radio">
+                                <label for="radio4"></label><p>其他</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="spLi">
+                        <p class="grow"><span>Position</span><font>职业属性</font></p>
+                        <div class="identity">
+                            <div class="item">
+                                <input name="intro105" id="radio11" value="创业者" type="radio">
+                                <label for="radio11"></label><p>创业者</p>
+                            </div>
+                            <div class="item">
+                                <input name="intro105" id="radio12" value="区块链从业者" type="radio">
+                                <label for="radio12"></label><p>区块链从业者</p>
+                            </div>
+                            <div class="item">
+                                <input name="intro105" id="radio13" value="投资机构" type="radio">
+                                <label for="radio13"></label><p>投资机构</p>
+                            </div>
+                            <div class="item">
+                                <input name="intro105" id="radio14" value="创始人" type="radio">
+                                <label for="radio14"></label><p>创始人</p>
+                            </div>
+                            <div class="item">
+                                <input name="intro105" id="radio15" value="其他" type="radio">
+                                <label for="radio15"></label><p>其他</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="activity clearfix">
+                <div class="activity-time">
+                    <p>活动时间</p>
+                    <span></span>
+                </div>
+                <div class="activity-site">
+                    <p>活动地点</p>
+                    <span></span>
+                </div>
+            </div>
+            <div class="apply-btn" id="applyBtn">提交</div>
+        </div>
+    </div>
+    <div class="succeed-mtc"><img class="su-img" src="../img/m-apply/su-img.png" alt=""><img id="suClose" class="su-close" src="../img/m-apply/su-close.png" alt=""></div>
+    <div class="shade"></div>
+</div>
+
+@@include("public/footer-prue.ejs", {
+"plugin": [],
+"private": ["../js/chinaTour.js"],
+"shreTitle": "<%= webSiteInfo.title %>",
+"shareDesc": "<%= webSiteInfo.description %>",
+"shareImgurl": "http://static.huoxing24.com/images/wxshare-icon.png"
+})

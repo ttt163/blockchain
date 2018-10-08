@@ -1,0 +1,553 @@
+/**
+ * Author：tantingting
+ * Time：2018/8/13
+ * Description：Description
+ */
+@import "./public/normalize";
+@import "./public/public";
+@import "./public/header";
+@import "./public/footer";
+
+.summit-warp {
+    .page-contain {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .page-title {
+        width: 714px;
+        margin: 0 auto 45px;
+        display: block;
+    }
+
+    .summit-page1 {
+        background: url("../img/sv-topic/pc--topic-bg1.jpg") center no-repeat;
+        background-size: 1920px 622px;
+        width: 100%;
+        height: 622px;
+
+        .left,
+        .right {
+            margin-top: 86px;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .page-contain {
+            position: relative;
+
+            .video-box {
+                position: absolute;
+                top: 190px;
+                left: 350px;
+
+                .video-contain {
+                    width: 500px;
+                    height: 280px;
+                    position: relative;
+
+                    video {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .mask {
+                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: rgba(0, 0, 0, 0.8);
+                        z-index: 9;
+
+                        .video-play-btn {
+                            position: absolute;
+                            background: url("../img/sv-topic/pc-video-play-btn.png");
+                            width: 109px;
+                            height: 144px;
+                            top: 50%;
+                            left: 50%;
+                            margin-top: -72px;
+                            margin-left: -54.5px;
+                        }
+                    }
+                }
+            }
+
+            .live-box {
+                position: absolute;
+                top: 302px;
+                left: 397px;
+
+                .live-contain {
+                    width: 242px;
+                    height: 148px;
+                    position: relative;
+
+                    .live-content {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .mask {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: rgba(0, 0, 0, 0.6);
+                        width: 100%;
+                        height: 100%;
+                        z-index: 9;
+                    }
+
+                    .live-play-btn {
+                        background: url("../img/sv-topic/pc-play-btn.png") no-repeat;
+                        display: block;
+                        width: 21px;
+                        height: 24px;
+                        position: absolute;
+                        z-index: 10;
+                        top: 50px;
+                        left: 111px;
+                    }
+
+                    .live-text {
+                        font-size: 16px;
+                        color: #fff;
+                        position: absolute;
+                        z-index: 10;
+                        top: 80px;
+                        left: 88px;
+                    }
+                }
+            }
+        }
+    }
+
+    .summit-page2 {
+        background: url("../img/sv-topic/pc--topic-bg2.jpg") center no-repeat;
+        background-size: 1920px 544px;
+        width: 100%;
+        height: 544px;
+
+        .page2-content {
+            height: 365px;
+
+            .left {
+                float: left;
+                width: 582px;
+                height: 100%;
+
+                .swiper-container {
+                    height: 100%;
+
+                    .swiper-slide {
+                        a {
+                            display: block;
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            .mode {
+                                display: block;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 30%;
+                                background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4), transparent);
+                            }
+
+                            h3 {
+                                font-size: 20px;
+                                color: #fff;
+                                position: absolute;
+                                bottom: 20px;
+                                padding: 0 20px;
+                            }
+                        }
+                    }
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        width: 40px;
+                        height: 60px;
+                        background: rgba(75, 42, 147, 0.6);
+                        text-align: center;
+                        line-height: 60px;
+
+                        &.swiper-button-prev {
+                            left: 0;
+                        }
+
+                        &.swiper-button-next {
+                            right: 0;
+                        }
+
+                        .iconfont {
+                            font-size: 22px;
+                            color: #fff;
+                        }
+                    }
+
+                    .swiper-pagination {
+                        top: auto;
+                        bottom: 0;
+                        background-color: rgba(124, 66, 234, 0.3);
+
+                        .swiper-pagination-progressbar {
+                            background-color: #7c42ea;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                float: right;
+                width: 580px;
+                height: 100%;
+                background: url("../img/sv-topic/pc-live-bg.png") no-repeat;
+
+                .live-box {
+                    width: 527px;
+                    height: 307px;
+                    overflow: auto;
+                    margin: 28px auto 0;
+                    padding-right: 20px;
+
+                    .live-box-title {
+                        font-size: 20px;
+                        color: #64c2ff;
+                    }
+
+                    .live-list {
+                        margin-top: 20px;
+
+                        .live-item {
+                            color: #9bbaff;
+                            height: 70px;
+                            display: block;
+
+                            span {
+                                float: left;
+                                display: block;
+                                word-break: break-word;
+                                width: 60px;
+                                text-align: center;
+                                padding: 8px 10px;
+                                box-sizing: border-box;
+                                font-size: 14px;
+                                background-color: #1c0b66;
+                                line-height: 18px;
+                                border-radius: 5px;
+                                opacity: 0.8;
+                            }
+
+                            h3 {
+                                float: left;
+                                font-size: 15px;
+                                width: 446px;
+                                line-height: 22px;
+                                margin-left: 16px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 2;
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 4px;
+                        height: 4px;
+                    }
+
+                    &::-webkit-scrollbar-button {
+                        background: rgba(101, 94, 251, 0.4);
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: rgba(101, 94, 251, 0.2);
+                    }
+
+                    &::-webkit-scrollbar-track-piece {
+                        background: rgba(101, 94, 251, 0.2);
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background: rgba(101, 94, 251, 1);
+                        border-radius: 5px;
+                    }
+
+                    &::-webkit-scrollbar-corner {
+                        background: #f0f0f0;
+                    }
+                }
+            }
+        }
+    }
+
+    .summit-page3 {
+        position: relative;
+        width: 100%;
+        //min-height: 1329px;
+        min-height: 744px;
+        background-color: #1d0256;
+        padding-bottom: 98px;
+        box-sizing: border-box;
+
+        .bg-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 744px;
+            background: url("../img/sv-topic/pc--topic-bg3-top.jpg") center no-repeat;
+            background-size: 1920px 744px;
+        }
+
+        .bg-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 586px;
+            background: url("../img/sv-topic/pc--topic-bg3-bottom.jpg") center no-repeat;
+            background-size: 1920px 586px;
+        }
+
+        .page3-contain {
+            position: relative;
+            z-index: 2;
+
+            .page-contain {
+                width: 1158px;
+            }
+
+            .news-list {
+                .news-item {
+                    display: block;
+                    float: left;
+                    width: 264px;
+                    margin-right: 33px;
+                    color: #b3caff;
+                    margin-bottom: 55px;
+
+                    &:nth-of-type(4n) {
+                        margin-right: 0;
+                    }
+
+                    .news-img {
+                        width: 100%;
+                        height: 192px;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            transition: transform 0.15s ease;
+                        }
+
+                        &:hover {
+                            img {
+                                transform: scale(1.04);
+                            }
+                        }
+                    }
+
+                    h3 {
+                        height: 40px;
+                        line-height: 20px;
+                        font-size: 15px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 21;
+                        opacity: 0.8;
+                        margin-top: 20px;
+                    }
+
+                    span {
+                        font-size: 12px;
+                        display: block;
+                        margin-top: 12px;
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            .news-no-more {
+                display: block;
+                background: url("../img/sv-topic/pc-topic-no-more.png") no-repeat;
+                background-size: contain;
+                width: 108px;
+                height: 22px;
+                margin: 24px auto 0;
+            }
+
+            .news-more-btn {
+                display: block;
+                background: url("../img/sv-topic/pc-topic-more-bth.png");
+                width: 800px;
+                height: 70px;
+                margin: 0 auto;
+                background-position: 0 0;
+
+                &:hover {
+                    background-position: 0 -80px;
+                }
+            }
+        }
+    }
+
+    .summit-page4 {
+        //background: url("../img/sv-topic/pc--topic-bg4.jpg") center no-repeat;
+        //background-size: 1920px 544px;
+        background-color: #1d0256;
+        width: 100%;
+        height: 544px;
+
+        .page-contain {
+            width: 1168px;
+        }
+
+        .alts-content {
+            height: 364px;
+
+            .left {
+                float: left;
+                width: 580px;
+                height: 100%;
+
+                .swiper-container {
+                    height: 100%;
+
+                    .swiper-slide {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        width: 40px;
+                        height: 60px;
+                        background: rgba(75, 42, 147, 0.6);
+                        text-align: center;
+                        line-height: 60px;
+
+                        &.swiper-button-prev {
+                            left: 0;
+                        }
+
+                        &.swiper-button-next {
+                            right: 0;
+                        }
+
+                        .iconfont {
+                            font-size: 22px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                float: right;
+                width: 576px;
+                height: 100%;
+
+                .img-row {
+                    img {
+                        width: 283px;
+                        height: 177px;
+                        display: block;
+                        float: left;
+
+                        &:nth-of-type(1) {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    &:nth-of-type(1) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 底部
+.footer-main {
+    background: #210661;
+    color: #8271ac;
+
+    .footer-copyright {
+        .hot-label {
+            .relation,
+            .send {
+                color: #8271ac;
+            }
+
+            h5 {
+                color: #ededed;
+            }
+        }
+    }
+
+    .footer-partner-con {
+        h3 {
+            color: #ededed;
+        }
+
+        .ft-partner-link-in {
+            a {
+                color: #8271ac;
+            }
+        }
+    }
+
+    .copy-info {
+        .info-left {
+            p {
+                color: #8271ac;
+            }
+        }
+
+        .info-right {
+            .fo-left {
+                a {
+                    color: #8271ac;
+                }
+
+                .cutline {
+                    background: #8271ac;
+                }
+            }
+
+            .footer-share-con {
+                .footer-share {
+                    .list {
+                        background: url("../img/sv-topic/share.png");
+                    }
+                }
+            }
+        }
+    }
+}

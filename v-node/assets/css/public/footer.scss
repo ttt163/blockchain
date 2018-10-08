@@ -1,0 +1,333 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-04-08 15:50
+ * Description：footer
+ */
+
+.footer-main {
+    min-width: 1200px;
+    background: #2e2e30;
+    color: #c8c8c8;
+    padding-bottom: 35px;
+
+    &.app {
+        margin-top: 0;
+    }
+
+    a {
+        float: left;
+        display: block;
+        color: #c8c8c8;
+    }
+
+    .footer-partner {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0 0;
+    }
+
+    .footer-partner-con {
+        float: left;
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .ft-partner-icon {
+            height: 28px;
+            margin-bottom: 10px;
+
+            a {
+                float: left;
+                margin-right: 20px;
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
+
+        .ft-partner-link {
+            margin-bottom: 20px;
+            font-size: 16px;
+            width: 725px;
+            overflow: hidden;
+            // height: 130px;
+
+            a {
+                position: relative;
+                display: inline-block;
+                padding-right: 40px;
+                line-height: 40px;
+                float: left;
+                text-align: left;
+                color: #999;
+
+                img {
+                    width: auto;
+                    height: 30px;
+                }
+
+                span {
+                    position: absolute;
+                    right: 20px;
+                    top: 18px;
+                    width: 5px;
+                    height: 8px;
+                    border-right: 1px #757575 solid;
+                }
+
+                &:hover {
+                    color: #c3c3c3;
+                }
+            }
+        }
+
+        h4 {
+            font-size: 16px;
+            line-height: 32px;
+
+            span {
+                font-size: 15px;
+                color: #969696;
+            }
+        }
+    }
+
+    .footer-copyright {
+        float: right;
+        position: relative;
+
+        .hot-label {
+            width: 400px;
+            height: auto;
+
+            .footer-host-tag {
+                text-align: right;
+            }
+
+            h5 {
+                font-size: 16px;
+                color: #ededed;
+                text-align: right;
+                margin-bottom: 20px;
+            }
+
+            .relation,
+            .send {
+                text-align: right;
+                color: #757575;
+                font-size: 16px;
+                line-height: 40px;
+
+                h4 {
+                    display: inline-block;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+
+    .cooperation {
+        width: 1200px;
+        margin: 0 auto;
+
+        h5 {
+            font-size: 16px;
+            color: #fff;
+            line-height: 32px;
+        }
+
+        h4 {
+            position: relative;
+            font-size: 16px;
+            display: inline-block;
+            float: left;
+            line-height: 32px;
+            margin-right: 25px;
+
+            span {
+                font-size: 15px;
+                color: #969696;
+            }
+
+            font {
+                position: absolute;
+                right: -11px;
+                top: 14px;
+                display: inline-block;
+                width: 5px;
+                height: 7px;
+                border-right: 1px solid #757575;
+            }
+
+            &:last-child {
+                font {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .copy-info {
+        width: 1200px;
+        margin: 10px auto;
+
+        .info-left {
+            width: 670px;
+            height: auto;
+            margin-top: 40px;
+
+            img {
+                width: 126px;
+                height: 30px;
+                display: inline-block;
+                float: left;
+            }
+
+            p {
+                font-size: 12px;
+                color: #5a5a5a;
+                line-height: 22px;
+                float: left;
+                margin: -7px 0 0 15px;
+
+                a {
+                    color: #5a5a5a;
+                }
+            }
+        }
+
+        .info-right {
+            float: right;
+            width: 200px;
+            margin-top: -30px;
+
+            .fo-left {
+                float: right;
+                margin-top: 30px;
+
+                .cutline {
+                    float: left;
+                    margin: 5px 30px;
+                    background: #3b3b3d;
+                    display: block;
+                    height: 12px;
+                    width: 1px;
+                }
+
+                a {
+                    display: inline-block;
+                    font-size: 14px;
+                    color: #999;
+
+                    &:hover {
+                        color: #e2e2e2;
+                    }
+                }
+            }
+
+            .footer-share-con {
+                position: relative;
+                float: right;
+                top: 10px;
+
+                .footer-share {
+                    width: 200px;
+
+                    .list {
+                        width: 40px;
+                        height: 40px;
+                        float: left;
+                        margin-left: 25px;
+                        cursor: pointer;
+                        background: url("../../img/footer/share.png") no-repeat;
+
+                        a {
+                            display: inline-block;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        &.l1 {
+                            background-position: 0 -45px;
+
+                            &:hover {
+                                background-position: 0 0;
+
+                                &:hover {
+                                    .wx-fx {
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            .wx-fx {
+                                position: absolute;
+                                top: -176px;
+                                left: -32px;
+                                width: 97px;
+                                height: 117px;
+                                background: #fff;
+                                border-radius: 5px;
+                                z-index: 10;
+                                padding: 20px;
+                                display: none;
+
+                                p {
+                                    width: 101px;
+                                    height: 110px;
+                                    float: left;
+
+                                    span {
+                                        display: inline-block;
+                                        text-align: center;
+                                        width: 100%;
+                                        font-size: 16px;
+                                        color: #616161;
+                                    }
+
+                                    img {
+                                        width: 98px;
+                                        height: 98px;
+                                        margin: 0 auto;
+                                    }
+                                }
+
+                                .arrow_down {
+                                    position: absolute;
+                                    bottom: -9px;
+                                    width: 0;
+                                    left: 62px;
+                                    height: 0;
+                                    border-left: 10px solid transparent;
+                                    border-right: 10px solid transparent;
+                                    border-top: 10px solid #fff;
+                                }
+                            }
+                        }
+
+                        &.l2 {
+                            background-position: -60px -45px;
+
+                            &:hover {
+                                background-position: -60px 0;
+                            }
+                        }
+
+                        &.l3 {
+                            background-position: -120px -45px;
+
+                            &:hover {
+                                background-position: -120px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

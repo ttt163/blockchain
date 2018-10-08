@@ -1,0 +1,49 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": [],
+"private": ["../css/video.css"],
+"title": "火星财经-区块链先锋门户"
+})
+
+<!-- 内容 -->
+<div class="video-cont">
+    <div class="video-cont-box" id="videoCont">
+        <%
+            var listData = newsData.videoData.inforList
+            var allData = newsData.videoData.recordCount
+            for (var i = 0; i < listData.length; i++) {
+            var videoImg = !listData[i].coverPic || listData[i].coverPic.indexOf('{') === -1 ? '' : JSON.parse(listData[i].coverPic)
+        %>
+        <div class="video-box">
+            <div class="video-img">
+                <a title="<%= listData[i].title %>" target="_blank" href="<%= domain %>/videoDetails/<%= listData[i].id %>/<%= listData[i].publishTime%> ">
+                    <img src="<%= !videoImg || !videoImg.pc ? '' : videoImg.pc %>" alt="<%= listData[i].title %>">
+                    <span class="btn">
+                        <img src="../img/video/video-btn.png" alt="播放">
+                    </span>
+                    <span class="title">火星视频</span>
+                </a>
+            </div>
+            <h5><%= listData[i].title %></h5>
+            <div class="video-describe">
+                <%= listData[i].content %>
+            </div>
+            <div class="box-bottom">
+                <p class="comment"><span><%= listData[i].commentCounts%></span>评论</p>
+                <p class="endorse"><span><%= listData[i].hotCounts %></span></p>
+                <p class="time"><span><%= newsData.videoTime[i]%></span></p>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <% if (allData > 12) { %>
+    <div class="video-more" id="videoMore" data-page="<%= newsData.videoData.pageCount%>">查看更多>></div>
+    <% } %>
+</div>
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": [],
+"private": ["../js/common.js", "../js/video.js", "../js/jquery.waterfall.js"]
+})
+

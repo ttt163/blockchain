@@ -1,0 +1,14 @@
+<div class="tags-box clearfix">
+    <div class="index-tags">
+        <div class="tags-title clearfix">
+            <h3>热门标签</h3>
+            <!--<a href="" class="more"></a>-->
+        </div>
+        <div class="tags-cont">
+            <% data.tagsDataList.map((item, index) => { %>
+            <a target="_blank" href="/hot/<%= item.name %>" title=<%=item.name%>><%= item.name %></a>
+            <%
+            }) %>
+        </div>
+    </div>
+</div>

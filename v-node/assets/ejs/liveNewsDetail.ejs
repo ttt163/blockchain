@@ -1,0 +1,14 @@
+<!-- 公共头部 -->
+@@include('public/header.ejs', {
+"plugin": [],
+"private": ["../css/liveNewsDetail.css"]
+})
+
+<!-- 内容 -->
+@@include('liveNewsDetail/main.ejs')
+
+<!-- 公共底部 -->
+@@include('public/footer.ejs', {
+"plugin": [],
+"private": ["../js/common.js", "../js/liveNewsDetail.js"]
+})

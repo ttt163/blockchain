@@ -1,0 +1,59 @@
+/**
+ * Author：tantingting
+ * Time：2018/4/20
+ * Description：Description
+ */
+
+.ad-swiper {
+    width: 555px;
+    height: 150px;
+
+    .swiper-slide {
+        width: 555px;
+        height: 150px;
+
+        img {
+            width: 555px;
+            height: 150px;
+        }
+    }
+
+    &:hover {
+        .swiper-button-prev {
+            transition: 0.3s;
+            left: 10px;
+        }
+
+        .swiper-button-next {
+            transition: 0.3s;
+            right: 10px;
+        }
+    }
+
+    .swiper-button-prev {
+        width: 39px;
+        height: 50px;
+        background: url("../img/adSwiper/left.png") no-repeat;
+        left: -39px;
+        z-index: 9999;
+
+        &:hover {
+            background: url("../img/adSwiper/left-h.png") no-repeat;
+        }
+    }
+
+    .swiper-button-next {
+        width: 39px;
+        height: 50px;
+        background: url("../img/adSwiper/right.png") no-repeat;
+        right: -39px;
+
+        &:hover {
+            background: url("../img/adSwiper/right-h.png") no-repeat;
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 15%;
+    }
+}

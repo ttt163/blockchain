@@ -1,0 +1,238 @@
+<div class="news-detail-box">
+    <% adImg.map((item) => { %>
+    <a class="activity-ad" href="<%= item.url %>" target="_blank" title="<% item.title %>"><img
+                src="<%= item.img_url %>" alt="<% item.title %>"></a>
+    <% }) %>
+    <div class="news-detail clearfix" data-info="<%= JSON.stringify({
+        id: newsData.current.id,
+        tags: newsData.current.tags,
+        createdBy: newsData.current.createdBy,
+        publishTime: newsData.current.publishTime,
+        score: newsData.current.score
+    }) %>">
+        <!--<div class="ad-top"></div>-->
+        <div class="news-detail-con simditor">
+            <div class="news-detail-wrap clearfix">
+                <div class="news-cont-box" id="detailBox">
+                    <div class="text-header">
+                        <h1>
+                            <%= !newsData.current || !newsData.current.title ? '' : newsData.current.title %>
+                        </h1>
+                        <h2 style="display: none"><%= !newsData.current.subTitle ? '' : newsData.current.subTitle %></h2>
+                        <div class="issue-box">
+                            <p class="author">
+                            <span title="<%= newsData.current.cateId === 1 ? newsData.current.nickName : newsData.current.author %>"
+                                  target="_blank">
+                                <%= newsData.current.cateId === 1 ? newsData.current.nickName : newsData.current.author %>
+                            </span>
+                                <font>·</font>
+                            </p>
+                            <p class="time"><span>
+                                    <%
+                                    const format = (date, str) => {
+                                        let _str = !str ? '' : str
+                                        const zero = (m) => {
+                                            return m < 10 ? '0' + m : m
+                                        }
+                                        let time = new Date(date)
+                                        // let y = time.getFullYear()
+                                        let m = time.getMonth() + 1
+                                        let d = time.getDate()
+                                        if (date) {
+                                            return _str + zero(m) + '月' + _str + zero(d) + '日'
+                                        } else {
+                                            return ''
+                                        }
+                                    }
+                                    %>
+                                    <%= format(!newsData.current.publishTime ? newsData.current.createTime : newsData.current.createTime) %>
+                            </span></p>
+                            <p class="read-numbner">热度: <span><%= newsData.current.hotCounts %></span></p>
+                        </div>
+                    </div>
+                    <div class="details-synopsis active" id="detailsSynopsis">
+                        <h2><%= newsData.current.synopsis %></h2>
+                    </div>
+                    <!-- 音频播放 -->
+                    @@include('./audio.ejs')
+                    <!-- 视频播放 -->
+                    <%
+                    var videoData = newsData.current.video
+                    if (!!videoData) {
+                        videoData = JSON.parse(videoData)
+                    if (videoData.length > 0) {
+                    %>
+                    <div>
+                        <div class="detail-video-wraper" style="width: 640px; height: 360px;">
+                            <video src="<%= videoData[0].fileUrl %>" preload="auto" controls=""
+                                   style="width: 100%; height: 100%;"></video>
+                        </div>
+                    </div>
+                    <%
+                    }
+                    }
+                    %>
+                    <!-- 新闻内容 -->
+                    <div class="detail-text-cont simditor-body">
+                        <%- newsData.current.content %>
+                    </div>
+                    <!--关键字-->
+                    <div class="keyword">关键字：
+                        <%
+                        let arr = !newsData.current.tags ? [] : newsData.current.tags.split(',')
+                        arr.map((item, index) => {
+                        if (index < 7) { %>
+                        <a title="<%= item %>" target="_blank" href="<%= domain %>/hot/<%= item %>"><%= item %></a>
+                        <% } else {
+                            return false
+                        } %>
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="news-share clearfix" id="newsShare">
+                    <div class="share-authorinfo"
+                         style="display: <%= parseInt(newsData.current.cateId) === 1 ? 'block' : 'none' %>"></div>
+                    <div class="share-reprint"
+                         style="display: <%= parseInt(newsData.current.cateId) === 2 ? 'block' : 'none' %>">
+                        本文来源: <%= newsData.current.source %></div>
+                    <div class="collect" id="newsCollect">
+                        <div class="collect-img <%= parseInt(newsData.ifCollect) === 1 ? 'active' : '' %>"
+                             data-ifCollect="<%= newsData.ifCollect %>"></div>
+                        <div class="comment-btn">
+                            <span></span>
+                            <p id="commentNum"></p>
+                        </div>
+                        <div class="share-box" id="shareBox">
+                            <p>分享</p>
+                            <!--<a href="" class="qq"></a>-->
+                            <!--<a href="" class="wechat"></a>-->
+                            <!--<a href="" class="sina"></a>-->
+                        </div>
+                        <div class="back-top" id="backTop"></div>
+                    </div>
+                </div>
+                <div id="topFixed"></div>
+                <!-- 底部推广 -->
+                <div id="adBbottom" class="ad-bottom">
+                    <h5>推广</h5>
+                    <div class="ad-bottom-box" id="adBottomBox">
+                        <!--<a href="" title="" target="_blank">-->
+                        <!--<img src="../../img/newsDetail/icon.png" alt="">-->
+                        <!--<h6>BitForex</h6>-->
+                        <!--<p>牌战略升级全新起航区块链数字广告生态牌战略升级全新起航区块链数字广告生态</p>-->
+                        <!--</a>-->
+                    </div>
+                </div>
+                <!--你可能感兴趣的内容-->
+                <div class="new-interest clearfix">
+                    <h5>相关新闻</h5>
+                    <div class="interest-box">
+                        <!--<a href="" title="" target="_blank">-->
+                        <!--<img src="../../img/newsDetail/detail-img.jpg" alt="">-->
+                        <!--<p>区块链安卓化时代来临？EOS主网上线EOS主网上线，全球21个“特权节点”中国占6个</p>-->
+                        <!--</a>-->
+                    </div>
+                </div>
+                <!-- 底部作者介绍 -->
+                <!--<div class="authorinfo-bottom"></div>-->
+            </div>
+        </div>
+        <div class="news-detail-right">
+            <!-- 右侧作者介绍 -->
+            <div class="authorinfo" style="display: <%= parseInt(newsData.current.cateId) === 1 ? 'block' : 'none' %>">
+                <!--<div class="authorinfo-top">-->
+                <!--<img class="portrait" src="" alt="">-->
+                <!--<div class="introduce">-->
+                <!--<div class="attention">关注</div>-->
+                <!--<h3>火星财经</h3>-->
+                <!--<p>复旦-杜伦工商管理博士，上海竑观资产管理有限公司管理合伙人上海竑观资产管理有限公司管理合伙人</p>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="authorinfo-infolist">-->
+                <!--<h5>最近更新</h5>-->
+                <!--<div class="authorinfo-news">-->
+                <!--<a href="" title="" target="_blank" class="clearfix">-->
+                <!--<span></span>-->
+                <!--<p>币安赵长鹏做客王峰十问：币安涉足乌干达法币交易，作为全球第一站</p>-->
+                <!--</a>-->
+                <!--<a href="" title="" target="_blank" class="clearfix">-->
+                <!--<span></span>-->
+                <!--<p>币安赵长鹏做客王峰十问：币安涉足乌干达法币交易，作为全球第一站</p>-->
+                <!--</a>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--转载文章-->
+            <div class="transshipment"
+                 style="display: <%= parseInt(newsData.current.cateId) === 2 ? 'block' : 'none' %>">
+                <div class="source-title clearfix">
+                    <span>本文来源: </span>
+                    <h3 title="<%= newsData.current.source %>"><%= newsData.current.source %></h3>
+                </div>
+                <div class="original-title">
+                    <span>原文标题: </span>
+                    <% if (newsData.current.originalUrl) { %>
+                    <a title="<%= newsData.current.title %>" href="<%= newsData.current.originalUrl %>"
+                       target="_blank"><%= newsData.current.originalTitle %></a>
+                    <% } else { %>
+                    <%= newsData.current.title %>
+                    <% } %>
+                </div>
+            </div>
+            <!--右侧推广-->
+            <div class="news-advertising">
+                <div class="swiper-container news-ad">
+                    <div class="swiper-wrapper" id="adRight">
+                        <!--<div class="swiper-slide">-->
+                        <!--<a href="" target="_blank" class="slide-list clearfix">-->
+                        <!--<img src="../../img/newsDetail/detail-img.jpg" alt="">-->
+                        <!--</a>-->
+                        <!--<span><img src="../../img/newsDetail/ad-title.png" alt=""></span>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="swiper-pagination news-page"></div>
+                </div>
+            </div>
+            <!-- 右侧行情 -------------------->
+            <div class="market-box clearfix">
+                <div class="index-market">
+                    <div class="market-title clearfix">
+                        <h3>涨幅榜</h3>
+                        <a href="/markets" target="_blank" class="more"></a>
+                    </div>
+                    <div class="news-market newsDetails"></div>
+                </div>
+            </div>
+            <!-- 右侧相关新闻 -->
+            <div class="ad-recomend">
+                <div class="aside-section">
+                    <div class="aside-title-name clearfix"><span class="aside-title-title">你可能感兴趣的内容</span></div>
+                    <div class="aside-title">
+                        <div class="aside-title-con">
+                            <div class="news-recommend clearfix" style="width: 100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%
+            var nextData = !newsData.next ? '' : newsData.next
+            var imgJson = {pc: ""}
+            var nextImg = !nextData.coverPic ? imgJson.pc : JSON.parse(nextData.coverPic)
+            %>
+            <!--下一页-->
+            <a class="next-page clearfix" style="display: <%= nextData === '' ? 'none' : 'block' %>"
+               href="<%= domain %>/newsdetail/<%= nextData.id %>" target="_blank" title=<%= nextData.title %>>
+                <h5>下一篇</h5>
+                <img src=<%= nextImg.pc %> alt="">
+                <p><%= nextData.title %></p>
+            </a>
+        </div>
+    </div>
+    <!-- 评论 -->
+    <div class="news-comment clearfix">
+        <div class="comment-box">
+            <div id="replyBox"></div>
+        </div>
+    </div>
+</div>
