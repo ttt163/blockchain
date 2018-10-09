@@ -1,0 +1,80 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+.my-article {
+    width: 1200px;
+    height: auto;
+    background: #fff;
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px 40px 38px;
+
+    .attention-head {
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 30px;
+
+        .project-title {
+            float: left;
+
+            img {
+                vertical-align: middle;
+                display: inline-block;
+                width: 24px;
+            }
+
+            span {
+                vertical-align: middle;
+                font-size: 24px;
+                color: #1482f0;
+                margin-left: 10px;
+            }
+
+            .num {
+                font-size: 18px;
+            }
+        }
+
+        // .search-content {
+        //     width: 230px;
+        //     height: 40px;
+        //     font-size: 16px;
+        //     float: right;
+        //     background: #fff;
+        //     position: relative;
+        //     border: 1px solid #e0e0e0;
+
+        //     input {
+        //         width: 80%;
+        //         height: 100%;
+        //         outline: none;
+        //         text-indent: 1em;
+        //         border: none;
+        //     }
+
+        //     img {
+        //         width: 21px;
+        //         height: 21px;
+        //         position: absolute;
+        //         top: 0;
+        //         bottom: 0;
+        //         margin: auto;
+        //         right: 15px;
+        //     }
+        // }
+    }
+
+    .article-content {
+        padding: 0 45px;
+
+        .noArticles {
+            margin-top: 90px;
+            font-size: 24px;
+            color: #bdbdbd;
+            text-align: center;
+            padding-bottom: 122px;
+        }
+    }
+}

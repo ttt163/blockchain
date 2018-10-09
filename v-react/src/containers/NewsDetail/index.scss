@@ -1,0 +1,290 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news -detail
+ */
+
+.news-detail-con {
+    border: none;
+}
+
+.news-detail {
+    width: 1200px;
+    margin: 20px auto 0;
+
+    .simditor {
+        border: none !important;
+
+        .simditor-body {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    .detail-video-wraper {
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .ad-item {
+        display: inline-block;
+        width: 100%;
+        font-size: 0;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .details-synopsis p {
+        //text-indent: 2em;
+        padding: 0.5rem 2.5rem 1.5rem 2.33333rem;
+        background: url(http://m.huoxing24.com/img/details-synopsis-bg-534309ede2.png) no-repeat left 0.8rem;
+        background-size: 1.5rem 1.08333rem;
+        color: #a6a6a6;
+        font-size: 1.08333rem;
+        text-align: left;
+        //font-weight: bold;
+        line-height: 1.91667rem;
+    }
+
+    .news-detail-wrap {
+        float: left;
+        width: 730px;
+        height: auto;
+        padding: 30px 49px 40px;
+        background: #fff;
+
+        .detail-text-cont {
+            width: 100%;
+
+            p {
+                font-size: 16px;
+                color: #363636;
+                line-height: 32px;
+                //text-indent: 2em;
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .page {
+            width: 100%;
+            line-height: 30px;
+            font-size: 16px;
+            color: #bdbdbd;
+            padding: 15px 0;
+            margin-top: 10px;
+            border-bottom: 1px #eee solid;
+            border-top: 1px #eee solid;
+
+            p {
+                margin-left: 10px;
+                color: #bdbdbd;
+                cursor: pointer;
+
+                &:hover {
+                    color: #1482f0;
+                }
+            }
+        }
+
+        .text-header {
+            width: 100%;
+            padding: 0 0 5px;
+            border-bottom: 1px #eee solid;
+            margin-bottom: 20px;
+
+            h6 {
+                min-height: 29px;
+                font-size: 26px;
+                color: #424242;
+                text-align: center;
+                line-height: 35px;
+            }
+
+            .issue-box {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                margin-top: 10px;
+                text-align: center;
+
+                p {
+                    min-width: 84px;
+                    float: left;
+                    margin: 0 15px;
+                    color: #bdbdbd;
+                    font-size: 14px;
+                    display: inline-block;
+                }
+
+                .read-numbner {
+                    margin-right: 0;
+                    float: right;
+                    padding-left: 20px;
+                    min-width: auto;
+                    background: url("./img/detail-eye.png") no-repeat left;
+                }
+
+                .collect {
+                    min-width: 25px;
+                    float: right;
+                    user-select: none;
+                    line-height: 38px;
+                    cursor: pointer;
+                    margin-right: 0;
+
+                    span {
+                        vertical-align: middle;
+                    }
+
+                    i {
+                        vertical-align: middle;
+                        font-size: 20px;
+                        color: #1482f0;
+
+                        &.hasCollect {
+                            color: #ffcd40;
+                        }
+                    }
+                }
+            }
+        }
+
+        .source {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+
+            .source-text {
+                float: left;
+
+                p {
+                    float: left;
+                    font-size: 14px;
+                    color: #bdbdbd;
+                    margin-right: 20px;
+                }
+            }
+
+            .share {
+                float: right;
+                color: #757575;
+
+                span {
+                    display: inline-block;
+                    line-height: 20px;
+                }
+
+                a {
+                    margin: 0 5px;
+
+                    img {
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .authorinfo {
+        float: right;
+        width: 330px;
+        background: #fff;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    .authorinfo-bottom {
+        background-color: #f8f8f8;
+        margin-top: 30px;
+    }
+
+    .ad-recomend {
+        width: 330px;
+        height: auto;
+        float: right;
+
+        .news-author {
+            width: 100%;
+            height: 340px;
+            background: #fff;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    }
+
+    .ad-show {
+        width: 330px;
+        height: auto;
+        float: right;
+    }
+
+    .market {
+        width: 330px;
+        float: right;
+    }
+}
+
+.bottom-recommend-news {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #424242;
+
+    .recommend-title {
+        font-size: 14px;
+        color: #424242;
+        background-color: #f8f8f8;
+        height: 44px;
+        line-height: 44px;
+        padding-left: 16px;
+    }
+
+    .news-item {
+        display: block;
+        margin-top: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #eee;
+
+        & > div {
+            //float: left;
+            margin-left: 13px;
+        }
+    }
+
+    .dot {
+        display: block;
+        float: left;
+        width: 5px;
+        height: 5px;
+        border: 1px #4b4b4b solid;
+        border-radius: 100%;
+        margin-top: 6px;
+        //margin-right: 8px;
+    }
+
+    a {
+        color: #424242;
+        font-size: 14px;
+    }
+
+    .news-title {
+        width: 710px;
+        margin-bottom: 10px;
+
+        &:hover {
+            color: #0c7ff2;
+        }
+    }
+
+    p {
+        color: #bdbdbd;
+    }
+}

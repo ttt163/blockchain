@@ -1,0 +1,83 @@
+.author-attention {
+    .author-content {
+        height: auto;
+        position: relative;
+        vertical-align: middle;
+        overflow: hidden;
+
+        .author-item {
+            width: 500px;
+            background: #fff;
+            height: 140px;
+            margin-bottom: 10px;
+            display: inline-block;
+            border: 1px #ebebeb solid;
+            position: relative;
+            cursor: pointer;
+
+            &:nth-of-type(odd) {
+                float: left;
+            }
+
+            &:nth-of-type(even) {
+                float: right;
+            }
+
+            & > div,
+            & > p {
+                display: inline-block;
+            }
+
+            .author-head-img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 17px;
+            }
+
+            .author-info {
+                width: 176px;
+                height: 75px;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 135px;
+
+                .nickname {
+                    font-size: 18px;
+                    color: #424242;
+                    margin-bottom: 15px;
+                }
+
+                .article-num {
+                    margin-bottom: 5px;
+                }
+
+                .article-num,
+                .count {
+                    font-size: 14px;
+                    color: #757575;
+                }
+            }
+
+            .cancel-attention {
+                line-height: 141px;
+                position: absolute;
+                cursor: pointer;
+                font-size: 16px;
+                color: #1482f0;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                border-left: 1px solid #ebebeb;
+                padding: 0 18px;
+            }
+        }
+    }
+}

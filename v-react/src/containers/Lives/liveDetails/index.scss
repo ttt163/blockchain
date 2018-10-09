@@ -1,0 +1,353 @@
+/**
+ * Author：liushaozong
+ * Time：2018/02/27
+ * Description：search
+ */
+.live-details {
+    position: relative;
+    width: 1200px;
+    padding-top: 780px;
+    margin: 0 auto;
+
+    .introduce-box {
+        position: absolute;
+        width: 1200px;
+        height: 100%;
+        top: 456px;
+        margin: 0 auto;
+
+        h5 {
+            position: absolute;
+            left: 50%;
+            margin-left: -62px;
+            top: 25px;
+            width: 125px;
+            height: 61px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .share {
+            position: absolute;
+            width: 160px;
+            height: 30px;
+            left: 50%;
+            top: 40px;
+            margin-left: 230px;
+            color: #a19fb9;
+            line-height: 30px;
+
+            a {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin: 0 10px;
+                font-size: 16px;
+
+                img {
+                    vertical-align: middle;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:nth-child(2) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .introduce-text {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            width: 1063px;
+            height: 60px;
+            margin-left: -531px;
+            background: url("../img/mark.png") center no-repeat;
+
+            p {
+                width: 600px;
+                height: 80px;
+                overflow: hidden;
+                font-size: 16px;
+                color: #a19fb9;
+                line-height: 26px;
+                text-align: center;
+                margin: 0 auto;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+        }
+
+        .live-ewm {
+            position: absolute;
+            width: 406px;
+            height: 64px;
+            left: 50%;
+            margin-left: -203px;
+            top: 200px;
+            z-index: 9999;
+
+            p {
+                position: relative;
+                width: 183px;
+                height: 64px;
+                float: left;
+                background: url("../img/btn.png") no-repeat;
+                cursor: pointer;
+                color: #1f1f2c;
+                font-size: 18px;
+                text-align: center;
+                line-height: 64px;
+                margin: 0 10px;
+
+                &:hover {
+                    & span {
+                        display: block;
+                    }
+                }
+
+                span {
+                    display: none;
+                    position: absolute;
+                    left: 11px;
+                    top: -180px;
+                    width: 140px;
+                    height: 140px;
+                    padding: 10px;
+                    background: #fff;
+                    border: 1px #eee solid;
+
+                    img {
+                        width: 140px;
+                        height: 140px;
+                    }
+
+                    font {
+                        position: absolute;
+                        bottom: -8px;
+                        left: 70px;
+                        width: 0;
+                        height: 0;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-top: 10px solid #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .live-cont-left {
+        position: relative;
+        width: 810px;
+        padding: 45px 35px;
+        height: auto;
+        float: left;
+        border-top: 3px #eac171 solid;
+        background: url("../img/cont-bg.png") top no-repeat;
+
+        .live-state {
+            position: absolute;
+            width: 79px;
+            height: 79px;
+            left: 0;
+            top: 0;
+
+            &.state0 {
+                background: url("../img/live-start.png") no-repeat;
+            }
+
+            &.state5,
+            &.state1 {
+                background: url("../img/live-in.png") no-repeat;
+            }
+
+            &.state4,
+            &.state2 {
+                background: url("../img/live-over.png") no-repeat;
+            }
+        }
+
+        .no-cont {
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .live-cont {
+            width: 100%;
+            margin-bottom: 40px;
+
+            .live-portrait {
+                width: 80px;
+                height: 80px;
+                float: left;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100%;
+                }
+            }
+
+            .live-right-cont {
+                position: relative;
+                width: 720px;
+                height: 100%;
+                float: right;
+
+                .live-cont-top {
+                    width: 100%;
+                    height: 25px;
+
+                    p {
+                        width: 50%;
+                        float: left;
+
+                        &.name {
+                            color: #121212;
+                            font-size: 16px;
+                            padding-left: 10px;
+                            box-sizing: border-box;
+                        }
+
+                        &.time {
+                            color: #747474;
+                            font-size: 14px;
+                            text-align: right;
+                        }
+                    }
+                }
+
+                .rr {
+                    position: absolute;
+                    left: 6px;
+                    top: 30px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .live-cont-text {
+                    float: right;
+                    width: 655px;
+                    padding: 25px;
+                    background: #fff;
+                    border-radius: 3px;
+                    font-size: 16px;
+                    color: #303030;
+
+                    p {
+                        line-height: 30px;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .live-cont-right {
+        width: 210px;
+        height: auto;
+        padding: 45px;
+        float: right;
+        border-top: 3px #eac171 solid;
+        background: url("../img/guest-bg.png") top no-repeat;
+
+        .guest-title {
+            width: 137px;
+            height: 43px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .figure {
+            width: 210px;
+            height: auto;
+            margin: 30px auto;
+
+            .portrait {
+                width: 170px;
+                height: 170px;
+                margin: 0 auto;
+
+                img {
+                    width: 170px;
+                    height: 170px;
+                    border-radius: 100% 100%;
+                }
+            }
+
+            .name {
+                width: 100%;
+                text-align: center;
+
+                h5 {
+                    font-size: 24px;
+                    color: #1d1c1c;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: #757575;
+                    line-height: 23px;
+                }
+            }
+        }
+
+        .wf-ewm {
+            position: relative;
+            width: 250px;
+            height: 260px;
+            margin: 0 auto;
+            left: -15px;
+            background: url("../img/wf-bg.png") no-repeat;
+
+            img {
+                position: absolute;
+                top: 50px;
+                left: 40px;
+                width: 162px;
+                height: 162px;
+            }
+
+            .title1,
+            .title2 {
+                position: absolute;
+                width: 100%;
+                font-size: 18px;
+                color: #3c3c3c;
+                text-align: center;
+            }
+
+            .title1 {
+                top: 15px;
+            }
+
+            .title2 {
+                bottom: 15px;
+                font-size: 16px;
+                color: #757575;
+            }
+        }
+    }
+}

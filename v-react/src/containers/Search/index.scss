@@ -1,0 +1,65 @@
+/**
+ * Author：liushaozong
+ * Time：2018/02/27
+ * Description：search
+ */
+
+.search-content {
+    width: 1200px;
+    height: auto;
+    margin: 20px auto;
+
+    .search-content-left {
+        float: left;
+        width: 850px;
+
+        .search-import {
+            width: 848px;
+            height: 100px;
+
+            .search-input {
+                background: url("./img/search-btn.png") #fff left no-repeat;
+                background-position: 15px;
+                width: 800px;
+                height: 54px;
+                padding-left: 48px;
+                border: 1px #e5e5e5 solid;
+                color: #757575;
+
+                &:hover {
+                    border: 1px #bdbdbd solid;
+                }
+            }
+
+            .result-num {
+                width: 100%;
+                line-height: 42px;
+                font-size: 14px;
+                color: #757575;
+
+                span {
+                    color: #e61e1e;
+                    padding: 0 7px;
+                }
+            }
+        }
+
+        .search-result-list {
+            width: 810px;
+            padding: 0 20px;
+            height: auto;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        .pagination {
+            width: 850px;
+            padding: 50px 0 0 0;
+        }
+    }
+
+    .search-content-right {
+        width: 330px;
+        float: right;
+    }
+}

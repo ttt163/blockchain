@@ -1,0 +1,99 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+.attention-password {
+    position: relative;
+    width: 478px;
+    background: #fff;
+    padding: 60px 185px 262px;
+    border: 1px #ebebeb solid;
+
+    .attention-password-title {
+        text-align: center;
+
+        img {
+            display: inline-block;
+            width: 28px;
+            height: 34px;
+            vertical-align: middle;
+            margin-top: 0;
+        }
+
+        span {
+            vertical-align: middle;
+            font-size: 24px;
+            color: #1482f0;
+            margin: 5px 10px;
+        }
+    }
+
+    .attention-password-list {
+        margin-top: 30px;
+
+        div {
+            line-height: 60px;
+
+            span {
+                display: inline-block;
+                width: 120px;
+                color: #757575;
+                font-size: 16px;
+            }
+
+            input {
+                width: 320px;
+                padding: 0 10px;
+                height: 48px;
+                line-height: 48px;
+                font-size: 16px;
+                color: #757575;
+                border: 1px #e5e5e5 solid;
+
+                &::-webkit-input-placeholder {
+                    color: #e5e5e5;
+                }
+
+                &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                    color: #e5e5e5;
+                }
+
+                &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                    color: #e5e5e5;
+                }
+
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: #e5e5e5;
+                }
+            }
+        }
+    }
+
+    .error-msg {
+        line-height: 40px !important;
+        width: 461px !important;
+    }
+}
+
+.password-btn {
+    width: 210px;
+    height: 55px;
+    background: #1482f0;
+    color: #fff;
+    line-height: 55px;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px 0 0 120px;
+}
+
+.back-user-center {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 30px;
+
+    img {
+        height: 100%;
+    }
+}

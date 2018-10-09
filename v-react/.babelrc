@@ -1,0 +1,39 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 5 versions",
+            "ie >= 9"
+          ]
+        }
+      }
+    ],
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-class-properties",
+    "transform-decorators-legacy",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        "react-hmre"
+      ],
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    }
+  }
+}

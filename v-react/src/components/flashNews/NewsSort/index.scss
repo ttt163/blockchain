@@ -1,0 +1,45 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-21 21:43
+ * Description： news sort
+ */
+
+.news-sort {
+    padding-top: 15px;
+
+    .list-box {
+        margin-bottom: 15px;
+        line-height: 26px;
+
+        span {
+            float: left;
+            color: #424242;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a {
+            float: right;
+            width: 270px;
+            color: #424242;
+            font-size: 16px;
+
+            &:hover {
+                color: #1482f0;
+            }
+        }
+
+        &:nth-child(1) span {
+            color: #f00;
+        }
+
+        &:nth-child(2) span {
+            color: #ff7200;
+        }
+
+        &:nth-child(3) span {
+            color: #ffb400;
+        }
+    }
+}
+

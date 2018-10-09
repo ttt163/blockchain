@@ -1,0 +1,260 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：header nav
+ */
+
+.header-nav {
+    position: relative;
+    height: 60px;
+    width: 1198px;
+    line-height: 60px;
+    margin: 0 auto;
+    font-size: 18px;
+
+    .logo-img {
+        position: relative;
+        top: 0;
+        z-index: 100;
+        display: inline-block;
+        height: auto;
+        width: 300px;
+
+        .logo {
+            float: left;
+            margin: 17px 5px 0 0;
+            height: 28px;
+            z-index: 100;
+            vertical-align: middle;
+        }
+
+        span {
+            float: left;
+            margin: 22px 0 0 8px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(204, 204, 204, 1);
+            display: inline-block;
+            height: 18px;
+            color: #999;
+            font-family: 'Microsoft YaHei';
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    .nav-content {
+        text-align: right;
+        max-width: 100%;
+        position: absolute;
+        display: inline-block;
+        left: 0;
+        right: 100px;
+        margin: auto;
+
+        .nav-item {
+            display: inline-block;
+            margin-right: 40px;
+            position: relative;
+
+            &:last-child {
+                //margin: 0;
+                margin-right: 160px;
+            }
+
+            /* &:nth-child(3) {
+                position: relative;
+
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    width: 26px;
+                    height: 19px;
+                    top: 2px;
+                    right: -13px;
+                    background: url("./img/new.png") no-repeat center;
+                    background-size: 100% 100%;
+                }
+            } */
+
+            a {
+                height: 100%;
+                color: #616161;
+                font-size: 18px;
+
+                &:hover {
+                    color: #1482f0;
+                }
+            }
+
+            &.active {
+                a {
+                    color: #1482f0;
+                }
+            }
+
+            .new-icon {
+                position: absolute;
+                top: 8px;
+                right: -6px;
+            }
+        }
+    }
+
+    .search-content-div {
+        width: 50px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        right: 145px;
+        margin: auto;
+        display: inline-block;
+        cursor: pointer;
+
+        .search-box-btn {
+            position: absolute;
+            top: 20px;
+            left: -27px;
+            width: 19px;
+            height: 19px;
+            background: url("./img/search-btn.png") right center no-repeat;
+
+            &:hover {
+                background: url("./img/search-btn-hover.png") right center no-repeat;
+            }
+
+            .search-content {
+                display: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: -161px;
+                width: 155px;
+                margin: auto;
+                height: 25px;
+                color: #616161;
+                font-size: 14px;
+                border-bottom: 1px solid #bdbdbd;
+
+                &.active {
+                    display: block;
+                }
+
+                .search-input {
+                    position: absolute;
+                    right: 0;
+                    width: 140px;
+                    height: 25px;
+                    outline: none;
+                    border: none;
+                    background: #fff;
+                    padding-right: 10px;
+                    z-index: 50;
+                }
+            }
+        }
+
+        span {
+            position: absolute;
+            right: -107px;
+            top: 25px;
+            z-index: 55;
+
+            &.close {
+                display: none;
+                width: 10px;
+                height: 10px;
+                background: url("./img/close.png") no-repeat;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .login-content {
+        width: auto;
+        height: 25px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 45px;
+        color: #616161;
+
+        .separation {
+            display: inline-block;
+            height: 15px;
+            width: 2px;
+            background: #e0e0e0;
+            vertical-align: top;
+            margin-top: 23px;
+        }
+
+        span,
+        a {
+            display: inline-block;
+            max-width: 70px;
+            font-size: 16px;
+            margin-right: 12px;
+            cursor: pointer;
+            height: 45px;
+            overflow: hidden;
+            color: #616161;
+            float: left;
+
+            &:hover {
+                color: #1482f0;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        .login-active {
+            color: #1482f0;
+        }
+    }
+
+    .wx-ewm {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        cursor: pointer;
+        width: 22px;
+        height: 18px;
+        background: url("./img/wx-ewm.png") no-repeat;
+
+        &:hover {
+            background: url("./img/wx-ewm-h.png") no-repeat;
+
+            .wx-ewm-img {
+                display: block;
+            }
+        }
+
+        .wx-ewm-img {
+            position: absolute;
+            width: 207px;
+            height: 116px;
+            display: none;
+            padding: 25px 18px;
+            right: -18px;
+            top: 20px;
+            z-index: 100;
+            background: url("./img/wem-bg.png") no-repeat;
+
+            img {
+                display: inline-block;
+                width: 98px;
+                height: 123px;
+                float: left;
+
+                &:nth-child(2) {
+                    margin-left: 11px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-21 21:43
+ * Description：index news left
+ */
+
+.index-news-left {
+    //width: 590px;
+    width: 630px;
+    height: auto;
+    float: left;
+
+    .block-style {
+        padding: 0 20px;
+    }
+
+    ul {
+        width: 100%;
+        height: 55px;
+        border-bottom: 1px #eee solid;
+
+        li {
+            position: relative;
+            // width: 84px;
+            margin: 0 14px;
+            height: 55px;
+            float: left;
+            line-height: 55px;
+            color: #757575;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+
+            &.active,
+            &:hover {
+                color: #212121;
+                font-weight: bold;
+            }
+
+            font {
+                position: absolute;
+                width: 40px;
+                height: 2px;
+                left: 50%;
+                margin-left: -20px;
+                background: #1482f0;
+                bottom: -1px;
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .new-left-more {
+        display: block;
+        width: 138px;
+        height: 38px;
+        border: 1px #b3e5fc solid;
+        text-align: center;
+        line-height: 38px;
+        float: right;
+        margin: 30px 0;
+        color: #1482f0;
+    }
+}

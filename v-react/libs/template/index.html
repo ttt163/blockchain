@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="viewport"
+          content="
+          width=device-width,
+          initial-scale=1.0,
+          minimum-scale=1.0,
+          maximum-scale=1.0,
+          user-scalable=no"/>
+    <link rel='icon' href='http://static.huoxing24.com/images/2018/03/02/1519984683706317.ico' type='image/x-ico'>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!--[if lte IE 8]>
+    <script src="http://static.huoxing24.com/assets/browser-tips.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="http://static.huoxing24.com/assets/react-polyfill.min.js" charSet="UTF-8"></script>
+    <![endif]-->
+
+    <!--publlic-->
+    <script src="http://common.8864.com/web/js/jquery/jquery-1.12.0.min.js"></script>
+    <script src="http://common.8864.com/web/plugins/swiper/swiper.jquery.min.js"></script>
+    <script src="http://static.huoxing24.com/assets/canvas-particle.js"></script>
+
+    <!--plugin-->
+    <link rel="stylesheet" type="text/css" href="http://static.huoxing24.com/assets/swiper.min.css">
+
+    <!--private-->
+
+</head>
+<body>
+<div class="social-share" style="display: none" id="socialShareRoot"></div>
+<script src="http://static.huoxing24.com/assets/social-share.min.js"></script>
+<script>
+    socialShare('#socialShareRoot', {
+        url: 'http://www.huoxing24.com/#/live',
+        image: 'http://static.huoxing24.com/images/2018/03/21/1521601947415046.jpg',
+        source : '火星财经', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+        title: '火星财经', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
+        description: '',
+        sites: ['weibo', 'qq', 'qzone', 'tencent']
+    })
+</script>
+<div class="lk-loading active" id="pageLoading">
+    <div class="lk-loading-center">
+        <div class="lk-loading-center-absolute">
+            <div class="round round-one"></div>
+            <div class="round round-two"></div>
+            <div class="round round-three"></div>
+        </div>
+    </div>
+</div>
+<div id="root"></div>
+<div style="display: none">
+    <script src="https://s22.cnzz.com/z_stat.php?id=1272858809&web_id=1272858809" language="JavaScript"></script>
+</div>
+</body>
+</html>

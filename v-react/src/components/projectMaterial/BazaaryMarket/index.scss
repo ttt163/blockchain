@@ -1,0 +1,145 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：项目资料  市场行情
+ */
+
+.bazaary-market {
+    width: 100%;
+    height: 500px;
+
+    .bazaary-market-tab-heade {
+        position: relative;
+        width: 103.6%;
+        height: 55px;
+        margin-top: 10px;
+
+        ul {
+            border-bottom: 1px #e1e0e0 solid;
+
+            li {
+                position: relative;
+                float: left;
+                width: 105px;
+                height: 55px;
+                line-height: 55px;
+                text-align: center;
+                color: #757575;
+                cursor: pointer;
+                font-size: 16px;
+
+                &.active {
+                    color: #1482f0;
+                }
+
+                span {
+                    display: none;
+                    position: absolute;
+                    width: 30px;
+                    height: 3px;
+                    left: 50%;
+                    bottom: -1px;
+                    margin-left: -15px;
+                    background: #1482f0;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+
+                &:hover span {
+                    display: block;
+                }
+            }
+        }
+
+        .currency-more {
+            position: absolute;
+            right: 0;
+            top: 14px;
+            width: 110px;
+            height: 40px;
+            font-size: 14px;
+            padding: 0 10px;
+            line-height: 40px;
+            cursor: pointer;
+            color: #757575;
+            border: 1px #e1e0e0 solid;
+
+            &:before {
+                position: absolute;
+                content: '';
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border: 11px solid transparent;
+                border-top: 9px solid #d2d2d2;
+                right: 20px;
+                top: 16px;
+            }
+        }
+    }
+
+    .sort-heade {
+        width: 100%;
+        height: 55px;
+        margin-top: 10px;
+        line-height: 55px;
+        border-bottom: 1px #e1e0e0 solid;
+
+        td {
+            height: 55px;
+            color: #757575;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            position: relative;
+
+            &:first-child {
+                width: 60px;
+            }
+
+            &:nth-child(2) {
+                width: 150px;
+            }
+
+            &:nth-child(n+4) {
+                span {
+                    position: relative;
+
+                    /* &:before {
+                        position: absolute;
+                        content: '';
+                        display: inline-block;
+                        width: 0;
+                        height: 0;
+                        border: 8px solid transparent;
+                        border-top: 8px solid #d2d2d2;
+                        right: -28px;
+                        top: 5px;
+                    } */
+                }
+            }
+        }
+    }
+}
+
+.market-tab-box {
+    height: 660px;
+    width: 100%;
+    overflow: hidden;
+
+    table {
+        width: 100%;
+    }
+
+    .check-more {
+        height: 40px;
+        margin-top: 10px;
+        border: 1px #1482f0 solid;
+        line-height: 40px;
+        text-align: center;
+        color: #1482f0;
+        cursor: pointer;
+    }
+}

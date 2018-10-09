@@ -1,0 +1,83 @@
+/**
+ * Author：tantingting
+ * Time：2018/3/30
+ * Description：Description
+ */
+
+.phone-code-box {
+    position: absolute;
+    background: #fff;
+    box-sizing: border-box;
+    top: 54px;
+    border: 1px solid #e5e5e5;
+    z-index: 99;
+    width: 342px;
+    left: -1px;
+    font-size: 14px;
+    color: #424242;
+
+    .code-contain {
+        margin: 10px 10px 20px 60px;
+        max-height: 284px;
+        overflow: auto;
+
+        .code-item {
+            height: 42px;
+            line-height: 42px;
+            cursor: pointer;
+            padding-right: 10px;
+
+            .left {
+                float: left;
+            }
+
+            .right {
+                float: right;
+            }
+
+            &.select {
+                color: #1979f4;
+            }
+
+            &:hover {
+                color: #1979f4;
+            }
+
+            &:after {
+                content: '';
+                clear: both;
+                display: block;
+                visibility: hidden;
+                width: 0;
+                height: 0;
+            }
+        }
+
+        /* webkit滚动条样式 */
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        &::-webkit-scrollbar-button {
+            background-color: #f0f0f0;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+
+        &::-webkit-scrollbar-track-piece {
+            background: #f0f0f0;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #bbb;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: #f0f0f0;
+        }
+    }
+}

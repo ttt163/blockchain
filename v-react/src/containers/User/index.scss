@@ -1,0 +1,111 @@
+/**
+ * Author：liushaozong
+ * Time：2017/02/21
+ * Description：news list
+ */
+.user-content {
+    width: 1200px;
+    margin: 20px auto;
+
+    .user-list-nav {
+        float: left;
+        width: 288px;
+        height: auto;
+        padding: 40px 20px;
+        background: #fff;
+        border: 1px #ebebeb solid;
+
+        .user-message {
+            width: 100%;
+            margin: 0 auto;
+
+            p {
+                text-align: center;
+
+                &.user-time {
+                    font-size: 14px;
+                    color: #757575;
+
+                    font {
+                        padding-left: 10px;
+                    }
+                }
+
+                &.user-name {
+                    font-size: 20px;
+                    color: #424242;
+                    line-height: 40px;
+                }
+            }
+
+            .user-portrait {
+                img {
+                    display: block;
+                    width: 120px;
+                    height: 120px;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .fans-box {
+            width: 288px;
+            margin: 20px auto;
+
+            .author-num,
+            .fans-num {
+                width: 120px;
+                float: left;
+                text-align: center;
+                font-size: 16px;
+                color: #000;
+
+                p {
+                    font-size: 14px;
+                    color: #757575;
+                    line-height: 30px;
+                }
+            }
+
+            .fans-num {
+                width: 143px;
+                float: right;
+                border-left: 1px #ebebeb solid;
+            }
+        }
+
+        .user-nav {
+            width: 250px;
+            margin: 0 auto;
+
+            li {
+                height: 60px;
+                line-height: 60px;
+                font-size: 16px;
+
+                a {
+                    color: #757575;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+
+                    &:hover {
+                        color: #1482f0;
+                    }
+
+                    &.active {
+                        color: #1482f0;
+                        background: url("./img/active.png") right no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    .user-right-cont {
+        margin: 0 auto;
+        width: 850px;
+        //min-height: 670px;
+        //float: right;
+    }
+}

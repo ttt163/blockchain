@@ -1,0 +1,114 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-27 16:10
+ * Description：flash news list
+ */
+
+.flash-news-list {
+    width: 100%;
+
+    .flash-news {
+        margin-bottom: 10px;
+        box-sizing: content-box;
+        width: 100%;
+        height: auto;
+        border: 1px solid #eee;
+        background: #fff;
+
+        .news-item {
+            padding: 25px 40px;
+            position: relative;
+
+            .important-news {
+                display: inline-block;
+                width: 51px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url("./img/flash-news-list-important.png") no-repeat center / 100%;
+            }
+
+            .hot-news {
+                display: inline-block;
+                width: 51px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url("./img/flash-news-list-hot.png") no-repeat center / 100%;
+            }
+
+            .new-time {
+                display: inline-block;
+                width: 65px;
+                color: #c9c9c9;
+                line-height: 20px;
+                height: 20px;
+                text-align: right;
+                background: url("./img/flash-news-list-clock.png") no-repeat left;
+            }
+
+            p.news-detail {
+                display: block;
+                width: 100%;
+                overflow: hidden;
+                text-align: justify;
+                margin-top: 10px;
+                font-size: 16px;
+                line-height: 24px;
+                padding-bottom: 5px;
+                word-break: break-all;
+                word-wrap: break-word;
+            }
+
+            .judge-profit {
+                position: relative;
+                text-align: right;
+
+                .good-profit,
+                .bad-profit {
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 14px;
+                    color: #c9c9c9;
+                    display: inline-block;
+                    margin-left: 35px;
+
+                    span {
+                        &:first-child {
+                            padding-left: 22px;
+                        }
+
+                        &.event-click {
+                            position: absolute;
+                            left: 50%;
+                            margin-left: -50px;
+                            top: 0;
+                            width: 100px;
+                            height: 20px;
+                        }
+                    }
+                }
+
+                .good-profit {
+                    background: url("img/flash-news-list-up.png") no-repeat left;
+
+                    &.active {
+                        background: url("img/flash-news-list-up-active.png") no-repeat left;
+                        color: #00af4b;
+                    }
+                }
+
+                .bad-profit {
+                    background: url("img/flash-news-list-down.png") no-repeat left;
+
+                    &.active {
+                        background: url("img/flash-news-list-down-active.png") no-repeat left;
+                        color: #fa322b;
+                    }
+                }
+            }
+        }
+    }
+}

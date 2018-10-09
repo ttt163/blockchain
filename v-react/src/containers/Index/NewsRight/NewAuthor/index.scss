@@ -1,0 +1,170 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-21 21:43
+ * Description：index news right-author
+ */
+
+.news-author {
+    padding: 0 0 5px;
+
+    .box-author {
+        width: 100%;
+        height: auto;
+
+        .title {
+            color: #212121;
+            font-size: 16px;
+            line-height: 35px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .list-author {
+            background: #fff;
+            position: relative;
+            width: calc(100% - 36px);
+            height: auto;
+            border: 1px #ececec solid;
+            border-radius: 4px;
+            padding: 16px 18px 18px;
+            margin-bottom: 10px;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .portrait-img {
+                width: 100%;
+                height: 44px;
+                margin-bottom: 16px;
+                position: relative;
+
+                img {
+                    vertical-align: middle;
+                    border: 1px solid #c8c8c8;
+                    width: 41px;
+                    height: 41px;
+                    border-radius: 100%;
+                    cursor: pointer;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                a {
+                    position: relative;
+                    display: inline-block;
+
+                    .v-personal,
+                    .v-enterprise {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        border: 1px solid #fff;
+                        position: absolute;
+                        bottom: -2px;
+                        right: -2px;
+                    }
+
+                    .v-personal {
+                        background: url("./img/personal.svg") no-repeat center;
+                        background-size: 100%;
+                    }
+
+                    .v-enterprise {
+                        background: url("./img/enterprise.svg") no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+
+                .name-follower {
+                    margin-left: 10px;
+                    vertical-align: middle;
+                    width: 100px;
+                    height: 40px;
+                    display: inline-block;
+                    line-height: 20px;
+
+                    .author-call {
+                        display: block;
+                        color: #333;
+                        font-size: 14px;
+                        cursor: pointer;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+
+                        &:hover {
+                            color: #1482f0;
+                        }
+                    }
+
+                    .crowd {
+                        color: #999;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .article-title {
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 16px;
+                color: #333;
+                word-break: break-all;
+
+                &:hover {
+                    color: #1482f0;
+                }
+            }
+
+            .attention,
+            .cancel-attention,
+            .owner {
+                width: 53px;
+                height: 23px;
+                border-radius: 4px;
+                line-height: 23px;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                margin-top: 15px;
+            }
+
+            .attention {
+                background: #fff;
+                color: #1482f0;
+                border: 1px #1482f0 solid;
+                border-radius: 16px;
+                width: 60px;
+                height: 26px;
+                line-height: 24px;
+
+                &:hover {
+                    background: #1482f0;
+                    color: #fff;
+                }
+            }
+
+            .cancel-attention {
+                background: #e6e6e6;
+                color: #5a5a5a;
+
+                &:hover {
+                    background: #1482f0;
+                    color: #fff;
+                }
+            }
+
+            .owner {
+                background: #e6e6e6;
+                color: #5a5a5a;
+            }
+        }
+    }
+}

@@ -1,0 +1,250 @@
+/**
+ * Author：tantingting
+ * Time：2018/4/3
+ * Description：Description
+ */
+
+.upload-img {
+    width: 94px;
+    height: 94px;
+    font-size: 12px;
+    background-color: #fbfbfb;
+    position: relative;
+
+    .upload-img-select {
+        border: 1px dashed #d9d9d9;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        //display: none;
+        box-sizing: border-box;
+
+        &:hover {
+            border-color: #108ee9;
+        }
+
+        .select-box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+            //display: none;
+
+            .select-bg {
+                position: absolute;
+                width: 100%;
+                margin-top: 16px;
+
+                .iconfont-add {
+                    font-size: 30px;
+                    color: #999;
+                    display: block;
+                    margin-bottom: 12px;
+                }
+            }
+
+            input {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+
+        .uploading-box {
+            display: none;
+            margin-top: 30px;
+
+            .upload-img-progress {
+                width: 70px;
+                height: 2px;
+                margin: 14px auto 0;
+
+                .upload-img-progress-bg {
+                    background-color: #ebe9e9;
+                    width: 100%;
+                    height: 100%;
+
+                    .upload-img-progress-bar {
+                        background-color: #108ee9;
+                        width: 30%;
+                        height: 100%;
+
+                        &.active {
+                            background-color: #00a854;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .upload-img-finish {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid #d9d9d9;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        //box-sizing: border-box;
+
+        .img-content {
+            //margin: 6px;
+            margin-top: 50%;
+            margin-left: 50%;
+            transform: translate(-50%, -50%);
+            height: 78px;
+            width: 78px;
+            border-radius: 5px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+
+            .upload-img-mask {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 5;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: #e2dede;
+                //display: none;
+                transition: all 0.5s;
+
+                .iconfont {
+                    font-size: 14px;
+                    margin-top: 32px;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+
+                .iconfont-look {
+                    margin-left: 20px;
+                }
+
+                .iconfont-del {
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+
+    // 图片预览
+    .upload-img-preview {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        display: none;
+
+        .preview-contain {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .mask {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                background-color: rgba(0, 0, 0, 0.4);
+                width: 100%;
+                height: 100%;
+            }
+
+            .img-preview-body {
+                width: 520px;
+                position: absolute;
+                z-index: 3;
+                padding: 16px;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                border-radius: 5px;
+                overflow: hidden;
+                background-color: #fff;
+                box-sizing: border-box;
+
+                .close {
+                    position: absolute;
+                    right: 16px;
+                    top: 16px;
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// 图片剪裁
+.img-corpper-warp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+    .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    .img-corpper-contain {
+        position: fixed;
+        z-index: 3;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        //padding: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        height: 274px;
+
+        .confirm-btn {
+            line-height: 35px;
+            font-size: 16px;
+            color: #1482f0;
+            margin: 0 auto;
+            border: 1px #1482f0 solid;
+            border-radius: 4px;
+            text-align: center;
+            width: 120px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #1482f0;
+                color: #fff;
+            }
+        }
+    }
+}

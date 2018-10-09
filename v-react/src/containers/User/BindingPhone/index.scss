@@ -1,0 +1,98 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+.attention-binding-phone {
+    width: 478px;
+    height: auto;
+    background: #fff;
+    padding: 60px 185px;
+    border: 1px #ebebeb solid;
+
+    .attention-binding-title {
+        text-align: center;
+
+        img {
+            display: inline-block;
+            width: 30px;
+            height: 37px;
+            vertical-align: top;
+            margin-top: 0;
+        }
+
+        span {
+            display: inline-block;
+            font-size: 24px;
+            color: #1482f0;
+            margin: 5px 10px;
+        }
+    }
+
+    .attention-binding-list {
+        margin-top: 30px;
+
+        div {
+            line-height: 60px;
+
+            span {
+                display: inline-block;
+                width: 120px;
+                color: #757575;
+                font-size: 16px;
+            }
+
+            input {
+                width: 320px;
+                padding: 0 10px;
+                height: 48px;
+                line-height: 48px;
+                font-size: 16px;
+                color: #757575;
+                border: 1px #e5e5e5 solid;
+
+                &::-webkit-input-placeholder {
+                    color: #e5e5e5;
+                }
+
+                &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                    color: #e5e5e5;
+                }
+
+                &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                    color: #e5e5e5;
+                }
+
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: #e5e5e5;
+                }
+
+                &.bindingCode {
+                    width: 200px;
+                }
+            }
+
+            .get-code {
+                width: 120px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 16px;
+                background: #f1f1f1;
+                border: 1px #e5e5e5 solid;
+                color: #1979f4;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .password-btn {
+        width: 210px;
+        height: 55px;
+        background: #1482f0;
+        color: #fff;
+        line-height: 55px;
+        text-align: center;
+        cursor: pointer;
+        margin: 20px 0 0 120px;
+    }
+}

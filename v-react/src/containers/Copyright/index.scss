@@ -1,0 +1,29 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+.copyright-content {
+    width: 1200px;
+    margin: 30px auto 40px;
+    background: #fff;
+
+    .copyright-title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 50px 0;
+    }
+
+    .copyright-content {
+        width: 800px;
+        padding: 0 200px 50px 200px;
+
+        p {
+            font-size: 17px;
+            letter-spacing: 2px;
+            line-height: 36px;
+            padding: 10px 0;
+        }
+    }
+}

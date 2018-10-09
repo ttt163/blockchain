@@ -1,0 +1,33 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：title aside
+ */
+
+.aside-section {
+    .aside-title {
+        margin-bottom: 20px;
+        padding: 0 15px 0;
+        background: #fff;
+        border-radius: 3px;
+    }
+
+    .aside-title-name {
+        color: #212121;
+        font-size: 16px;
+        margin-bottom: 5px;
+
+        .aside-title-title {
+            display: inline-block;
+            line-height: 35px;
+            font-weight: bolder;
+            font-size: 16px;
+        }
+
+        img.aside-title-icon {
+            float: left;
+            margin-right: 18px;
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+/**
+ * Author：tantingting
+ * Time：2018/3/30
+ * Description：Description
+ */
+
+.aside-market {
+    width: 100%;
+
+    .aside-market-top {
+        & > div {
+            float: left;
+
+            h5 {
+                color: #757575;
+                font-size: 16px;
+                float: left;
+                cursor: pointer;
+
+                &:nth-of-type(1) {
+                    margin-right: 16px;
+                }
+
+                &.active {
+                    color: #212121;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .more {
+            float: right;
+            display: block;
+            font-size: 13px;
+            color: #bdbdbd;
+        }
+    }
+
+    .market-column-box {
+        width: 100%;
+        margin-top: 14px;
+
+        .market-box-list {
+            font-size: 13px;
+            color: #424242;
+
+            .market-tab {
+                height: 42px;
+                line-height: 42px;
+
+                .table-title-ul {
+                    li {
+                        height: 42px;
+                        width: 82px;
+                        font-size: 14px;
+
+                        &:nth-of-type(1) {
+                            width: 20%;
+                        }
+
+                        &:nth-of-type(2) {
+                            width: 20% !important;
+                        }
+
+                        &:nth-of-type(3) {
+                            width: 35%;
+                        }
+
+                        &:nth-of-type(4) {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+
+            table {
+                tr {
+                    background-color: #fff;
+                    height: 42px;
+
+                    &:hover {
+                        background-color: #f6f6f6;
+                    }
+
+                    td {
+                        font-size: 13px;
+                        height: 42px;
+                        line-height: 42px;
+                        //color: #424242;
+
+                        &.grey {
+                            color: #999;
+                        }
+
+                        &:nth-of-type(1) {
+                            width: 20%;
+                            color: #d4d4d4;
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+
+                        &:nth-of-type(2) {
+                            width: 20% !important;
+                        }
+
+                        &:nth-of-type(3) {
+                            width: 35%;
+                            color: #424242;
+                        }
+
+                        &:nth-of-type(4) {
+                            width: 25%;
+                        }
+
+                        .img-log {
+                            img {
+                                width: 16px;
+                                padding: 0;
+                                border: 0;
+                                vertical-align: middle;
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(1) {
+                        td:nth-of-type(1) {
+                            color: #0c7ff2;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        td:nth-of-type(1) {
+                            color: #5cbcff;
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        td:nth-of-type(1) {
+                            color: #95e7ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+.down-load {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    background: url("./img/download-bg.png") no-repeat top;
+    margin: 0 auto;
+
+    .down-cont {
+        position: relative;
+        max-width: 1200px;
+        height: 825px;
+        margin: 0 auto;
+        padding-top: 75px;
+
+        .phone {
+            width: 526px;
+            height: 825px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .down-load-box {
+            position: absolute;
+            right: 0;
+            top: 301px;
+            width: 385px;
+            height: 385px;
+
+            .down-log {
+                position: absolute;
+                left: 55px;
+                width: 270px;
+                height: 113px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .down-ewm {
+                position: absolute;
+                top: 215px;
+                width: 155px;
+                height: 155px;
+                background: #62abef;
+                border-radius: 5px;
+
+                p {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    width: 135px;
+                    height: 135px;
+                    background: #fff;
+                    border-radius: 5px;
+
+                    img {
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                        width: 112px;
+                        height: 112px;
+                    }
+                }
+            }
+
+            .down-btn {
+                position: absolute;
+                right: 0;
+                top: 215px;
+                width: 200px;
+
+                a {
+                    position: relative;
+                    display: inline-block;
+                    width: 200px;
+                    cursor: pointer;
+
+                    .spanIos {
+                        position: absolute;
+                        width: 200px;
+                        height: 60px;
+                        background: #fff;
+                        top: -210px;
+                        left: 0;
+                    }
+
+                    &.ios,
+                    &.android {
+                        width: 200px;
+                        height: 62px;
+                        background: url("./img/down-btn-h.png") no-repeat;
+
+                        &:hover {
+                            background: url("./img/down-btn.png") no-repeat;
+                        }
+                    }
+
+                    &.ios {
+                        background-position: 0 0;
+
+                        &:hover {
+                            background-position: 0 0;
+                        }
+                    }
+
+                    &.android {
+                        margin-top: 32px;
+                        background-position: 0 -92px;
+
+                        &:hover {
+                            background-position: 0 -92px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .phone-shade {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 129px;
+        background: url("./img/phone-shade.png") center no-repeat;
+    }
+}

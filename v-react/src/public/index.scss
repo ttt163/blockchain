@@ -1,0 +1,171 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2017/7/27
+ * Description：public
+ */
+@import "../../libs/scss/reset";
+@import "./share.min";
+
+html,
+body,
+#root {
+    background: #eee;
+    // font-family: "Microsoft YaHei UI", "Helvetica Neue", Ubuntu, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    //font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    font-family: 'Microsoft YaHei';
+    min-width: 1200px;
+    height: 100%;
+}
+
+.lk-loading.ajax {
+    background: none;
+}
+
+.block-style {
+    background: #fff;
+    border-radius: 3px;
+}
+
+.pagination {
+    text-align: center;
+    padding: 50px 0;
+
+    ul {
+        display: inline-block;
+
+        li {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+/* @font-face {
+    font-family: 'iconfont';  !* project id 574327 *!
+    src: url('//at.alicdn.com/t/font_574327_k71552mh5ar4fgvi.eot');
+    src: url('//at.alicdn.com/t/font_574327_k71552mh5ar4fgvi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_574327_k71552mh5ar4fgvi.woff') format('woff'), url('//at.alicdn.com/t/font_574327_k71552mh5ar4fgvi.ttf') format('truetype'), url('//at.alicdn.com/t/font_574327_k71552mh5ar4fgvi.svg#iconfont') format('svg');
+} */
+
+@font-face {
+    font-family: 'iconfont';  /* project id 574327 */
+    src: url('//at.alicdn.com/t/font_574327_75gy0spe9cedbo6r.eot');
+    src:
+        url('//at.alicdn.com/t/font_574327_75gy0spe9cedbo6r.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_574327_75gy0spe9cedbo6r.woff') format('woff'),
+        url('//at.alicdn.com/t/font_574327_75gy0spe9cedbo6r.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_574327_75gy0spe9cedbo6r.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: 'iconfont', serif !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-upload:before {
+    content: '\e78a';
+}
+
+.iconfont-del:before {
+    content: '\e659';
+}
+
+.iconfont-add:before {
+    content: '\e68c';
+}
+
+.iconfont-look:before {
+    content: '\e602';
+}
+
+.iconfont-file:before {
+    content: '\e600';
+}
+
+.iconfont-close:before {
+    content: '\e650';
+}
+
+.error-msg,
+.login-error-msg {
+    font-size: 15px;
+    color: #da361a;
+    padding-left: 33px;
+    margin-bottom: 10px;
+    line-height: 40px;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    box-sizing: border-box;
+    border: 1px solid #da361a;
+    transition: all 0.1s ease;
+
+    &.show {
+        animation: shake 0.3s;
+        height: 40px;
+        width: 340px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.shake {
+        animation: shake 0.3s;
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translateX(-6px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translateX(6px);
+    }
+}
+
+/* webkit滚动条样式 */
+
+//* {
+//    &::-webkit-scrollbar {
+//        width: 3px;
+//        height: 3px;
+//    }
+//
+//    &::-webkit-scrollbar-button {
+//        background-color: #f0f0f0;
+//    }
+//
+//    &::-webkit-scrollbar-track {
+//        background: #f0f0f0;
+//    }
+//
+//    &::-webkit-scrollbar-track-piece {
+//        background: #f0f0f0;
+//    }
+//
+//    &::-webkit-scrollbar-thumb {
+//        background: #bbb;
+//        border-radius: 5px;
+//    }
+//
+//    &::-webkit-scrollbar-corner {
+//        background: #f0f0f0;
+//    }
+//}

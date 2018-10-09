@@ -1,0 +1,108 @@
+/**
+ * Author：liushaozong
+ * Time：2018/02/27
+ * Description：search
+ */
+
+.live-cont-box {
+    position: relative;
+    padding-top: 590px;
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+
+    .live-title {
+        position: absolute;
+        width: 124px;
+        height: 61px;
+        left: 50%;
+        margin-left: -62px;
+        top: 480px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .live-tab {
+        .live-list {
+            width: 390px;
+            height: 398px;
+            border-bottom: 2px #eac171 solid;
+            background: #fff;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 40px;
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+
+            a {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+
+                .list-state {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 79px;
+                    height: 79px;
+
+                    span {
+                        display: block;
+                        width: 79px;
+                        height: 79px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .list-img {
+                    width: 100%;
+                    height: 260px;
+
+                    img {
+                        width: 100%;
+                        height: 260px;
+                    }
+                }
+
+                .list-cont {
+                    width: 100%;
+                    height: 140px;
+
+                    .title {
+                        width: 370px;
+                        height: 45px;
+                        line-height: 23px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        padding: 15px 10px 0;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        color: #262424;
+                    }
+
+                    .describe {
+                        width: 370px;
+                        height: 40px;
+                        padding: 10px;
+                        line-height: 23px;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        color: #757575;
+                    }
+                }
+            }
+        }
+    }
+}

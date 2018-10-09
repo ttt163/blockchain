@@ -1,0 +1,68 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2017/7/27
+ * Description：main
+ */
+
+.project-info-head {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+
+    .info-head {
+        width: 1150px;
+        height: 58px;
+        margin: 0 auto;
+        line-height: 60px;
+        font-size: 18px;
+        border-bottom: 1px solid #e0e0e0;
+        color: #757575;
+
+        & > a {
+            color: #757575;
+            display: inline-block;
+            position: relative;
+            margin: 0 32px;
+
+            &:first-child {
+                margin-left: 10px;
+            }
+
+            &:hover {
+                color: #1482f0;
+
+                &:before {
+                    position: absolute;
+                    display: inline-block;
+                    content: '';
+                    width: 30px;
+                    height: 3px;
+                    background: #1482f0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+
+            &.active {
+                color: #1482f0;
+
+                &:before {
+                    position: absolute;
+                    display: inline-block;
+                    content: '';
+                    width: 30px;
+                    height: 3px;
+                    background: #1482f0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

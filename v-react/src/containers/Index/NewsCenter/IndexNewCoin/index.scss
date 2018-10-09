@@ -1,0 +1,34 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-24 16:55
+ * Description：index new coin
+ */
+
+.indec-new-coin {
+    .inc-nav {
+        padding-top: 20px;
+        color: #757575;
+        font-weight: bolder;
+        line-height: 32px;
+
+        a {
+            float: left;
+            display: block;
+            width: 33.33%;
+            text-align: center;
+
+            &.active {
+                color: #1482f0;
+            }
+
+            &:first-child {
+                text-align: left;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+}
+

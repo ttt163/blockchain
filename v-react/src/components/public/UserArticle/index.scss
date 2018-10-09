@@ -1,0 +1,174 @@
+.user-article {
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+
+    &:not(:first-of-type) {
+        margin-top: 20px;
+    }
+
+    > a {
+        float: left;
+
+        &,
+        img {
+            width: 220px;
+            height: 160px;
+        }
+    }
+
+    .right-panel {
+        display: block;
+        margin-left: 240px;
+        height: 160px;
+        position: relative;
+
+        .statusDiv {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+            height: 44px;
+            font-size: 14px;
+            text-align: right;
+
+            .reason {
+                margin-top: 10px;
+                border-radius: 4px;
+                padding: 8px 10px;
+                text-align: justify;
+                background: #949494;
+                width: 150px;
+                word-break: break-all;
+                color: #fff;
+
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    border: 10px solid transparent;
+                    border-bottom: 10px solid #949494;
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    top: 12px;
+                    right: 33px;
+                }
+            }
+
+            .statusType {
+                display: inline-block;
+                width: auto;
+                padding: 0 8px;
+                line-height: 22px;
+                color: #fff;
+                border-radius: 4px;
+                background: #dd274e;
+
+                &.notPass {
+                    cursor: pointer;
+                }
+
+                &.hadDel {
+                    background: #949494;
+                }
+
+                &.checking {
+                    background: #ff6f40;
+                }
+            }
+        }
+
+        .title {
+            color: #424242;
+            font-size: 18px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-height: 1.4;
+            word-break: break-all;
+
+            &.spe {
+                margin-right: 80px;
+            }
+
+            &:hover {
+                color: #1482f0;
+            }
+        }
+
+        .desc {
+            font-size: 14px;
+            color: #757575;
+            line-height: 1.4;
+            margin-top: 10px;
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            word-break: break-all;
+        }
+
+        .bottom {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            line-height: 28px;
+
+            .labels {
+                .label {
+                    width: 60px;
+                    height: 28px;
+                    border: 1px solid #1482f0;
+                    color: #1482f0;
+                    font-size: 14px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    margin-right: 10px;
+                    float: left;
+                }
+            }
+
+            .userinfo {
+                float: left;
+                // line-height: 35px;
+                font-size: 0;
+
+                img,
+                span {
+                    vertical-align: middle;
+                }
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 100%;
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+
+                span {
+                    color: #757575;
+                    font-size: 14px;
+                }
+            }
+
+            .time {
+                display: block;
+                text-align: right;
+                font-size: 14px;
+                color: #c1bfbd;
+                line-height: 36px;
+
+                &.myCollect {
+                    line-height: 36px;
+                }
+            }
+        }
+    }
+}

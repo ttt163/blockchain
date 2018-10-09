@@ -1,0 +1,264 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2017/8/10
+ * Description：market
+ */
+
+.market-column-box {
+    width: 1200px;
+    height: auto;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 3px;
+
+    .pagination {
+        text-align: center;
+        padding: 50px 0;
+
+        ul {
+            display: inline-block;
+
+            li {
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .market-tab {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px #eee solid;
+
+        ul {
+            li {
+                float: left;
+                width: 155px;
+                height: 50px;
+                text-align: center;
+
+                &:nth-of-type(1) {
+                    width: 85px;
+                }
+
+                &:nth-of-type(2) {
+                    width: 75px;
+                }
+
+                &:nth-child(3) {
+                    width: 155px;
+                }
+
+                &:nth-child(8) {
+                    width: 100px;
+                }
+            }
+        }
+    }
+
+    .market-tab-list {
+        margin: 0 auto;
+        padding-bottom: 20px;
+
+        table {
+            width: 100%;
+
+            tr {
+                position: relative;
+                cursor: pointer;
+                width: 100%;
+                height: 60px;
+
+                &:nth-child(2n) {
+                    background: #fbf9f9;
+                }
+
+                &:hover {
+                    background: #f6f6f6;
+                }
+
+                .blue {
+                    color: #1482f0;
+                }
+
+                .green {
+                    color: #66bb6a;
+                }
+
+                .red {
+                    color: #ee250a;
+                }
+
+                td {
+                    width: 161px;
+                    height: 60px;
+                    line-height: 60px;
+                    font-size: 16px;
+                    text-align: center;
+
+                    .attention {
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        vertical-align: middle;
+                        text-align: center;
+                        background: url("./img/attention-img.png") center no-repeat;
+
+                        &.active {
+                            background: url("./img/attention-img2.png") center no-repeat;
+                        }
+                    }
+
+                    &.coins-name-column {
+                        width: 130px;
+                        text-align: left;
+                        text-overflow: ellipsis !important;
+                        overflow: hidden !important;
+                        white-space: nowrap !important;
+                    }
+
+                    & > img {
+                        vertical-align: middle;
+                    }
+
+                    &:last-child img {
+                        width: 80%;
+                        vertical-align: middle;
+                    }
+
+                    &:nth-child(1) {
+                        width: 85px;
+                    }
+
+                    &:nth-child(2) {
+                        width: 120px !important;
+                    }
+
+                    font {
+                        display: inline-block;
+
+                        img {
+                            width: 21px;
+                            padding: 5px;
+                            border: 1px solid #eee;
+                            vertical-align: middle;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .market-cut-tab {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        padding-top: 20px;
+        border-bottom: 1px #eee solid;
+        font-size: 18px;
+        color: #757575;
+
+        p {
+            width: 120px;
+            height: 60px;
+            float: left;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                color: #1482f0;
+            }
+
+            &.active {
+                color: #1482f0;
+            }
+
+            span {
+                display: inline-block;
+                width: 100%;
+                height: 40px;
+            }
+
+            &.my-attention {
+                padding: 0;
+            }
+        }
+
+        .sort,
+        .currency-type,
+        .mining {
+            float: left;
+            position: relative;
+            margin-top: 10px;
+            line-height: 38px;
+            text-align: left;
+            margin-right: 25px;
+
+            .Select-value {
+                line-height: 38px;
+            }
+
+            .Select-option {
+                &.is-selected {
+                    background-color: #1482f0;
+                    color: #fff;
+                }
+            }
+
+            .currency-select,
+            .mining-select {
+                width: 152px;
+                height: 38px;
+            }
+
+            .sort-select {
+                margin-left: 40px;
+                width: 215px;
+                height: 38px;
+            }
+
+            font {
+                position: absolute;
+                right: 20px;
+                z-index: 2;
+            }
+        }
+
+        .search-keyword {
+            position: absolute;
+            right: 0;
+            width: 220px;
+            height: 40px;
+
+            input {
+                outline: none;
+                width: 170px;
+                padding: 0 5px;
+                border: none;
+                height: 40px;
+                border-bottom: 1px #b3e5fc solid;
+            }
+
+            a {
+                display: block;
+                float: right;
+                width: 40px;
+                height: 40px;
+                vertical-align: bottom;
+                margin-top: 5px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .loading {
+        color: #e0e0e0;
+        font-size: 16px;
+        text-align: center;
+        padding: 100px 0;
+    }
+}

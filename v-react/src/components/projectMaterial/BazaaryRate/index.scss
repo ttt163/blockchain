@@ -1,0 +1,70 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：项目资料  市场占有率
+ */
+
+.bazaary-bate {
+    width: 100%;
+
+    .bate-title {
+        width: 100%;
+        height: 70px;
+        margin: 0 auto;
+        border-bottom: 1px #b3e5fc solid;
+
+        span {
+            float: left;
+            vertical-align: top;
+            margin-top: 13px;
+            margin-left: 10px;
+        }
+
+        h6 {
+            font-weight: bold;
+            float: left;
+            line-height: 60px;
+            font-size: 18px;
+            color: #757575;
+            margin-left: 10px;
+        }
+    }
+
+    .bazaary-bate-chart {
+        width: 1050px;
+        height: 320px;
+        margin: 30px auto 0;
+
+        .overall-bate,
+        .circulate-bate,
+        .change-bate {
+            width: 240px;
+            height: 270px;
+            margin: 0 55px;
+            float: left;
+
+            .chart-box {
+                width: 238px;
+                height: 238px;
+                border: 1px #b3e5fc solid;
+                margin-bottom: 20px;
+            }
+
+            p {
+                width: 100%;
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+                color: #212121;
+            }
+
+            span {
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+                color: #757575;
+            }
+        }
+    }
+}

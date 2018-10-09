@@ -1,0 +1,153 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+.attention-info {
+    width: 478px;
+    height: auto;
+    background: #fff;
+    padding: 60px 185px;
+    border: 1px #ebebeb solid;
+
+    .img-preview {
+        border-radius: 50%;
+        background: #e0e0e0;
+        border: 1px #1482f0 solid;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+        overflow: hidden;
+        width: 120px !important;
+        float: left;
+        height: 120px !important;
+    }
+
+    .attention-info-title {
+        text-align: center;
+
+        img {
+            display: inline-block;
+            width: 30px;
+            height: 37px;
+            vertical-align: top;
+            margin-top: 0;
+        }
+
+        span {
+            display: inline-block;
+            font-size: 24px;
+            color: #1482f0;
+            margin: 5px 10px;
+        }
+    }
+
+    .info-pagination {
+        width: 100%;
+        text-align: center;
+
+        .info-img {
+            background: url("../img/portrait.png") no-repeat center;
+            height: 120px;
+            position: relative;
+            margin: 30px 0 15px 0;
+            text-align: center;
+
+            & > img {
+                border: 1px #757575 solid;
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .btns {
+            position: relative;
+            width: 120px;
+            height: 35px;
+            margin: 0 auto;
+
+            .info-btn {
+                line-height: 35px;
+                font-size: 16px;
+                color: #1482f0;
+                cursor: pointer;
+                margin: 0 auto;
+                border: 1px #1482f0 solid;
+            }
+
+            .hidden-input {
+                opacity: 0;
+                width: 120px;
+                height: 35px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .info-introduce {
+            font-size: 14px;
+            color: #757575;
+            margin-top: 10px;
+
+            p {
+                line-height: 25px;
+            }
+        }
+    }
+
+    .info-list {
+        width: 100%;
+        margin-top: 30px;
+
+        p {
+            line-height: 45px;
+
+            span {
+                display: inline-block;
+                width: 95px;
+                line-height: 40px;
+                font-size: 16px;
+                color: #757575;
+            }
+
+            font {
+                display: inline-block;
+                width: 240px;
+                font-size: 16px;
+                color: #424242;
+            }
+
+            .nick-name-input {
+                font-size: 14px;
+                padding-left: 4px;
+                width: 240px;
+                height: 30px;
+                outline: none;
+            }
+
+            a {
+                cursor: pointer;
+                float: right;
+
+                &.done {
+                    span {
+                        border: #757575 solid 1px;
+                        color: #757575;
+                    }
+                }
+
+                span {
+                    width: 120px;
+                    height: 35px;
+                    line-height: 35px;
+                    border: #1482f0 solid 1px;
+                    color: #1482f0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

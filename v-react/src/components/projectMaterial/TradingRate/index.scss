@@ -1,0 +1,67 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-25 21:56
+ * Description：trading rate
+ */
+
+.trading-rate {
+    margin-top: 30px;
+    padding: 18px 14px;
+    border: 1px solid #eee;
+    height: 100%;
+    width: 240px;
+
+    .trading-rate-btn {
+        border: 1px solid #b3e5fc;
+        height: 38px;
+
+        a {
+            float: left;
+            height: 100%;
+            width: 100%;
+            // width: 50%;
+            color: #757575;
+            font-size: 14px;
+            line-height: 38px;
+            text-align: center;
+
+            &.active {
+                background: #1482f0;
+                color: #fff;
+            }
+        }
+    }
+
+    .trading-rate-chart {
+        margin: 30px auto;
+        height: 270px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .trading-rate-legend {
+        li {
+            margin-bottom: 15px;
+            float: left;
+            height: 15px;
+            width: 50%;
+
+            span {
+                float: left;
+                margin-right: 10px;
+                display: block;
+                height: 100%;
+                width: 30px;
+            }
+
+            em {
+                float: left;
+                color: #757575;
+                font-size: 14px;
+                height: 100%;
+                overflow: hidden;
+                width: 75px;
+            }
+        }
+    }
+}

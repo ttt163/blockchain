@@ -1,0 +1,152 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-20 21:43
+ * Description：header roll msg
+ */
+.new-coins-detail {
+    width: 1180px;
+    margin: 20px auto 0;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px #ebebeb solid;
+    padding-bottom: 50px;
+
+    .introduce-cont {
+        width: 1100px;
+        margin: 0 auto;
+        font-size: 16px;
+        color: #757575;
+
+        .team {
+            p {
+                width: 500px;
+                background: url("./img/user.png") left no-repeat;
+                padding-left: 30px;
+            }
+        }
+
+        .media {
+            color: #757575;
+
+            a {
+                text-decoration: underline;
+                color: #424242;
+
+                &:hover {
+                    color: #ffcd40;
+                }
+            }
+        }
+
+        h6 {
+            width: 100%;
+            line-height: 40px;
+            font-size: 18px;
+            color: #1482f0;
+            margin-top: 30px;
+        }
+
+        p {
+            display: block;
+            float: left;
+            width: 50%;
+            line-height: 30px;
+
+            a {
+                color: #757575;
+            }
+        }
+
+        .introduction {
+            p {
+                width: 100%;
+            }
+        }
+    }
+
+    .table-list {
+        width: 1140px;
+        margin: 0 auto;
+
+        table {
+            tr {
+                width: 100%;
+                height: 68px;
+                line-height: 68px;
+                border-bottom: 1px #ebebeb solid;
+
+                td {
+                    width: 275px;
+                    height: 68px;
+                    padding-left: 10px;
+                    font-size: 15px;
+
+                    span {
+                        margin-left: 10px;
+                    }
+
+                    .underway,
+                    .coming,
+                    .end {
+                        display: inline;
+                        padding: 5px;
+                        border-radius: 3px;
+                        background: #66bb6a;
+                        color: #fff;
+                        margin-left: 10px;
+
+                        span {
+                            margin: 0;
+                        }
+                    }
+
+                    .coming {
+                        background: #f69834;
+                    }
+
+                    .end {
+                        background: #757575;
+                    }
+                }
+            }
+        }
+    }
+
+    .detail-title {
+        width: 1140px;
+        height: 60px;
+        padding: 10px 20px;
+        border-bottom: 1px #ebebeb solid;
+
+        .title-name {
+            float: left;
+            width: 500px;
+            height: 60px;
+
+            img {
+                display: block;
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                float: left;
+            }
+
+            p {
+                float: left;
+                display: block;
+                line-height: 60px;
+                margin-left: 10px;
+            }
+        }
+
+        .back {
+            float: right;
+            font-size: 16px;
+            line-height: 60px;
+
+            a {
+                color: #1482f0;
+            }
+        }
+    }
+}

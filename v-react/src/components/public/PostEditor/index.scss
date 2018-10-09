@@ -1,0 +1,45 @@
+/**
+ * Author：tantingting
+ * Time：2017/9/21
+ * Description：Description
+ */
+.editor-post-content {
+    border: 1px solid #e9e9e9;
+
+    img {
+        height: auto !important;
+        max-width: 100% !important;
+    }
+
+    .post-title {
+        height: 50px;
+        font-size: 15px;
+
+        input {
+            height: 100%;
+            width: 100%;
+            padding: 0 15px;
+            border: 0;
+            outline: 0;
+        }
+    }
+
+    .post-radio {
+        padding: 15px 20px;
+    }
+
+    .btns {
+        padding: 20px;
+    }
+
+    .simditor {
+        border: none !important;
+        box-sizing: border-box;
+        border-left: 0;
+        border-right: 0;
+
+        .simditor-body img {
+            width: auto;
+        }
+    }
+}

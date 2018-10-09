@@ -1,0 +1,75 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-21 21:43
+ * Description：index news right img
+ */
+
+.news-right-img {
+    width: 100%;
+    height: auto;
+
+    a,
+    .questionnaire-index {
+        margin-bottom: 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        display: block;
+        height: 160px;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.questionaire-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 8889;
+
+    .questionaire-mask {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.8);
+        height: 100%;
+        width: 100%;
+    }
+
+    .questionaire-con {
+        margin: -300px 0 0 -450px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        height: 600px;
+        width: 900px;
+
+        .iframe-wrap {
+            border-radius: 3px;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    .questionaire-close {
+        position: absolute;
+        right: -40px;
+        top: 0;
+        background: rgba(255, 255, 255, 0.8);
+        height: 30px;
+        width: 30px;
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 32px;
+        line-height: 26px;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+

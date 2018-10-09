@@ -1,0 +1,235 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：header roll msg
+ */
+
+.project-info-content {
+    position: relative;
+    width: 100%;
+
+    .partner-content {
+        width: 1150px;
+        margin: 0 auto;
+        position: relative;
+
+        .partner-header {
+            position: relative;
+            height: 84px;
+            line-height: 84px;
+            border-bottom: 1px solid #b3e5fc;
+
+            .icon {
+                vertical-align: middle;
+            }
+
+            .title {
+                font-size: 18px;
+                color: #1482f0;
+                font-weight: bolder;
+                vertical-align: middle;
+                padding-left: 10px;
+            }
+        }
+
+        .partner-list {
+            width: 1150px;
+            min-height: 320px;
+            margin: 0 auto;
+
+            .partner-item {
+                width: 50%;
+                position: relative;
+                display: inline-block;
+                float: left;
+
+                .partner-head-img {
+                    margin-left: 30px;
+                    float: left;
+                    margin-top: 40px;
+                    display: inline-block;
+                }
+
+                .partner-intr {
+                    display: inline-block;
+                    word-break: break-all;
+                    padding: 60px;
+                    padding-bottom: 10px;
+                    width: 360px;
+                    font-size: 16px;
+                    line-height: 23px;
+                    color: #757575;
+
+                    .partner-identify {
+                        margin-bottom: 25px;
+
+                        .name {
+                            font-size: 24px;
+                            font-weight: bolder;
+                            padding-right: 50px;
+                            color: #000;
+                        }
+
+                        .position {
+                            font-size: 18px;
+                            font-weight: bolder;
+                            color: #1482f0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .history-events {
+        width: 1150px;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+
+        .history-header {
+            position: relative;
+            height: 84px;
+            line-height: 84px;
+            border-bottom: 1px solid #b3e5fc;
+
+            .icon {
+                vertical-align: middle;
+            }
+
+            .title {
+                font-size: 18px;
+                color: #1482f0;
+                font-weight: bolder;
+                vertical-align: middle;
+                padding-left: 10px;
+            }
+        }
+
+        .event-content {
+            position: relative;
+            overflow: auto;
+
+            .history-list {
+                padding: 20px;
+                width: 1680px;
+
+                .history-item {
+                    height: 240px;
+                    width: 140px;
+                    display: inline-block;
+
+                    .event-node {
+                        position: absolute;
+                        width: 15px;
+                        height: 15px;
+                        background: #1482f0;
+                        border-radius: 50%;
+                        box-shadow: 0 0 0 8px #b3e5fc;
+                        margin: auto;
+                        top: 0;
+                        bottom: 0;
+
+                        &:before {
+                            content: '';
+                            display: inline-block;
+                            height: 75px;
+                            width: 1px;
+                            position: absolute;
+                            background: #b3e5fc;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            z-index: -1;
+                        }
+
+                        .desc {
+                            position: absolute;
+                            left: -50%;
+                            width: 300px;
+                            height: 30px;
+                            line-height: 30px;
+
+                            .count {
+                                display: inline-block;
+                                width: 30px;
+                                height: 30px;
+                                border: 1px solid #b3e5fc;
+                                border-radius: 50%;
+                                color: #1482f0;
+                                text-align: center;
+                                line-height: 30px;
+                                font-weight: bold;
+                                margin-right: 15px;
+                            }
+
+                            .content {
+                                display: inline-block;
+                                min-width: 140px;
+                                max-width: 240px;
+                                height: 30px;
+                                line-height: 30px;
+                                font-size: 14px;
+                                font-weight: bolder;
+                            }
+                        }
+
+                        .date {
+                            width: 75px;
+                            height: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                            color: #1482f0;
+                            position: absolute;
+                            bottom: 20px;
+                            left: 30px;
+                            font-size: 12px;
+                        }
+
+                        &.odd {
+                            &:before {
+                                bottom: 0;
+                            }
+
+                            .count {
+                                bottom: 75px;
+                            }
+
+                            .desc {
+                                bottom: 76px;
+                            }
+                        }
+
+                        &.even {
+                            &:before {
+                                top: 0;
+                            }
+
+                            .count {
+                                top: 75px;
+                            }
+
+                            .desc {
+                                top: 75px;
+                            }
+                        }
+
+                        &:after {
+                            content: '';
+                            display: inline-block;
+                            width: 130px;
+                            height: 1px;
+                            position: absolute;
+                            background: #b3e5fc;
+                            top: 0;
+                            bottom: 0;
+                            left: 5px;
+                            margin: auto;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

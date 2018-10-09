@@ -1,0 +1,41 @@
+/**
+ * Author：liushaozong
+ * Time：2017/8/10
+ * Description：news list
+ */
+.no-tab {
+    margin-top: 20px;
+}
+
+.news-con {
+    width: 1200px;
+    margin: 0 auto;
+
+    .news-list-wrap {
+        float: left;
+        width: 805px;
+        height: auto;
+        padding: 0 20px;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px #eee solid;
+
+        .new-left-more {
+            display: block;
+            width: 138px;
+            height: 38px;
+            border: 1px #b3e5fc solid;
+            text-align: center;
+            line-height: 38px;
+            float: right;
+            margin: 30px 0;
+            color: #1482f0;
+        }
+    }
+
+    .ad-recomend {
+        width: 330px;
+        height: auto;
+        float: right;
+    }
+}

@@ -1,0 +1,171 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-20 21:43
+ * Description：new author
+ */
+.new-author-title {
+    position: relative;
+    width: 100%;
+    padding: 40px 0 20px;
+
+    .author-title-img {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+
+        img {
+            display: block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        h6 {
+            position: relative;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            top: 10px;
+        }
+    }
+
+    .author-detl {
+        width: 100%;
+        height: 50px;
+        margin-top: 30px;
+
+        .author-name,
+        .author-article {
+            width: 164px;
+            height: 50px;
+            border-right: 1px #ebebeb solid;
+            float: left;
+            text-align: center;
+            line-height: 25px;
+
+            h6 {
+                color: #000;
+                font-size: 16px;
+
+                &:hover {
+                    color: #1482f0;
+                }
+            }
+
+            p {
+                color: #757575;
+                font-size: 14px;
+
+                &:hover {
+                    color: #1482f0;
+                }
+            }
+        }
+
+        .author-article {
+            border: none;
+        }
+    }
+
+    h6.title-author {
+        margin: 10px auto 5px;
+        padding: 0 20px;
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+
+        &:hover {
+            color: #1482f0;
+        }
+    }
+
+    .introduce-author {
+        padding: 0 20px;
+        color: #757575;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    .attention {
+        margin: 20px auto 0;
+        bottom: 25px;
+        width: 98px;
+        height: 28px;
+        border: 1px #1482f0 solid;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #1482f0;
+        text-align: center;
+        line-height: 28px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+            color: #fff !important;
+            background: #1482f0;
+        }
+    }
+
+    .bottom-author-desc {
+        width: 70%;
+    }
+
+    &.line-new-author {
+        padding: 20px;
+        width: auto;
+        position: relative;
+
+        & > div {
+            float: left;
+            font-size: 14px;
+            color: #757575;
+
+            &.author-title-img {
+                width: 58px;
+                height: 58px;
+                margin-right: 15px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &.attention {
+                margin: 0;
+                position: absolute;
+                right: -20px;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: #1482f0;
+
+                &:hover {
+                    color: #fff;
+                }
+
+                &.active {
+                    color: #fff;
+                }
+            }
+
+            .title-author {
+                display: inline-block;
+                padding: 0;
+                color: #424242;
+                font-size: 15.76px;
+                margin-top: 8px;
+            }
+
+            .introduce-author {
+                padding: 0;
+                text-align: left;
+                margin-top: 8px;
+            }
+        }
+    }
+}

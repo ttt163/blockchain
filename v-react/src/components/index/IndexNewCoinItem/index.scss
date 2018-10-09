@@ -1,0 +1,72 @@
+/**
+ * Author：zhoushuanglong
+ * Time：2018-01-24 17:29
+ * Description：inde new coin item
+ */
+
+.index-new-coin-item {
+    padding: 20px 0;
+    cursor: pointer;
+    height: 60px;
+
+    .inci-logo {
+        float: left;
+        border-radius: 100%;
+        height: 100%;
+        width: 60px;
+        overflow: hidden;
+
+        img {
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .inci-con {
+        float: right;
+        width: 200px;
+
+        .inci-con-up {
+            height: 24px;
+            line-height: 24px;
+
+            h3 {
+                float: left;
+                color: #757575;
+                font-size: 16px;
+                width: 120px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            span {
+                font-size: 13px;
+                float: right;
+                background: #66bb6a;
+                border-radius: 12px;
+                display: block;
+                height: 100%;
+                width: 70px;
+                color: #fff;
+                text-align: center;
+
+                &.will {
+                    background: #f69834;
+                }
+
+                &.did {
+                    background: #757575;
+                }
+            }
+        }
+
+        p {
+            color: #bdbdbd;
+            font-size: 14px;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+    }
+}

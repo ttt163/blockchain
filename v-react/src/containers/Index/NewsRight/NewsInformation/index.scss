@@ -1,0 +1,82 @@
+/**
+ * Author：liushaozong
+ * Time：2018-01-21 21:43
+ * Description：index news right-information
+ */
+
+.news-information {
+    width: 210px;
+    padding: 0 0 5px;
+
+    h5 {
+        font-size: 18px;
+        color: #1482f0;
+        height: 28px;
+        line-height: 59px;
+        background: url("./img/quick-news-icon-earth.png") left no-repeat;
+        padding: 0 0 30px 40px;
+        border-bottom: 1px #b3e5fc solid;
+    }
+
+    .box-information {
+        width: 100%;
+        height: auto;
+
+        .list-information {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px #eee solid;
+            padding: 20px 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            span {
+                display: block;
+
+                &.time {
+                    height: 30px;
+                    line-height: 30px;
+                    color: #bdbdbd;
+                    font-size: 14px;
+                    background: url("./img/time.png") left no-repeat;
+                    padding-left: 30px;
+                }
+            }
+
+            p {
+                margin-top: 5px;
+                word-wrap: break-word;
+                word-break: normal;
+
+                &.details {
+                    font-size: 14px;
+                    color: #757575;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+
+.more-new-coins {
+    color: #b0b0b0;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+
+    &:hover {
+        color: #1482f0;
+    }
+}
+
+.live-news-loading {
+    text-align: center;
+    color: #969696;
+    height: 150px;
+    line-height: 150px;
+    width: 100%;
+}
